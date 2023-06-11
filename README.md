@@ -2,14 +2,14 @@
 
 General Guidelines:
 
-scraper.py
+**scraper.py**
 
 This script does the following:<br>
  -Connect to elastic instance via given arguments<br>
  -Scrapes .eml fiels from ```--directory``` location and create map list for each .eml file<br>
  -Send each json record data to ```email_scraper``` indice name<br>
 
- alerts.py
+ **alerts.py**
 
  This script does the following:<br>
  -Connect to elastic instance via given arguments<br>
