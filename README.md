@@ -5,17 +5,17 @@ General Guidelines:
 **scraper.py**
 
 This script does the following:<br>
- -Connect to elastic instance via given arguments<br>
+ -Connect to elastic deployment via given arguments<br>
  -Scrapes .eml fiels from ```--directory``` location and create map list for each .eml file<br>
- -Send each json record data to ```email_scraper``` indice name<br>
+ -Send each json record data to ```email_scraper``` indice name in elastic deployment<br>
 
  **alerts.py**
 
  This script does the following:<br>
- -Connect to elastic instance via given arguments<br>
+ -Connect to elastic deployment via given arguments<br>
  -Retreive domain list from previous script indice name: ```email_scraper```<br>
  -Search given indice name from traffic shipper the extracted domains<br>
- -Alerts if domain found in each domain search<br>
+ -Alerts if domain found in each search itterations<br>
 
 ## How To:
 
@@ -25,7 +25,7 @@ Clone this repository to your local machine: <br>
 Use the command below to install the packages according to the configuration file <br>
     ```pip install -r requirements.txt```
 
-Run the 1st script by using the command:**<br>
+Run the 1st script by using the command: (Please pay attention to the argument list in the end of this file)<br>
 ```python3 scraper.py -d <directory>```
 
 
