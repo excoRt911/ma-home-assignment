@@ -1,0 +1,4 @@
+mailparser
+elasticsearch
+tldextract
+argparse

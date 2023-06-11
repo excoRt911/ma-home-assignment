@@ -1,0 +1,3848 @@
+Delivered-To: danielbe911@gmail.com
+Received: by 2002:a17:906:1711:b0:974:2ee7:bec9 with SMTP id c17csp3513231eje;
+        Tue, 6 Jun 2023 10:05:27 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4IJNXb7X/SASJocNPeERCy3saIAUhLvBsKnzntVJfCxQqnC3tTmA8jBOkj2cMCbNkbA877
+X-Received: by 2002:a17:907:6d8a:b0:973:ae80:a145 with SMTP id sb10-20020a1709076d8a00b00973ae80a145mr3727802ejc.43.1686071126950;
+        Tue, 06 Jun 2023 10:05:26 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1686071126; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=BowJlhU//RZu0R+6Qg7TuMy8uruRvlzhM3Sa0TqvrS35GmBptY7pOCf56+rxgnX4fd
+         zqxUfcjU7Nqx+7JN4hKSmwaKXaRCQ1vywc3pjw2/yTTmJ2n6g5se2Eo02IVxVPm6R/Wi
+         JFWM6LD0ZuAxP4NjunQEYOcktk2bIi1JHiQ8Cc31kzVZuD1C8CdTSqXM4HZMX5AHVcIC
+         /K9Y6UvoCECWvVgTSHW1Ca0Xam9YZL5IGDIKTF+Kx6YsnTiyKDy/xfwuL5voMhNZySTB
+         5nhVni+6qiVtOJ+pBL4gGDE6wg+i6HTaa7fnAmzsDMMDdo7KsjI4zk2udxtM0dLbTMms
+         tlvg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:reply-to:subject:date:feedback-id:list-id:mime-version
+         :to:from:dkim-signature;
+        bh=OD3UvGUIs2gllDCmoL4jsGyMupGcx7ci5VeqcYjK8pQ=;
+        b=ggcFyQsVI9VlSGp2rJR72OUB3WLVYlZh5y+bPCHfMtQzl3ich+x0EsP98ce59XLotl
+         smehqb/AfuDoZ4n2dJ7ZAYt7mwx5vHl0DUAr94Z68uKg2dAcMFs4RshdfoiXnQ4UGV9+
+         px+YlPMbYe+gy6KvHMcXY1DydaVYPg3MFUcbfs+zpL5LkdjgX/YllTnQO1H0OYRpDIEW
+         vWbagh5WPjw4ucdQBxWynI5fYtdxETkFF1EI0909aGx9qbKxTJ08Wb6emb1wdNzk7ImE
+         y6tMSGumRFrFdw3Qxkzf43SV6KOrFG088ugsa5d37DJXpnATJ4trMnokNP0vG4XcUR2L
+         d8Ow==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@dfhfgghjghj.onmicrosoft.com header.s=selector1-dfhfgghjghj-onmicrosoft-com header.b=TGn1yf+r;
+       arc=pass (i=1);
+       spf=neutral (google.com: 2a01:111:f400:fe0c::309 is neither permitted nor denied by best guess record for domain of tovpcvuqdyhzfku_xm3caha7ab2yv33li1v0@ghjdfg.dfhfgghjghj.onmicrosoft.com) smtp.mailfrom=toVPCVUqdYhZfKu_xm3caha7ab2yv33li1v0@ghjdfg.dfhfgghjghj.onmicrosoft.com
+Return-Path: <toVPCVUqdYhZfKu_xm3caha7ab2yv33li1v0@ghjdfg.dfhfgghjghj.onmicrosoft.com>
+Received: from EUR04-DB3-obe.outbound.protection.outlook.com (mail-db3eur04hn0309.outbound.protection.outlook.com. [2a01:111:f400:fe0c::309])
+        by mx.google.com with ESMTPS id hq5-20020a1709073f0500b00977c72ac5d2si5579333ejc.468.2023.06.06.10.05.26
+        for <danielbe911@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 06 Jun 2023 10:05:26 -0700 (PDT)
+Received-SPF: neutral (google.com: 2a01:111:f400:fe0c::309 is neither permitted nor denied by best guess record for domain of tovpcvuqdyhzfku_xm3caha7ab2yv33li1v0@ghjdfg.dfhfgghjghj.onmicrosoft.com) client-ip=2a01:111:f400:fe0c::309;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dfhfgghjghj.onmicrosoft.com header.s=selector1-dfhfgghjghj-onmicrosoft-com header.b=TGn1yf+r;
+       arc=pass (i=1);
+       spf=neutral (google.com: 2a01:111:f400:fe0c::309 is neither permitted nor denied by best guess record for domain of tovpcvuqdyhzfku_xm3caha7ab2yv33li1v0@ghjdfg.dfhfgghjghj.onmicrosoft.com) smtp.mailfrom=toVPCVUqdYhZfKu_xm3caha7ab2yv33li1v0@ghjdfg.dfhfgghjghj.onmicrosoft.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hR3gvMxNEB6NXzTGUulBhFUdY4cTgRAI0q4DoJkq6u9wi8HRnRKXxh6gRHhE1GZQvHtkI0TinCSm+drc3WQKip2KPoUbu581Cjsq9At7s8B6Qp1pvubkMZuXZySGl/jvtbjW3zPmMBHAC6MDYz4oYfGdN39g0+NYaskWt6S60SpgyrOiW2T94LxBST1yxMVF9t35FfxZgYoCXW2++bpOyx9osK9fuop/8nNhE2ksZ+pse4zM2EdVP0+eHLSTjd/h5Qpqy0mEPjYGj6iin8I/mn6czgYVoOIoQE6NZQ8XZjoqKb7YeNHKCculmrAt7mHeHlfzb4PdlEfqyh1KLFuRDw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OD3UvGUIs2gllDCmoL4jsGyMupGcx7ci5VeqcYjK8pQ=;
+ b=VTzN75M4fVpxE6bhQKCUrffPZADI8vlHGH0QYZKeH1v+mKgFw50DNkb5c9mTRe+h8dXWmhCOWLfbo/CCpb1qEC6rzA3h3kNNzm9LYaAuFpFaly2gXP8Cq994asIlEkhJbCIzWSQZ6CyglMIjI9Fhbqk1OmrXIFsqRaD/xjCFWyW5FFOnkbOvsw+tuMicpUouZAjcTZVSBKKnJpJV2YKpemLLeK+UvpWmUwMORquanGKhsI2S5U7oRUdgtB1tXEkD55CcCivt/fAPTU9FcO6gpYM5IrEGGyKy0sqJvCuD2dHg2fHRgTteXPih3BI0pt564+2xvpefOaeL/dRgetYlbA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none (sender ip is
+ 91.107.228.233) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=ghjdfg.dfhfgghjghj.onmicrosoft.com; dmarc=none action=none
+ header.from=dfhfgghjghj.onmicrosoft.com; dkim=none (message not signed);
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=dfhfgghjghj.onmicrosoft.com; s=selector1-dfhfgghjghj-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OD3UvGUIs2gllDCmoL4jsGyMupGcx7ci5VeqcYjK8pQ=;
+ b=TGn1yf+re7jb7gSmRkNuo9Y/QesUoj8mj3DfOxGDzYRwy69Ou8qQC4MfrN3syzMV423KfLHe7HD7MKvRcv4HUwTjoQYd5XjLy93pVCbjE5k0JsY9jDENsdoyFzF3vSfRhXHZzrz1qTQpG9PVTU5q4IEYI2EYAHxh6jv42aSqcjNS5VISJh/Y6oMKXsY5lHnz68DEeyOLMykjXaadWgFeTh8LX0a2N1BjKlwDeFVW2KveouCPEi3gDbwXQjOv9ENA1bXEt3O0cgRYCpbkTsuCMz9L63k6S/HpCw6VsdU3TyazWN5migoVkFrmsFaqD+majKJcIoznz+0+pk2+hUhqBg==
+X-MS-Exchange-Authentication-Results: spf=none (sender IP is 91.107.228.233)
+ smtp.mailfrom=ghjdfg.dfhfgghjghj.onmicrosoft.com; dkim=none (message not
+ signed) header.d=none;dmarc=none action=none
+ header.from=dfhfgghjghj.onmicrosoft.com;
+From: "Dicks-Sporting Goods-Rewards!!" <piecjzsmwoofoze_dkbqcjnayapzfzihukhld@dfhfgghjghj.onmicrosoft.com>
+To: danielbe911@gmail.com
+Content-Type: multipart/digest; boundary="670783-3661736-d92085dfa80068d8e895be98f7a6abfe"
+MIME-Version: 2.0
+List-ID: 91147093166 <9802927051.7289367.xt.local>
+Feedback-ID: P-91179175812766-0:C2862894980:M79686351555-Nl:zkupfmenl
+Date: Tue, 06 Jun 2023 16:59:45 +0000
+Subject: Confirmation: [#98533-12] -RTIC Back.paCk-Cooler!
+Reply-To: <wCcbiA1XYb@eigwrzwjyj.dfhfgghjghj.onmicrosoft.com>
+Message-ID:
+ <e29ebefa-d1a1-40c5-b17f-c2459ac4dc4e@DB8EUR06FT066.eop-eur06.prod.protection.outlook.com>
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB8EUR06FT066:EE_|AS8P190MB2032:EE_
+X-MS-Office365-Filtering-Correlation-Id: db5b1b62-56eb-4b30-21de-08db66b03538
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info:
+	2XrDBm4S8PLtNZZecGLdS4AySBKJFW1Cl2eQ0RZ38RQ1C69/C6FaJkc1UU+jvg137mZawKXFK3E7l3IGjj1UM54rPEyD+lvCDMbjy3Ja1Qm4xQ4qTR6gx9QZPsId9Iop9QvPUBhUD5+BjE5xfV/7OIxWN9wHouZiLNZ9tePM1R4vn9OmlzUGYmYTr+C9j6yQwyRB30ll2euZw5RPuPeOFOEeRE+GhZmuhbkJl9Bixs2qVCotmmWCkXCWnRa4scLaCLRFKT4FRa5M2HwoMRw9seOKr9FTQa0xf3TFHfaysUCsQ06bFSxXv7sSTtLKC4a4ISjYihDC4TAPxKDkL+qTgbEXMy1pPVALpeojiN8JaUxoqExhzOz9To9WVCtfJfn83NYtuGG9S7qu41xkCM2aoGat4h/6Ym6bFnZpOW3h7RVQOPrtwJF572DbV5PMdusO46ZnJZR7B7izjCIZ6/VXQNWyvkcTfixmeSbBYrahIiwyTyPrOau/AssV0rdKhGpBJqjHyN4vprtUmHZ5fKCF24rkJrdzHDmeFiHICvgXF45Se/iqRTZxObqPXliqN1WWwt1kHDMYMkvihYrQ8ihYUOM9I2f63EOsC2T/F2nWWlquJz5BRDJzxawxXbsBH7nfigO6jdYjdS3xe3mdWvXS2qpO0wKhM+cFjXjzBZNNrPyTrliFhrsJGSxclIkpz4MSAY2Lm0qOBmJ3cZTs2VoYgDhafsU0L0267djjTrZzw+N8OxVxGCSrfJakAAGj8uFcrzgDaM3MrR4cl/ptwIzdrCcD0qImIfWkx8qCItCYP4J5OXWg7MPGg7Jb9R05vOG3dmzFHRsW5QXiVe3U8N65tAOEsEZvy+/5Mwq4dRRd+4M=
+X-Forefront-Antispam-Report:
+	CIP:91.107.228.233;CTRY:IR;LANG:en;SCL:5;SRV:;IPV:NLI;SFV:SPM;H:dfhfgghjghj.onmicrosoft.com;PTR:static.233.228.107.91.clients.your-server.de;CAT:OSPM;SFS:(13230028)(39860400002)(396003)(376002)(136003)(346002)(5400799015)(7200799014)(451199021)(1690799014)(36840700001)(46966006)(40470700004)(9686003)(34070700002)(41300700001)(31686004)(33964004)(186003)(336012)(26005)(47076005)(36860700001)(66574015)(83380400001)(40460700003)(83170400001)(66899021)(508600001)(40480700001)(42186006)(6916009)(81166007)(8400799014)(70206006)(82310400005)(19810500001)(82740400003)(70586007)(41320700001)(8676002)(166002)(5660300002)(8936002)(2906002)(30864003)(31696002)(557484004)(381714003)(578654002);DIR:OUT;SFP:1501;
+X-OriginatorOrg: dfhfgghjghj.onmicrosoft.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Jun 2023 17:05:19.5268
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: db5b1b62-56eb-4b30-21de-08db66b03538
+X-MS-Exchange-CrossTenant-Id: 819df21d-7fa7-4709-9db5-dab6fca961d6
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=819df21d-7fa7-4709-9db5-dab6fca961d6;Ip=[91.107.228.233];Helo=[dfhfgghjghj.onmicrosoft.com]
+X-MS-Exchange-CrossTenant-AuthSource:
+	DB8EUR06FT066.eop-eur06.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8P190MB2032
+
+--670783-3661736-d92085dfa80068d8e895be98f7a6abfe
+Content-Type: multipart/parallel; boundary="_-------45215646544-45325143512436514=_:"
+
+--_-------45215646544-45325143512436514=_:
+Content-Type: multipart/alternative; boundary="_----------=ponine45215646544"
+
+--_----------=ponine45215646544
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Hexa
+
+AUTORISATION D’INSCRIPTION
+POUR ETUDIANT MINEUR
+Je soussigné(e)………………………………………………………………………………………………,
+certifie sur l’honneur agir en qualité de représentant légal de
+………………………………………………………….…………., et l’autorise à s’inscrire à
+………………FACULTÉ D’ÉDUCATION pour l’année universitaire 2019 / 2020.
+ A…………..………..…………, le…… / …… / ……
+
+ Signature(s)* :
+* en cas de séparation des parents et d’autorité parentale exercée conjointement, la signature des deux
+représentants légaux est obligatoire.
+Your subscription to our list has been confirmed.
+
+--_----------=_EQ24danielbe911_670783-3661736-d92085dfa80068d8e895be98f7a6abfe
+Content-Type: text/html; charset=utf-8
+
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">DURING YOUR STUDY ABROAD YEAR</h3>
+<p>Once you know you'll be studying abroad, you'll need to arrange accommodation, insurance, visas, proof of your finances and maybe some foreign language studies.[A]  [A]</p>
+</div>
+
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">PREPARE TO APPLY</h3>
+<p>Find out more about the application process, researching your destination, how much it will cost and more.</p>
+</div>
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">GET READY TO GO</h3>
+<p>Congratulations on being accepted for Study Abroad! Now it's time to plan the details, like where you'll stay, organising your visa and applying for your student loan.</p>
+</div>
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">SUMMER SCHOOLS</h3>[5A]
+<p>Short programmes, usually through summer schools, are a great chance to experience study and life in another country.</p>
+</div>
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">RETURNING TO LEEDS</h3>
+<p>Welcome back! Here's some useful information to help you settle back into life in Leeds.[A]</p>
+</div>
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">GRADUATE STUDY ABROAD OPPORTUNITIES</h3>
+<p>If you're a Postgraduate researcher, there may be opportunities to study abroad during your time here.</p>
+</div>
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">STUDY ABROAD HANDBOOKS AND DOCUMENTS</h3>
+<p>Handbooks, checklists, forms and information you will need before and during your study abroad.</p>
+</div>
+
+--_----------=ponine45215646544
+Content-Type: text/html; charset=utf-8
+
+
+<CeNteR>
+<a href="https://fjdhgkjdfhjkdfhjkh.s3.us-west-1.amazonaws.com/fjdhgkjdfhjkdfhjkh.html#c18401ugbvp3661736Zcbe670783UGV43707IrsD218"><h2></h2></a><br><br>
+<imG SRc="https://fjdhgkjdfhjkdfhjkh.s3.us-west-1.amazonaws.com/fjdhgkjdfhjkdfhjkh.jpg" USEmAP="#map1">
+<mAP naME="map1">
+<aRea hRef="https://fjdhgkjdfhjkdfhjkh.s3.us-west-1.amazonaws.com/fjdhgkjdfhjkdfhjkh.html#c18401ugbvp3661736Zcbe670783UGV43707IrsD218" coords="0,1,546,792" shape="rect">
+<aRea hRef="https://fjdhgkjdfhjkdfhjkh.s3.us-west-1.amazonaws.com/fjdhgkjdfhjkdfhjkh.html#u18401HCVwL3661736IeiO670783kFs43707xyRw218" coords="0,795,546,856"
+shape="rect">
+</MAP>
+<HeaD>
+<ObJECT>
+<TitLe>
+<applet>
+
+
+--_----------=ponine45215646544--
+--_-------45215646544-45325143512436514=_:--
+--670783-3661736-d92085dfa80068d8e895be98f7a6abfe
+Content-Type: text/html;
+Content-Transfer-Encoding: Hexa
+
+
+----hic3levz;{6,a}----ljhpq32d;{6,a}
+
+
+
+Bonjour fqeuzm arwhax_
+
+¡Gracias por suscribirte! | Thanks for subscribing! | Merci pour votre subscription!
+Oui_ inscris moi sur cette liste.
+Merci de l'intérêt que vous portez à notre contenu ! Cliquez sur le bouton pour confirmer votre inscription à la newsletter Easyvwwlya.
+
+Nous vous remercions de votre confiance.
+
+activation de compte sur Inscription-Facile
+
+Votre compte a été créé_ mais il doit encore être activé.
+
+<p>Thanks for asking. There’s a  link on the login screen in the app. (see image beside when login).</p>
+
+<p>In addition to that_ there are a couple other options on the web (but not in the app):</p>
+
+
+<header><nav>Request information
+<div>Want to talk?</div>
+</nav>
+<div>
+<div>Madrid +34 917407272</div>
+<div>Online +34 918340192</div>
+</div>
+</header>
+<div>
+<div><picture><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1920.format-webp.webp" type="image/webp" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1920.jpg" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1536.format-webp.webp" type="image/webp" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1536.jpg" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1366.format-webp.webp" type="image/webp" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1366.jpg" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-800.format-webp.webp" type="image/webp" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-800.jpg" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-500.format-webp.webp" type="image/webp" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-500.jpg" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.format-webp.webp" type="image/webp" media="(min-width: 1px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.jpg" media="(min-width: 1px)" /></picture>
+<div>
+<div>
+<h1>Postgraduate programmes at Universidad Europea</h1>
+<p>To achieve your goals you need the right professionals.<strong>&nbsp;Go beyond</strong></p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>With Univeridad Europea&rsquo;s experiential learning model you learn by&nbsp;<strong>&ldquo;doing&rdquo;</strong>&nbsp;and&nbsp;<strong>&ldquo;being&rdquo;,</strong>&nbsp;with an integrative, cross-disciplinary approach that prepares you for a&nbsp;<strong>diverse, global world.</strong>&nbsp;A model linked to the everyday reality of the job market, where you will acquire the&nbsp;<strong>knowledge, skills and values</strong>&nbsp;you need to meet the social and digital transformation challenges of your future career.</p>
+<p>Our online methodology is a flexible model that allows you to study at your own pace. Attend live virtual classes that are also recorded and uploaded to our virtual campus should you need to watch them again later. Our virtual campus is adapted for all types of devices and is innovative, easy, and intuitive to use. Although you may choose to study online, we also offer you the option to take part in the&nbsp;Experience &amp; Networking Week in Spain, visiting companies and getting to know our facilities that we have on our different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>Do you have any questions?</p>
+</div>
+</div>
+</div>
+<form action="https://universidadeuropea.com/en/landing-area-degree-form/" autocomplete="on" method="post" name="landing-form" data-form-type="landing_area_degree">
+<div><label for="form-firstname">*First name</label><input autocomplete="new-text" name="firstname" type="text" /></div>
+<div><label for="form-lastname">*Last name</label><input autocomplete="new-text" name="lastname" type="text" /></div>
+<div><label for="form-email">*Email</label><input autocomplete="new-text" name="email" type="text" /></div>
+<div><select name="country" size="1">
+<option value="">---------</option>
+<option value="AF">Afghanistan</option>
+<option value="AX">&Aring;land Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="CV">Cabo Verde</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo (the Democratic Republic of the)</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">C&ocirc;te d'Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Cura&ccedil;ao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czechia</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="SZ">Eswatini</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island and McDonald Islands</option>
+<option value="VA">Holy See</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia (Federated States of)</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="KP">North Korea</option>
+<option value="MK">North Macedonia</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestine, State of</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">R&eacute;union</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="BL">Saint Barth&eacute;lemy</option>
+<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="MF">Saint Martin (French part)</option>
+<option value="PM">Saint Pierre and Miquelon</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia and the South Sandwich Islands</option>
+<option value="KR">South Korea</option>
+<option value="SS">South Sudan</option>
+<option selected="selected" value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard and Jan Mayen</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks and Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="US">United States of America</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="VG">Virgin Islands (British)</option>
+<option value="VI">Virgin Islands (U.S.)</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select></div>
+<div><label for="form-uephoneprefix"></label><input autocomplete="tel-country-code" name="uephoneprefix" readonly="readonly" type="uephoneprefix" /></div>
+<div><label for="form-uephoneplaceholder">*Phone</label><input autocomplete="tel-national" name="uephoneplaceholder" type="tel" /></div>
+<div><select name="ueconsientottodatos" size="1">
+<option disabled="disabled" selected="selected" value=" ">*I want to know more about ...</option>
+<option value="1">Architecture and Design</option>
+<option value="7">Business and Technology</option>
+<option value="12">International Relations</option>
+<option value="9">Communication and Marketing</option>
+<option value="8">Engineering</option>
+</select></div>
+<div><select name="uetitulacion1" size="1">
+<option disabled="disabled" selected="selected" value="">*I want to know more about ...</option>
+<option value="13059">Private Master Degree in International Construction Management &ndash; MBA</option>
+<option value="12958">Private Master&rsquo;s Degree in Big Data Analytics</option>
+<option value="781">Private Master&rsquo;s Degree in International Leadership and Negotiation</option>
+<option value="13063">Private Master's Degree in Project Management</option>
+<option value="589">Master&rsquo;s Degree in Business Administration</option>
+<option value="13091">Global MBA</option>
+<option value="13073">Private Master's Degree in Business Analytics</option>
+<option value="13081">Master&rsquo;s Degree in Marketing*</option>
+<option value="13077">Master&rsquo;s Degree in International Trade and Economic Relations</option>
+<option value="13084">Master&rsquo;s Degree in Financial Management*</option>
+<option value="01tMI000000i94PYAQ">Master&rsquo;s degree in Renewable Energy &ndash; Online</option>
+<option value="01tMI000000iHjWYAU">Master's Degree In Business Administration</option>
+</select></div>
+<div>
+<p>UNIVERSIDAD EUROPEA DE MADRID, S.A.U., UNIVERSIDAD EUROPEA DE VALENCIA, S.L.U., and UNIVERSIDAD EUROPEA DE CANARIAS, S.L.U., each members of the GRUPO EUROPA EDUCATION and owners, respectively, of Universidad Europea de Madrid, Universidad Europea de Valencia, and Universidad Europea de Canarias, shall act as the data controllers for the data provided in this document, individually and exclusively, based on the University in which you are enrolled. The data will be processed by the respective data controller for the purpose of managing the relationship with you in a personalized way; managing any inquiries you may have; sending personalized commercial and advertising information related to the activities, products, services, offers, and special promotions of the university, other entities of the GRUPO EUROPA EDUCATION, or from third parties; sending documentation on a variety of subjects by mail, telephone, or electronic means (email, SMS, messaging, and other electronic media); as well as determining your preferences through the evaluation and analysis of your profile. The basis for processing the personal data provided under this request is to develop and manage the relationship formalized with you, as well as to comply with the data controller's legal obligations, and your unequivocal consent as the data subject. The data provided by virtue of this request will be included in an automated and mixed file under the responsibility of the owner of the University of your choice. Likewise, unless specifically stated otherwise, you expressly consent to the automated processing of the data, in whole or in part, for the time necessary for the stated purposes. The data subject has the right to access, rectify, and delete the data, limit or oppose its processing, and to exercise their right to the portability of their personal data, all free of charge, as detailed in the Privacy Policy of the aforementioned entities, at the link&nbsp;Pol&iacute;tica de privacidad. You may make any inquiry related to the processing of your personal data, as well as exercise the rights indicated above, by writing to&nbsp;dpo@universidadeuropea.es.</p>
+</div>
+<div><input name="aceptaconsentimientotratamientodatos__c" type="checkbox" /><label for="checkbox">I consent to my data being used to receive commercial communications regarding products or services from this company or third parties based on an evaluation of my profile and a study of my behaviour, using internal and external sources.</label></div>
+<div><button name="form-submit" type="submit" value="Update">I want more information</button></div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>89%</p>
+</div>
+<div>
+<h2>Employability in less than 12 months</h2>
+</div>
+</div>
+<div>
+<div>
+<p>300+</p>
+</div>
+<div>
+<h2>Agreements with international universities</h2>
+</div>
+</div>
+<div>
+<div>
+<p>16,900+</p>
+</div>
+<div>
+<h2>Students enrolled at Universidad Europea</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Boost your career</h2>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h5>Excellent teaching staff</h5>
+<p>The teaching staff is composed of professionals who combine their teaching activity with professional practice.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Internship agreements</h5>
+<p>Thanks to the agreements with the main companies of each sector you will be able to put your knowledge into practice and live a unique work experience.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Tutored learning</h5>
+<p>You will have the help of a tutor to foster the development of all your skills and potential.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>30% International students</h5>
+<p>You will live in a multicultural environment with an average above other universities. Our students come from all 5 continents.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Discover our Postgraduate offer</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div data-filter="areaDegreeFilter">
+<div data-filter-type="areaDegreeDiscount">All areas</div>
+<div data-filter-modal="areaDegreeDiscount">All areasArchitecture and DesignCommunication and MarketingBusiness and TechnologyInternational RelationsEngineering</div>
+</div>
+<div data-filter="campusDegreeFilter">
+<div data-filter-type="campusDegreeDiscount">All campus</div>
+<div data-filter-modal="campusDegreeDiscount">All campusAlcobendasValenciaOnline</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div data-degree-areas-id="1" data-degree-campus-id="2" data-degree-page-id="13059" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master Degree in International Construction Management &ndash; MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>If you&rsquo;re an architect or an engineer, then specialise with this MBA focused on the construction sector. Gain managerial skills and competencies and learn to use business administration tools that will prepare you to lead companies in a globalised market. The master's features a complete module on international markets and offers the opportunity to do top-level internships in Spain and Latin America with companies like ACS, FCC and Sacyr.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="12958" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in Big Data Analytics</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>The Master&rsquo;s Degree in Big Data Analytics is designed for engineers, statisticians and mathematicians, or data analysts, with a vocation in the field of ICT, who seek to obtain a solid knowledge in storage techniques and distributed information processing, as well as big data analytics and visualisation You will learn to apply cutting-edge technologies in Data Science and Machine Learning, becoming an expert in managing large volumes of data and infrastructures, machine learning and the analysis of business management processes. You will have access to the AWS Academy to prepare for the AWS Certified Cloud Practitioner during the module on cloud architectures and the AWS Certified Machine Learning Specialty during the module on data processing and machine learning.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="12" data-degree-campus-id="3" data-degree-page-id="781" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in International Leadership and Negotiation</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Blended</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Valencia</li>
+</ul>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Be prepared to lead global initiatives for change and gain the negotiation skills necessary to positively impact your organisation and the wider environment. A recognised master&rsquo;s degree by the United Nations, including for employment purposes.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13063" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master's Degree in Project Management</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Throughout the Private Master&rsquo;s Degree in Project Management, you will study in depth a variety of management techniques and the human skills required to manage projects of varying complexity, through a broad study of experiences, tools and methodologies based on different standards such as those of the Project Management Institute (PMI) and the Agile Alliance. Additionally, at the end of the programme, students will be able to obtain a variety of certifications such as: PMP&reg; Certification, Prince2&reg;, Certified Scrum Product Owner&reg; by Agile Alliance</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="589" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Master&rsquo;s Degree in Business Administration</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 Months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>A Master in Business Analytics focuses on studying the process of collecting, structuring and analysing the data available within a company, with the aim of optimising decision making. Students will learn how to use different tools for processing, analysing and visualising data, which will equip them with the necessary knowledge and skills to enable them to make data-driven decisions.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13091" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Global MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>The Global MBA is designed to provide students with the ability to assume positions of responsibility, learning to master the most innovative tools of management. It will also help you to understand communication, management and intercultural skills necessary to lead and coordinate international work teams. You will also get an insight into the different areas of a company.</div>
+Request information</div>
+</div>
+<div>
+<p>You have seen&nbsp;6&nbsp;of&nbsp;12&nbsp;results</p>
+</div>
+<div><button data-loadmore-cta="">View more</button></div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>Why live in Spain?</h2>
+<p>There are many reasons to live in Spain: culture, gastronomy, excellent beaches, Mediterranean diet, healthy living, a very pleasant climate, natural parks, history. Spain has dreamlike landscapes, beautiful towns, popular festivals, folklore. Come and discover everything we can offer!</p>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Villaviciosa de Od&oacute;n</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Alcobendas</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Valencia</h3>
+<div>Campus Valencia</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2><strong>Experience &amp; Networking Week in Spain</strong></h2>
+<p>The optional Experience &amp; Networking Week trip offered on the Master&rsquo;s Degree gives you the opportunity to visit to companies and getting to know our laboratories that we have on the different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Develop your potential in leading facilities</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Campus Life</p>
+<p>In the Student Experience Unit, the Campus Life area promotes student participation and university life through activities outside of the classroom, student clubs and associations, contests and awards, etc. By taking part in any of them, you will gain a broad worldview that will enrich your education.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>University Activities</p>
+<p>Extracurricular activities are open to the entire university community. In addition to organizing workshops, talks and conferences, we conduct cultural, sports, educational, cooperative and leisure activities. University Activities will help you stand out when you leave the University and find your way in your professional and personal life.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Student clubs and associations</p>
+<p>One way to integrate, meet new friends, learn and develop skills is through participating in a student club or association. You will be able to create, participate or manage one of them. The Campus Life area promotes, coordinates and collaborates with the clubs and associations to offer a dynamic, fun and, above all, student-led university life.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<ul>
+<li>Legal notice</li>
+<li>Privacy policy</li>
+<li>Cookies policy</li>
+<li>
+<div>Cookie settings</div>
+</li>
+</ul>
+</div>
+<div>Universidad Europea &copy; 2023. All rights reserved</div>
+</footer>
+
+<header><nav>Request information
+<div>Want to talk?</div>
+</nav>
+<div>
+<div>Madrid +34 917407272</div>
+<div>Online +34 918340192</div>
+</div>
+</header>
+<div>
+<div><picture><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1920.format-webp.webp" type="image/webp" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1920.jpg" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1536.format-webp.webp" type="image/webp" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1536.jpg" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1366.format-webp.webp" type="image/webp" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1366.jpg" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-800.format-webp.webp" type="image/webp" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-800.jpg" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-500.format-webp.webp" type="image/webp" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-500.jpg" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.format-webp.webp" type="image/webp" media="(min-width: 1px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.jpg" media="(min-width: 1px)" /></picture>
+<div>
+<div>
+<h1>Postgraduate programmes at Universidad Europea</h1>
+<p>To achieve your goals you need the right professionals.<strong>&nbsp;Go beyond</strong></p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>With Univeridad Europea&rsquo;s experiential learning model you learn by&nbsp;<strong>&ldquo;doing&rdquo;</strong>&nbsp;and&nbsp;<strong>&ldquo;being&rdquo;,</strong>&nbsp;with an integrative, cross-disciplinary approach that prepares you for a&nbsp;<strong>diverse, global world.</strong>&nbsp;A model linked to the everyday reality of the job market, where you will acquire the&nbsp;<strong>knowledge, skills and values</strong>&nbsp;you need to meet the social and digital transformation challenges of your future career.</p>
+<p>Our online methodology is a flexible model that allows you to study at your own pace. Attend live virtual classes that are also recorded and uploaded to our virtual campus should you need to watch them again later. Our virtual campus is adapted for all types of devices and is innovative, easy, and intuitive to use. Although you may choose to study online, we also offer you the option to take part in the&nbsp;Experience &amp; Networking Week in Spain, visiting companies and getting to know our facilities that we have on our different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>Do you have any questions?</p>
+</div>
+</div>
+</div>
+<form action="https://universidadeuropea.com/en/landing-area-degree-form/" autocomplete="on" method="post" name="landing-form" data-form-type="landing_area_degree">
+<div><label for="form-firstname">*First name</label><input autocomplete="new-text" name="firstname" type="text" /></div>
+<div><label for="form-lastname">*Last name</label><input autocomplete="new-text" name="lastname" type="text" /></div>
+<div><label for="form-email">*Email</label><input autocomplete="new-text" name="email" type="text" /></div>
+<div><select name="country" size="1">
+<option value="">---------</option>
+<option value="AF">Afghanistan</option>
+<option value="AX">&Aring;land Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="CV">Cabo Verde</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo (the Democratic Republic of the)</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">C&ocirc;te d'Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Cura&ccedil;ao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czechia</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="SZ">Eswatini</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island and McDonald Islands</option>
+<option value="VA">Holy See</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia (Federated States of)</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="KP">North Korea</option>
+<option value="MK">North Macedonia</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestine, State of</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">R&eacute;union</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="BL">Saint Barth&eacute;lemy</option>
+<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="MF">Saint Martin (French part)</option>
+<option value="PM">Saint Pierre and Miquelon</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia and the South Sandwich Islands</option>
+<option value="KR">South Korea</option>
+<option value="SS">South Sudan</option>
+<option selected="selected" value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard and Jan Mayen</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks and Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="US">United States of America</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="VG">Virgin Islands (British)</option>
+<option value="VI">Virgin Islands (U.S.)</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select></div>
+<div><label for="form-uephoneprefix"></label><input autocomplete="tel-country-code" name="uephoneprefix" readonly="readonly" type="uephoneprefix" /></div>
+<div><label for="form-uephoneplaceholder">*Phone</label><input autocomplete="tel-national" name="uephoneplaceholder" type="tel" /></div>
+<div><select name="ueconsientottodatos" size="1">
+<option disabled="disabled" selected="selected" value=" ">*I want to know more about ...</option>
+<option value="1">Architecture and Design</option>
+<option value="7">Business and Technology</option>
+<option value="12">International Relations</option>
+<option value="9">Communication and Marketing</option>
+<option value="8">Engineering</option>
+</select></div>
+<div><select name="uetitulacion1" size="1">
+<option disabled="disabled" selected="selected" value="">*I want to know more about ...</option>
+<option value="13059">Private Master Degree in International Construction Management &ndash; MBA</option>
+<option value="12958">Private Master&rsquo;s Degree in Big Data Analytics</option>
+<option value="781">Private Master&rsquo;s Degree in International Leadership and Negotiation</option>
+<option value="13063">Private Master's Degree in Project Management</option>
+<option value="589">Master&rsquo;s Degree in Business Administration</option>
+<option value="13091">Global MBA</option>
+<option value="13073">Private Master's Degree in Business Analytics</option>
+<option value="13081">Master&rsquo;s Degree in Marketing*</option>
+<option value="13077">Master&rsquo;s Degree in International Trade and Economic Relations</option>
+<option value="13084">Master&rsquo;s Degree in Financial Management*</option>
+<option value="01tMI000000i94PYAQ">Master&rsquo;s degree in Renewable Energy &ndash; Online</option>
+<option value="01tMI000000iHjWYAU">Master's Degree In Business Administration</option>
+</select></div>
+<div>
+<p>UNIVERSIDAD EUROPEA DE MADRID, S.A.U., UNIVERSIDAD EUROPEA DE VALENCIA, S.L.U., and UNIVERSIDAD EUROPEA DE CANARIAS, S.L.U., each members of the GRUPO EUROPA EDUCATION and owners, respectively, of Universidad Europea de Madrid, Universidad Europea de Valencia, and Universidad Europea de Canarias, shall act as the data controllers for the data provided in this document, individually and exclusively, based on the University in which you are enrolled. The data will be processed by the respective data controller for the purpose of managing the relationship with you in a personalized way; managing any inquiries you may have; sending personalized commercial and advertising information related to the activities, products, services, offers, and special promotions of the university, other entities of the GRUPO EUROPA EDUCATION, or from third parties; sending documentation on a variety of subjects by mail, telephone, or electronic means (email, SMS, messaging, and other electronic media); as well as determining your preferences through the evaluation and analysis of your profile. The basis for processing the personal data provided under this request is to develop and manage the relationship formalized with you, as well as to comply with the data controller's legal obligations, and your unequivocal consent as the data subject. The data provided by virtue of this request will be included in an automated and mixed file under the responsibility of the owner of the University of your choice. Likewise, unless specifically stated otherwise, you expressly consent to the automated processing of the data, in whole or in part, for the time necessary for the stated purposes. The data subject has the right to access, rectify, and delete the data, limit or oppose its processing, and to exercise their right to the portability of their personal data, all free of charge, as detailed in the Privacy Policy of the aforementioned entities, at the link&nbsp;Pol&iacute;tica de privacidad. You may make any inquiry related to the processing of your personal data, as well as exercise the rights indicated above, by writing to&nbsp;dpo@universidadeuropea.es.</p>
+</div>
+<div><input name="aceptaconsentimientotratamientodatos__c" type="checkbox" /><label for="checkbox">I consent to my data being used to receive commercial communications regarding products or services from this company or third parties based on an evaluation of my profile and a study of my behaviour, using internal and external sources.</label></div>
+<div><button name="form-submit" type="submit" value="Update">I want more information</button></div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>89%</p>
+</div>
+<div>
+<h2>Employability in less than 12 months</h2>
+</div>
+</div>
+<div>
+<div>
+<p>300+</p>
+</div>
+<div>
+<h2>Agreements with international universities</h2>
+</div>
+</div>
+<div>
+<div>
+<p>16,900+</p>
+</div>
+<div>
+<h2>Students enrolled at Universidad Europea</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Boost your career</h2>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h5>Excellent teaching staff</h5>
+<p>The teaching staff is composed of professionals who combine their teaching activity with professional practice.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Internship agreements</h5>
+<p>Thanks to the agreements with the main companies of each sector you will be able to put your knowledge into practice and live a unique work experience.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Tutored learning</h5>
+<p>You will have the help of a tutor to foster the development of all your skills and potential.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>30% International students</h5>
+<p>You will live in a multicultural environment with an average above other universities. Our students come from all 5 continents.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Discover our Postgraduate offer</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div data-filter="areaDegreeFilter">
+<div data-filter-type="areaDegreeDiscount">All areas</div>
+<div data-filter-modal="areaDegreeDiscount">All areasArchitecture and DesignCommunication and MarketingBusiness and TechnologyInternational RelationsEngineering</div>
+</div>
+<div data-filter="campusDegreeFilter">
+<div data-filter-type="campusDegreeDiscount">All campus</div>
+<div data-filter-modal="campusDegreeDiscount">All campusAlcobendasValenciaOnline</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div data-degree-areas-id="1" data-degree-campus-id="2" data-degree-page-id="13059" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master Degree in International Construction Management &ndash; MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>If you&rsquo;re an architect or an engineer, then specialise with this MBA focused on the construction sector. Gain managerial skills and competencies and learn to use business administration tools that will prepare you to lead companies in a globalised market. The master's features a complete module on international markets and offers the opportunity to do top-level internships in Spain and Latin America with companies like ACS, FCC and Sacyr.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="12958" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in Big Data Analytics</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>The Master&rsquo;s Degree in Big Data Analytics is designed for engineers, statisticians and mathematicians, or data analysts, with a vocation in the field of ICT, who seek to obtain a solid knowledge in storage techniques and distributed information processing, as well as big data analytics and visualisation You will learn to apply cutting-edge technologies in Data Science and Machine Learning, becoming an expert in managing large volumes of data and infrastructures, machine learning and the analysis of business management processes. You will have access to the AWS Academy to prepare for the AWS Certified Cloud Practitioner during the module on cloud architectures and the AWS Certified Machine Learning Specialty during the module on data processing and machine learning.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="12" data-degree-campus-id="3" data-degree-page-id="781" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in International Leadership and Negotiation</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Blended</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Valencia</li>
+</ul>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Be prepared to lead global initiatives for change and gain the negotiation skills necessary to positively impact your organisation and the wider environment. A recognised master&rsquo;s degree by the United Nations, including for employment purposes.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13063" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master's Degree in Project Management</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Throughout the Private Master&rsquo;s Degree in Project Management, you will study in depth a variety of management techniques and the human skills required to manage projects of varying complexity, through a broad study of experiences, tools and methodologies based on different standards such as those of the Project Management Institute (PMI) and the Agile Alliance. Additionally, at the end of the programme, students will be able to obtain a variety of certifications such as: PMP&reg; Certification, Prince2&reg;, Certified Scrum Product Owner&reg; by Agile Alliance</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="589" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Master&rsquo;s Degree in Business Administration</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 Months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>A Master in Business Analytics focuses on studying the process of collecting, structuring and analysing the data available within a company, with the aim of optimising decision making. Students will learn how to use different tools for processing, analysing and visualising data, which will equip them with the necessary knowledge and skills to enable them to make data-driven decisions.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13091" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Global MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>The Global MBA is designed to provide students with the ability to assume positions of responsibility, learning to master the most innovative tools of management. It will also help you to understand communication, management and intercultural skills necessary to lead and coordinate international work teams. You will also get an insight into the different areas of a company.</div>
+Request information</div>
+</div>
+<div>
+<p>You have seen&nbsp;6&nbsp;of&nbsp;12&nbsp;results</p>
+</div>
+<div><button data-loadmore-cta="">View more</button></div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>Why live in Spain?</h2>
+<p>There are many reasons to live in Spain: culture, gastronomy, excellent beaches, Mediterranean diet, healthy living, a very pleasant climate, natural parks, history. Spain has dreamlike landscapes, beautiful towns, popular festivals, folklore. Come and discover everything we can offer!</p>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Villaviciosa de Od&oacute;n</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Alcobendas</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Valencia</h3>
+<div>Campus Valencia</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2><strong>Experience &amp; Networking Week in Spain</strong></h2>
+<p>The optional Experience &amp; Networking Week trip offered on the Master&rsquo;s Degree gives you the opportunity to visit to companies and getting to know our laboratories that we have on the different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Develop your potential in leading facilities</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Campus Life</p>
+<p>In the Student Experience Unit, the Campus Life area promotes student participation and university life through activities outside of the classroom, student clubs and associations, contests and awards, etc. By taking part in any of them, you will gain a broad worldview that will enrich your education.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>University Activities</p>
+<p>Extracurricular activities are open to the entire university community. In addition to organizing workshops, talks and conferences, we conduct cultural, sports, educational, cooperative and leisure activities. University Activities will help you stand out when you leave the University and find your way in your professional and personal life.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Student clubs and associations</p>
+<p>One way to integrate, meet new friends, learn and develop skills is through participating in a student club or association. You will be able to create, participate or manage one of them. The Campus Life area promotes, coordinates and collaborates with the clubs and associations to offer a dynamic, fun and, above all, student-led university life.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<ul>
+<li>Legal notice</li>
+<li>Privacy policy</li>
+<li>Cookies policy</li>
+<li>
+<div>Cookie settings</div>
+</li>
+</ul>
+</div>
+<div>Universidad Europea &copy; 2023. All rights reserved</div>
+</footer>
+
+<header><nav>Request information
+<div>Want to talk?</div>
+</nav>
+<div>
+<div>Madrid +34 917407272</div>
+<div>Online +34 918340192</div>
+</div>
+</header>
+<div>
+<div><picture><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1920.format-webp.webp" type="image/webp" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1920.jpg" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1536.format-webp.webp" type="image/webp" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1536.jpg" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1366.format-webp.webp" type="image/webp" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1366.jpg" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-800.format-webp.webp" type="image/webp" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-800.jpg" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-500.format-webp.webp" type="image/webp" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-500.jpg" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.format-webp.webp" type="image/webp" media="(min-width: 1px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.jpg" media="(min-width: 1px)" /></picture>
+<div>
+<div>
+<h1>Postgraduate programmes at Universidad Europea</h1>
+<p>To achieve your goals you need the right professionals.<strong>&nbsp;Go beyond</strong></p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>With Univeridad Europea&rsquo;s experiential learning model you learn by&nbsp;<strong>&ldquo;doing&rdquo;</strong>&nbsp;and&nbsp;<strong>&ldquo;being&rdquo;,</strong>&nbsp;with an integrative, cross-disciplinary approach that prepares you for a&nbsp;<strong>diverse, global world.</strong>&nbsp;A model linked to the everyday reality of the job market, where you will acquire the&nbsp;<strong>knowledge, skills and values</strong>&nbsp;you need to meet the social and digital transformation challenges of your future career.</p>
+<p>Our online methodology is a flexible model that allows you to study at your own pace. Attend live virtual classes that are also recorded and uploaded to our virtual campus should you need to watch them again later. Our virtual campus is adapted for all types of devices and is innovative, easy, and intuitive to use. Although you may choose to study online, we also offer you the option to take part in the&nbsp;Experience &amp; Networking Week in Spain, visiting companies and getting to know our facilities that we have on our different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>Do you have any questions?</p>
+</div>
+</div>
+</div>
+<form action="https://universidadeuropea.com/en/landing-area-degree-form/" autocomplete="on" method="post" name="landing-form" data-form-type="landing_area_degree">
+<div><label for="form-firstname">*First name</label><input autocomplete="new-text" name="firstname" type="text" /></div>
+<div><label for="form-lastname">*Last name</label><input autocomplete="new-text" name="lastname" type="text" /></div>
+<div><label for="form-email">*Email</label><input autocomplete="new-text" name="email" type="text" /></div>
+<div><select name="country" size="1">
+<option value="">---------</option>
+<option value="AF">Afghanistan</option>
+<option value="AX">&Aring;land Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="CV">Cabo Verde</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo (the Democratic Republic of the)</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">C&ocirc;te d'Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Cura&ccedil;ao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czechia</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="SZ">Eswatini</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island and McDonald Islands</option>
+<option value="VA">Holy See</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia (Federated States of)</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="KP">North Korea</option>
+<option value="MK">North Macedonia</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestine, State of</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">R&eacute;union</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="BL">Saint Barth&eacute;lemy</option>
+<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="MF">Saint Martin (French part)</option>
+<option value="PM">Saint Pierre and Miquelon</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia and the South Sandwich Islands</option>
+<option value="KR">South Korea</option>
+<option value="SS">South Sudan</option>
+<option selected="selected" value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard and Jan Mayen</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks and Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="US">United States of America</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="VG">Virgin Islands (British)</option>
+<option value="VI">Virgin Islands (U.S.)</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select></div>
+<div><label for="form-uephoneprefix"></label><input autocomplete="tel-country-code" name="uephoneprefix" readonly="readonly" type="uephoneprefix" /></div>
+<div><label for="form-uephoneplaceholder">*Phone</label><input autocomplete="tel-national" name="uephoneplaceholder" type="tel" /></div>
+<div><select name="ueconsientottodatos" size="1">
+<option disabled="disabled" selected="selected" value=" ">*I want to know more about ...</option>
+<option value="1">Architecture and Design</option>
+<option value="7">Business and Technology</option>
+<option value="12">International Relations</option>
+<option value="9">Communication and Marketing</option>
+<option value="8">Engineering</option>
+</select></div>
+<div><select name="uetitulacion1" size="1">
+<option disabled="disabled" selected="selected" value="">*I want to know more about ...</option>
+<option value="13059">Private Master Degree in International Construction Management &ndash; MBA</option>
+<option value="12958">Private Master&rsquo;s Degree in Big Data Analytics</option>
+<option value="781">Private Master&rsquo;s Degree in International Leadership and Negotiation</option>
+<option value="13063">Private Master's Degree in Project Management</option>
+<option value="589">Master&rsquo;s Degree in Business Administration</option>
+<option value="13091">Global MBA</option>
+<option value="13073">Private Master's Degree in Business Analytics</option>
+<option value="13081">Master&rsquo;s Degree in Marketing*</option>
+<option value="13077">Master&rsquo;s Degree in International Trade and Economic Relations</option>
+<option value="13084">Master&rsquo;s Degree in Financial Management*</option>
+<option value="01tMI000000i94PYAQ">Master&rsquo;s degree in Renewable Energy &ndash; Online</option>
+<option value="01tMI000000iHjWYAU">Master's Degree In Business Administration</option>
+</select></div>
+<div>
+<p>UNIVERSIDAD EUROPEA DE MADRID, S.A.U., UNIVERSIDAD EUROPEA DE VALENCIA, S.L.U., and UNIVERSIDAD EUROPEA DE CANARIAS, S.L.U., each members of the GRUPO EUROPA EDUCATION and owners, respectively, of Universidad Europea de Madrid, Universidad Europea de Valencia, and Universidad Europea de Canarias, shall act as the data controllers for the data provided in this document, individually and exclusively, based on the University in which you are enrolled. The data will be processed by the respective data controller for the purpose of managing the relationship with you in a personalized way; managing any inquiries you may have; sending personalized commercial and advertising information related to the activities, products, services, offers, and special promotions of the university, other entities of the GRUPO EUROPA EDUCATION, or from third parties; sending documentation on a variety of subjects by mail, telephone, or electronic means (email, SMS, messaging, and other electronic media); as well as determining your preferences through the evaluation and analysis of your profile. The basis for processing the personal data provided under this request is to develop and manage the relationship formalized with you, as well as to comply with the data controller's legal obligations, and your unequivocal consent as the data subject. The data provided by virtue of this request will be included in an automated and mixed file under the responsibility of the owner of the University of your choice. Likewise, unless specifically stated otherwise, you expressly consent to the automated processing of the data, in whole or in part, for the time necessary for the stated purposes. The data subject has the right to access, rectify, and delete the data, limit or oppose its processing, and to exercise their right to the portability of their personal data, all free of charge, as detailed in the Privacy Policy of the aforementioned entities, at the link&nbsp;Pol&iacute;tica de privacidad. You may make any inquiry related to the processing of your personal data, as well as exercise the rights indicated above, by writing to&nbsp;dpo@universidadeuropea.es.</p>
+</div>
+<div><input name="aceptaconsentimientotratamientodatos__c" type="checkbox" /><label for="checkbox">I consent to my data being used to receive commercial communications regarding products or services from this company or third parties based on an evaluation of my profile and a study of my behaviour, using internal and external sources.</label></div>
+<div><button name="form-submit" type="submit" value="Update">I want more information</button></div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>89%</p>
+</div>
+<div>
+<h2>Employability in less than 12 months</h2>
+</div>
+</div>
+<div>
+<div>
+<p>300+</p>
+</div>
+<div>
+<h2>Agreements with international universities</h2>
+</div>
+</div>
+<div>
+<div>
+<p>16,900+</p>
+</div>
+<div>
+<h2>Students enrolled at Universidad Europea</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Boost your career</h2>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h5>Excellent teaching staff</h5>
+<p>The teaching staff is composed of professionals who combine their teaching activity with professional practice.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Internship agreements</h5>
+<p>Thanks to the agreements with the main companies of each sector you will be able to put your knowledge into practice and live a unique work experience.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Tutored learning</h5>
+<p>You will have the help of a tutor to foster the development of all your skills and potential.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>30% International students</h5>
+<p>You will live in a multicultural environment with an average above other universities. Our students come from all 5 continents.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Discover our Postgraduate offer</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div data-filter="areaDegreeFilter">
+<div data-filter-type="areaDegreeDiscount">All areas</div>
+<div data-filter-modal="areaDegreeDiscount">All areasArchitecture and DesignCommunication and MarketingBusiness and TechnologyInternational RelationsEngineering</div>
+</div>
+<div data-filter="campusDegreeFilter">
+<div data-filter-type="campusDegreeDiscount">All campus</div>
+<div data-filter-modal="campusDegreeDiscount">All campusAlcobendasValenciaOnline</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div data-degree-areas-id="1" data-degree-campus-id="2" data-degree-page-id="13059" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master Degree in International Construction Management &ndash; MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>If you&rsquo;re an architect or an engineer, then specialise with this MBA focused on the construction sector. Gain managerial skills and competencies and learn to use business administration tools that will prepare you to lead companies in a globalised market. The master's features a complete module on international markets and offers the opportunity to do top-level internships in Spain and Latin America with companies like ACS, FCC and Sacyr.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="12958" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in Big Data Analytics</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>The Master&rsquo;s Degree in Big Data Analytics is designed for engineers, statisticians and mathematicians, or data analysts, with a vocation in the field of ICT, who seek to obtain a solid knowledge in storage techniques and distributed information processing, as well as big data analytics and visualisation You will learn to apply cutting-edge technologies in Data Science and Machine Learning, becoming an expert in managing large volumes of data and infrastructures, machine learning and the analysis of business management processes. You will have access to the AWS Academy to prepare for the AWS Certified Cloud Practitioner during the module on cloud architectures and the AWS Certified Machine Learning Specialty during the module on data processing and machine learning.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="12" data-degree-campus-id="3" data-degree-page-id="781" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in International Leadership and Negotiation</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Blended</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Valencia</li>
+</ul>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Be prepared to lead global initiatives for change and gain the negotiation skills necessary to positively impact your organisation and the wider environment. A recognised master&rsquo;s degree by the United Nations, including for employment purposes.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13063" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master's Degree in Project Management</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Throughout the Private Master&rsquo;s Degree in Project Management, you will study in depth a variety of management techniques and the human skills required to manage projects of varying complexity, through a broad study of experiences, tools and methodologies based on different standards such as those of the Project Management Institute (PMI) and the Agile Alliance. Additionally, at the end of the programme, students will be able to obtain a variety of certifications such as: PMP&reg; Certification, Prince2&reg;, Certified Scrum Product Owner&reg; by Agile Alliance</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="589" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Master&rsquo;s Degree in Business Administration</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 Months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>A Master in Business Analytics focuses on studying the process of collecting, structuring and analysing the data available within a company, with the aim of optimising decision making. Students will learn how to use different tools for processing, analysing and visualising data, which will equip them with the necessary knowledge and skills to enable them to make data-driven decisions.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13091" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Global MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>The Global MBA is designed to provide students with the ability to assume positions of responsibility, learning to master the most innovative tools of management. It will also help you to understand communication, management and intercultural skills necessary to lead and coordinate international work teams. You will also get an insight into the different areas of a company.</div>
+Request information</div>
+</div>
+<div>
+<p>You have seen&nbsp;6&nbsp;of&nbsp;12&nbsp;results</p>
+</div>
+<div><button data-loadmore-cta="">View more</button></div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>Why live in Spain?</h2>
+<p>There are many reasons to live in Spain: culture, gastronomy, excellent beaches, Mediterranean diet, healthy living, a very pleasant climate, natural parks, history. Spain has dreamlike landscapes, beautiful towns, popular festivals, folklore. Come and discover everything we can offer!</p>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Villaviciosa de Od&oacute;n</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Alcobendas</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Valencia</h3>
+<div>Campus Valencia</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2><strong>Experience &amp; Networking Week in Spain</strong></h2>
+<p>The optional Experience &amp; Networking Week trip offered on the Master&rsquo;s Degree gives you the opportunity to visit to companies and getting to know our laboratories that we have on the different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Develop your potential in leading facilities</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Campus Life</p>
+<p>In the Student Experience Unit, the Campus Life area promotes student participation and university life through activities outside of the classroom, student clubs and associations, contests and awards, etc. By taking part in any of them, you will gain a broad worldview that will enrich your education.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>University Activities</p>
+<p>Extracurricular activities are open to the entire university community. In addition to organizing workshops, talks and conferences, we conduct cultural, sports, educational, cooperative and leisure activities. University Activities will help you stand out when you leave the University and find your way in your professional and personal life.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Student clubs and associations</p>
+<p>One way to integrate, meet new friends, learn and develop skills is through participating in a student club or association. You will be able to create, participate or manage one of them. The Campus Life area promotes, coordinates and collaborates with the clubs and associations to offer a dynamic, fun and, above all, student-led university life.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<ul>
+<li>Legal notice</li>
+<li>Privacy policy</li>
+<li>Cookies policy</li>
+<li>
+<div>Cookie settings</div>
+</li>
+</ul>
+</div>
+<div>Universidad Europea &copy; 2023. All rights reserved</div>
+</footer>
+
+<p>.</p>
+
+
+
+----HV88BHkU;TPMTTV----Jd9PlRX1;LTDZTA
+
+
+
+----lOgGuYBN;WAMBKJ----quiTLGAn;EXXWWL
+
+----eFVTewsv;IBMIQK----f4e29XBC;VOPMEM
+<p> Computers: We provide computers for student use in the student lounge_ and students will not require a laptop for their classwork. If you do wish to bring a laptop_ however_ wifi is available in local cafés. Finally_ please remember that YOU will be responsible for carrying your own luggage at all times_ so try to be as realistic as possible about what you will need. Electricity in France Please keep in mind that electricity in France is different than in the U.S. Thus_ please do not bring irons_ hair dryers_ or other electrical equipment. Even with a transformer_ they will often short out. If necessary_ cheap appliances can be bought in France and used just for the month.  Checklist 1. TO DO IMMEDIATELY (_____) Check that your passport is valid and will not expire while you are in France. (_____) If you are not a US_ Canadian or European Union citizen_ contact your local French Embassy to determine whether you need to apply for an entry visa to France. 2. ADVANCE PLANNING (_____) Order your debit/credit card. Make a copy of it in case it gets lost. (_____) Make 3 photocopies of your passport & birth certificate: one to leave with your family and two to carry with you while you travel. () Confirm your plane reservation with the airline_ as well as the time_ flight number and departure terminal. NOTE: DO THIS 72 HOURS BEFORE YOU LEAVE! 3. PACKING TIME () Make sure that any breakables in your suitcase are well-wrapped or protected_ or placed in your hand luggage. (_____) Think through how much clothing you will need this summer. (Each year most students bring far too much_ so try to adhere to the packing list.) 4. BEFORE YOU LEAVE THE HOUSE (You MUST include all these items in your carry-on bag) (_____) Your passport (and visa paperwork_ if applicable) (_____) A copy of your passport in another place from the original_ with a second copy left at home with your parents () Your plane tickets (_____) Your spending money (packed securely). () The Académie de France program office telephone numbers and addresses (_____) Name & address labels_ plus “OXBRIDGE” luggage tags_ on your luggage (sent by mail) 5. AT THE AIRPORT (_____) Keep the bar-coded luggage stubs_ given to you by the airline at check-in_ in a safe place in your carry-on luggage. Happy travels from wherever you may be in the world_ and we will see you in France in early July! Map of Montpellier Internat d’Excellence Montpellier 4_ rue du 81ème régiment d'infanterie 34090 Montpellier France</p>
+----ey1sgzP8;SGPWFV----adkt05BZ;RUVBEQ
+----tby9qg6P;QIJZZZ----uNTI5yqp;NVDOAE
+
+
+----3eEkKP3W;FTSKEZ----aWAPeRuH;TIHINT
+
+
+
+----pF6W4Tje;AAQWTQ----GldTo5do;QAHLKB
+
+
+
+----FbctycfV;KXWVDO----bjY6TGY7;MNONYK
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f4f6f9" class="email-content-table-outer">
+    <tr>
+      <td valign="top" align="center" style="border-top: 4px solid #2B96D4; font-family: SalesforceSans_ Helvetica Neue_ Helvetica_ Arial; font-size: 14px;" class="td-outer">
+        
+        <table cellpadding="0" cellspacing="0" border="0" class="email-content-table" style="width: 656px; border: 0; padding: 0; margin: 0;">
+          <tr>
+            <td style="border: 0; padding: 0; margin: 0;">
+            
+              <table width="656" cellpadding="0" cellspacing="16" border="0" class="email-content-table-sub" style="border: 0; padding: 0; margin: 0;">
+                <tr>
+                  <td align="center" class="layout-td-width td-logo" style="border: 0; padding: 0; margin: 0; font-size: 0px;"></td>
+                </tr>
+              </table>
+              
+            </td>
+          </tr>
+          <tr class="tr-top">
+            <td style="border: 0; padding: 0; margin: 0;">
+            
+              <table width="656" cellpadding="0" cellspacing="0" border="0" class="email-content-table-sub" style="border: 0; padding: 0; margin: 0;">
+                <tr>
+                  <td align="right" valign="bottom" style="width: 16px; height: 17px; font-size: 0;" class="shadow-pixel-td"></td>
+                  <td align="center" bgcolor="#4B9EE4" style="width: 624px; height: 17px; font-size: 0;" class="layout-td-width"></td>
+                  <td align="left" valign="bottom" style="width: 16px; height: 17px; font-size: 0;" class="shadow-pixel-td"></td>
+                </tr>
+              </table>
+              
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 0; padding: 0; margin: 0;">
+            
+              <table width="656" cellpadding="0" cellspacing="0" border="0" class="email-content-table-sub email-content-table-sub-with-actual" style="border: 0; padding: 0; margin: 0;">
+                <tr>
+                  <td bgcolor="#efefef" width="1" class="shadow-pixel-td"></td>
+                  <td bgcolor="#e9e9e9" width="1" class="shadow-pixel-td"></td>
+                  <td bgcolor="#e0e0e0" width="1" class="shadow-pixel-td"></td>
+                  <td bgcolor="#4B9EE4" width="650" class="layout-td-width">
+                    
+                    <table width="650" cellpadding="0" cellspacing="0" border="0" class="email-content-table-actual email-content-table-actual-top">
+                      <tr>
+                        <td align="center" bgcolor="#4B9EE4" style="width: 650px; background: #4B9EE4; color: #ffffff; font-family: SalesforceSansLight_ Helvetica Neue_ Helvetica_ Arial; font-size: 32px; padding: 16px 0 24px 0;" class="layout-td-width td-title"><span style="padding: 0 20px; display: block;">Thanks for signing up with Salesforce!</span></td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="width: 650px; font-size: 0;" class="layout-td-width"></td>
+                      </tr>
+                    </table>
+----fPpNuArJ;FYIUQX----tpPRtq9H;ZCXWJF
+----r79uJHbp;UYGXPM]----jR9prWrL;GTEQBY
+
+
+----0UkE7yQD;HXBCKE----bKjk1Etd;JFKHMZ
+
+
+
+<header><nav>Request information
+<div>Want to talk?</div>
+</nav>
+<div>
+<div>Madrid +34 917407272</div>
+<div>Online +34 918340192</div>
+</div>
+</header>
+<div>
+<div><picture><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1920.format-webp.webp" type="image/webp" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1920.jpg" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1536.format-webp.webp" type="image/webp" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1536.jpg" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1366.format-webp.webp" type="image/webp" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1366.jpg" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-800.format-webp.webp" type="image/webp" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-800.jpg" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-500.format-webp.webp" type="image/webp" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-500.jpg" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.format-webp.webp" type="image/webp" media="(min-width: 1px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.jpg" media="(min-width: 1px)" /></picture>
+<div>
+<div>
+<h1>Postgraduate programmes at Universidad Europea</h1>
+<p>To achieve your goals you need the right professionals.<strong>&nbsp;Go beyond</strong></p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>With Univeridad Europea&rsquo;s experiential learning model you learn by&nbsp;<strong>&ldquo;doing&rdquo;</strong>&nbsp;and&nbsp;<strong>&ldquo;being&rdquo;,</strong>&nbsp;with an integrative, cross-disciplinary approach that prepares you for a&nbsp;<strong>diverse, global world.</strong>&nbsp;A model linked to the everyday reality of the job market, where you will acquire the&nbsp;<strong>knowledge, skills and values</strong>&nbsp;you need to meet the social and digital transformation challenges of your future career.</p>
+<p>Our online methodology is a flexible model that allows you to study at your own pace. Attend live virtual classes that are also recorded and uploaded to our virtual campus should you need to watch them again later. Our virtual campus is adapted for all types of devices and is innovative, easy, and intuitive to use. Although you may choose to study online, we also offer you the option to take part in the&nbsp;Experience &amp; Networking Week in Spain, visiting companies and getting to know our facilities that we have on our different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>Do you have any questions?</p>
+</div>
+</div>
+</div>
+<form action="https://universidadeuropea.com/en/landing-area-degree-form/" autocomplete="on" method="post" name="landing-form" data-form-type="landing_area_degree">
+<div><label for="form-firstname">*First name</label><input autocomplete="new-text" name="firstname" type="text" /></div>
+<div><label for="form-lastname">*Last name</label><input autocomplete="new-text" name="lastname" type="text" /></div>
+<div><label for="form-email">*Email</label><input autocomplete="new-text" name="email" type="text" /></div>
+<div><select name="country" size="1">
+<option value="">---------</option>
+<option value="AF">Afghanistan</option>
+<option value="AX">&Aring;land Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="CV">Cabo Verde</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo (the Democratic Republic of the)</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">C&ocirc;te d'Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Cura&ccedil;ao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czechia</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="SZ">Eswatini</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island and McDonald Islands</option>
+<option value="VA">Holy See</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia (Federated States of)</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="KP">North Korea</option>
+<option value="MK">North Macedonia</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestine, State of</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">R&eacute;union</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="BL">Saint Barth&eacute;lemy</option>
+<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="MF">Saint Martin (French part)</option>
+<option value="PM">Saint Pierre and Miquelon</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia and the South Sandwich Islands</option>
+<option value="KR">South Korea</option>
+<option value="SS">South Sudan</option>
+<option selected="selected" value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard and Jan Mayen</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks and Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="US">United States of America</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="VG">Virgin Islands (British)</option>
+<option value="VI">Virgin Islands (U.S.)</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select></div>
+<div><label for="form-uephoneprefix"></label><input autocomplete="tel-country-code" name="uephoneprefix" readonly="readonly" type="uephoneprefix" /></div>
+<div><label for="form-uephoneplaceholder">*Phone</label><input autocomplete="tel-national" name="uephoneplaceholder" type="tel" /></div>
+<div><select name="ueconsientottodatos" size="1">
+<option disabled="disabled" selected="selected" value=" ">*I want to know more about ...</option>
+<option value="1">Architecture and Design</option>
+<option value="7">Business and Technology</option>
+<option value="12">International Relations</option>
+<option value="9">Communication and Marketing</option>
+<option value="8">Engineering</option>
+</select></div>
+<div><select name="uetitulacion1" size="1">
+<option disabled="disabled" selected="selected" value="">*I want to know more about ...</option>
+<option value="13059">Private Master Degree in International Construction Management &ndash; MBA</option>
+<option value="12958">Private Master&rsquo;s Degree in Big Data Analytics</option>
+<option value="781">Private Master&rsquo;s Degree in International Leadership and Negotiation</option>
+<option value="13063">Private Master's Degree in Project Management</option>
+<option value="589">Master&rsquo;s Degree in Business Administration</option>
+<option value="13091">Global MBA</option>
+<option value="13073">Private Master's Degree in Business Analytics</option>
+<option value="13081">Master&rsquo;s Degree in Marketing*</option>
+<option value="13077">Master&rsquo;s Degree in International Trade and Economic Relations</option>
+<option value="13084">Master&rsquo;s Degree in Financial Management*</option>
+<option value="01tMI000000i94PYAQ">Master&rsquo;s degree in Renewable Energy &ndash; Online</option>
+<option value="01tMI000000iHjWYAU">Master's Degree In Business Administration</option>
+</select></div>
+<div>
+<p>UNIVERSIDAD EUROPEA DE MADRID, S.A.U., UNIVERSIDAD EUROPEA DE VALENCIA, S.L.U., and UNIVERSIDAD EUROPEA DE CANARIAS, S.L.U., each members of the GRUPO EUROPA EDUCATION and owners, respectively, of Universidad Europea de Madrid, Universidad Europea de Valencia, and Universidad Europea de Canarias, shall act as the data controllers for the data provided in this document, individually and exclusively, based on the University in which you are enrolled. The data will be processed by the respective data controller for the purpose of managing the relationship with you in a personalized way; managing any inquiries you may have; sending personalized commercial and advertising information related to the activities, products, services, offers, and special promotions of the university, other entities of the GRUPO EUROPA EDUCATION, or from third parties; sending documentation on a variety of subjects by mail, telephone, or electronic means (email, SMS, messaging, and other electronic media); as well as determining your preferences through the evaluation and analysis of your profile. The basis for processing the personal data provided under this request is to develop and manage the relationship formalized with you, as well as to comply with the data controller's legal obligations, and your unequivocal consent as the data subject. The data provided by virtue of this request will be included in an automated and mixed file under the responsibility of the owner of the University of your choice. Likewise, unless specifically stated otherwise, you expressly consent to the automated processing of the data, in whole or in part, for the time necessary for the stated purposes. The data subject has the right to access, rectify, and delete the data, limit or oppose its processing, and to exercise their right to the portability of their personal data, all free of charge, as detailed in the Privacy Policy of the aforementioned entities, at the link&nbsp;Pol&iacute;tica de privacidad. You may make any inquiry related to the processing of your personal data, as well as exercise the rights indicated above, by writing to&nbsp;dpo@universidadeuropea.es.</p>
+</div>
+<div><input name="aceptaconsentimientotratamientodatos__c" type="checkbox" /><label for="checkbox">I consent to my data being used to receive commercial communications regarding products or services from this company or third parties based on an evaluation of my profile and a study of my behaviour, using internal and external sources.</label></div>
+<div><button name="form-submit" type="submit" value="Update">I want more information</button></div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>89%</p>
+</div>
+<div>
+<h2>Employability in less than 12 months</h2>
+</div>
+</div>
+<div>
+<div>
+<p>300+</p>
+</div>
+<div>
+<h2>Agreements with international universities</h2>
+</div>
+</div>
+<div>
+<div>
+<p>16,900+</p>
+</div>
+<div>
+<h2>Students enrolled at Universidad Europea</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Boost your career</h2>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h5>Excellent teaching staff</h5>
+<p>The teaching staff is composed of professionals who combine their teaching activity with professional practice.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Internship agreements</h5>
+<p>Thanks to the agreements with the main companies of each sector you will be able to put your knowledge into practice and live a unique work experience.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Tutored learning</h5>
+<p>You will have the help of a tutor to foster the development of all your skills and potential.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>30% International students</h5>
+<p>You will live in a multicultural environment with an average above other universities. Our students come from all 5 continents.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Discover our Postgraduate offer</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div data-filter="areaDegreeFilter">
+<div data-filter-type="areaDegreeDiscount">All areas</div>
+<div data-filter-modal="areaDegreeDiscount">All areasArchitecture and DesignCommunication and MarketingBusiness and TechnologyInternational RelationsEngineering</div>
+</div>
+<div data-filter="campusDegreeFilter">
+<div data-filter-type="campusDegreeDiscount">All campus</div>
+<div data-filter-modal="campusDegreeDiscount">All campusAlcobendasValenciaOnline</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div data-degree-areas-id="1" data-degree-campus-id="2" data-degree-page-id="13059" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master Degree in International Construction Management &ndash; MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>If you&rsquo;re an architect or an engineer, then specialise with this MBA focused on the construction sector. Gain managerial skills and competencies and learn to use business administration tools that will prepare you to lead companies in a globalised market. The master's features a complete module on international markets and offers the opportunity to do top-level internships in Spain and Latin America with companies like ACS, FCC and Sacyr.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="12958" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in Big Data Analytics</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>The Master&rsquo;s Degree in Big Data Analytics is designed for engineers, statisticians and mathematicians, or data analysts, with a vocation in the field of ICT, who seek to obtain a solid knowledge in storage techniques and distributed information processing, as well as big data analytics and visualisation You will learn to apply cutting-edge technologies in Data Science and Machine Learning, becoming an expert in managing large volumes of data and infrastructures, machine learning and the analysis of business management processes. You will have access to the AWS Academy to prepare for the AWS Certified Cloud Practitioner during the module on cloud architectures and the AWS Certified Machine Learning Specialty during the module on data processing and machine learning.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="12" data-degree-campus-id="3" data-degree-page-id="781" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in International Leadership and Negotiation</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Blended</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Valencia</li>
+</ul>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Be prepared to lead global initiatives for change and gain the negotiation skills necessary to positively impact your organisation and the wider environment. A recognised master&rsquo;s degree by the United Nations, including for employment purposes.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13063" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master's Degree in Project Management</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Throughout the Private Master&rsquo;s Degree in Project Management, you will study in depth a variety of management techniques and the human skills required to manage projects of varying complexity, through a broad study of experiences, tools and methodologies based on different standards such as those of the Project Management Institute (PMI) and the Agile Alliance. Additionally, at the end of the programme, students will be able to obtain a variety of certifications such as: PMP&reg; Certification, Prince2&reg;, Certified Scrum Product Owner&reg; by Agile Alliance</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="589" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Master&rsquo;s Degree in Business Administration</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 Months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>A Master in Business Analytics focuses on studying the process of collecting, structuring and analysing the data available within a company, with the aim of optimising decision making. Students will learn how to use different tools for processing, analysing and visualising data, which will equip them with the necessary knowledge and skills to enable them to make data-driven decisions.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13091" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Global MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>The Global MBA is designed to provide students with the ability to assume positions of responsibility, learning to master the most innovative tools of management. It will also help you to understand communication, management and intercultural skills necessary to lead and coordinate international work teams. You will also get an insight into the different areas of a company.</div>
+Request information</div>
+</div>
+<div>
+<p>You have seen&nbsp;6&nbsp;of&nbsp;12&nbsp;results</p>
+</div>
+<div><button data-loadmore-cta="">View more</button></div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>Why live in Spain?</h2>
+<p>There are many reasons to live in Spain: culture, gastronomy, excellent beaches, Mediterranean diet, healthy living, a very pleasant climate, natural parks, history. Spain has dreamlike landscapes, beautiful towns, popular festivals, folklore. Come and discover everything we can offer!</p>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Villaviciosa de Od&oacute;n</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Alcobendas</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Valencia</h3>
+<div>Campus Valencia</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2><strong>Experience &amp; Networking Week in Spain</strong></h2>
+<p>The optional Experience &amp; Networking Week trip offered on the Master&rsquo;s Degree gives you the opportunity to visit to companies and getting to know our laboratories that we have on the different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Develop your potential in leading facilities</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Campus Life</p>
+<p>In the Student Experience Unit, the Campus Life area promotes student participation and university life through activities outside of the classroom, student clubs and associations, contests and awards, etc. By taking part in any of them, you will gain a broad worldview that will enrich your education.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>University Activities</p>
+<p>Extracurricular activities are open to the entire university community. In addition to organizing workshops, talks and conferences, we conduct cultural, sports, educational, cooperative and leisure activities. University Activities will help you stand out when you leave the University and find your way in your professional and personal life.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Student clubs and associations</p>
+<p>One way to integrate, meet new friends, learn and develop skills is through participating in a student club or association. You will be able to create, participate or manage one of them. The Campus Life area promotes, coordinates and collaborates with the clubs and associations to offer a dynamic, fun and, above all, student-led university life.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<ul>
+<li>Legal notice</li>
+<li>Privacy policy</li>
+<li>Cookies policy</li>
+<li>
+<div>Cookie settings</div>
+</li>
+</ul>
+</div>
+<div>Universidad Europea &copy; 2023. All rights reserved</div>
+</footer>
+
+<header><nav>Request information
+<div>Want to talk?</div>
+</nav>
+<div>
+<div>Madrid +34 917407272</div>
+<div>Online +34 918340192</div>
+</div>
+</header>
+<div>
+<div><picture><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1920.format-webp.webp" type="image/webp" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1920.jpg" media="(min-width: 1537px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1536.format-webp.webp" type="image/webp" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1536.jpg" media="(min-width: 1367px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.width-1366.format-webp.webp" type="image/webp" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.width-1366.jpg" media="(min-width: 1025px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-800.format-webp.webp" type="image/webp" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-800.jpg" media="(min-width: 641px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.origina.height-500.format-webp.webp" type="image/webp" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/home-campus-villaviciosa.original.height-500.jpg" media="(min-width: 480px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.format-webp.webp" type="image/webp" media="(min-width: 1px)" /><source srcset="https://universidadeuropea.com/resources/media/images/peru-380x680.height-640.jpg" media="(min-width: 1px)" /></picture>
+<div>
+<div>
+<h1>Postgraduate programmes at Universidad Europea</h1>
+<p>To achieve your goals you need the right professionals.<strong>&nbsp;Go beyond</strong></p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>With Univeridad Europea&rsquo;s experiential learning model you learn by&nbsp;<strong>&ldquo;doing&rdquo;</strong>&nbsp;and&nbsp;<strong>&ldquo;being&rdquo;,</strong>&nbsp;with an integrative, cross-disciplinary approach that prepares you for a&nbsp;<strong>diverse, global world.</strong>&nbsp;A model linked to the everyday reality of the job market, where you will acquire the&nbsp;<strong>knowledge, skills and values</strong>&nbsp;you need to meet the social and digital transformation challenges of your future career.</p>
+<p>Our online methodology is a flexible model that allows you to study at your own pace. Attend live virtual classes that are also recorded and uploaded to our virtual campus should you need to watch them again later. Our virtual campus is adapted for all types of devices and is innovative, easy, and intuitive to use. Although you may choose to study online, we also offer you the option to take part in the&nbsp;Experience &amp; Networking Week in Spain, visiting companies and getting to know our facilities that we have on our different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>Do you have any questions?</p>
+</div>
+</div>
+</div>
+<form action="https://universidadeuropea.com/en/landing-area-degree-form/" autocomplete="on" method="post" name="landing-form" data-form-type="landing_area_degree">
+<div><label for="form-firstname">*First name</label><input autocomplete="new-text" name="firstname" type="text" /></div>
+<div><label for="form-lastname">*Last name</label><input autocomplete="new-text" name="lastname" type="text" /></div>
+<div><label for="form-email">*Email</label><input autocomplete="new-text" name="email" type="text" /></div>
+<div><select name="country" size="1">
+<option value="">---------</option>
+<option value="AF">Afghanistan</option>
+<option value="AX">&Aring;land Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="CV">Cabo Verde</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo (the Democratic Republic of the)</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">C&ocirc;te d'Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Cura&ccedil;ao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czechia</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="SZ">Eswatini</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island and McDonald Islands</option>
+<option value="VA">Holy See</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia (Federated States of)</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="KP">North Korea</option>
+<option value="MK">North Macedonia</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestine, State of</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">R&eacute;union</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="BL">Saint Barth&eacute;lemy</option>
+<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="MF">Saint Martin (French part)</option>
+<option value="PM">Saint Pierre and Miquelon</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia and the South Sandwich Islands</option>
+<option value="KR">South Korea</option>
+<option value="SS">South Sudan</option>
+<option selected="selected" value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard and Jan Mayen</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks and Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="US">United States of America</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="VG">Virgin Islands (British)</option>
+<option value="VI">Virgin Islands (U.S.)</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select></div>
+<div><label for="form-uephoneprefix"></label><input autocomplete="tel-country-code" name="uephoneprefix" readonly="readonly" type="uephoneprefix" /></div>
+<div><label for="form-uephoneplaceholder">*Phone</label><input autocomplete="tel-national" name="uephoneplaceholder" type="tel" /></div>
+<div><select name="ueconsientottodatos" size="1">
+<option disabled="disabled" selected="selected" value=" ">*I want to know more about ...</option>
+<option value="1">Architecture and Design</option>
+<option value="7">Business and Technology</option>
+<option value="12">International Relations</option>
+<option value="9">Communication and Marketing</option>
+<option value="8">Engineering</option>
+</select></div>
+<div><select name="uetitulacion1" size="1">
+<option disabled="disabled" selected="selected" value="">*I want to know more about ...</option>
+<option value="13059">Private Master Degree in International Construction Management &ndash; MBA</option>
+<option value="12958">Private Master&rsquo;s Degree in Big Data Analytics</option>
+<option value="781">Private Master&rsquo;s Degree in International Leadership and Negotiation</option>
+<option value="13063">Private Master's Degree in Project Management</option>
+<option value="589">Master&rsquo;s Degree in Business Administration</option>
+<option value="13091">Global MBA</option>
+<option value="13073">Private Master's Degree in Business Analytics</option>
+<option value="13081">Master&rsquo;s Degree in Marketing*</option>
+<option value="13077">Master&rsquo;s Degree in International Trade and Economic Relations</option>
+<option value="13084">Master&rsquo;s Degree in Financial Management*</option>
+<option value="01tMI000000i94PYAQ">Master&rsquo;s degree in Renewable Energy &ndash; Online</option>
+<option value="01tMI000000iHjWYAU">Master's Degree In Business Administration</option>
+</select></div>
+<div>
+<p>UNIVERSIDAD EUROPEA DE MADRID, S.A.U., UNIVERSIDAD EUROPEA DE VALENCIA, S.L.U., and UNIVERSIDAD EUROPEA DE CANARIAS, S.L.U., each members of the GRUPO EUROPA EDUCATION and owners, respectively, of Universidad Europea de Madrid, Universidad Europea de Valencia, and Universidad Europea de Canarias, shall act as the data controllers for the data provided in this document, individually and exclusively, based on the University in which you are enrolled. The data will be processed by the respective data controller for the purpose of managing the relationship with you in a personalized way; managing any inquiries you may have; sending personalized commercial and advertising information related to the activities, products, services, offers, and special promotions of the university, other entities of the GRUPO EUROPA EDUCATION, or from third parties; sending documentation on a variety of subjects by mail, telephone, or electronic means (email, SMS, messaging, and other electronic media); as well as determining your preferences through the evaluation and analysis of your profile. The basis for processing the personal data provided under this request is to develop and manage the relationship formalized with you, as well as to comply with the data controller's legal obligations, and your unequivocal consent as the data subject. The data provided by virtue of this request will be included in an automated and mixed file under the responsibility of the owner of the University of your choice. Likewise, unless specifically stated otherwise, you expressly consent to the automated processing of the data, in whole or in part, for the time necessary for the stated purposes. The data subject has the right to access, rectify, and delete the data, limit or oppose its processing, and to exercise their right to the portability of their personal data, all free of charge, as detailed in the Privacy Policy of the aforementioned entities, at the link&nbsp;Pol&iacute;tica de privacidad. You may make any inquiry related to the processing of your personal data, as well as exercise the rights indicated above, by writing to&nbsp;dpo@universidadeuropea.es.</p>
+</div>
+<div><input name="aceptaconsentimientotratamientodatos__c" type="checkbox" /><label for="checkbox">I consent to my data being used to receive commercial communications regarding products or services from this company or third parties based on an evaluation of my profile and a study of my behaviour, using internal and external sources.</label></div>
+<div><button name="form-submit" type="submit" value="Update">I want more information</button></div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p>89%</p>
+</div>
+<div>
+<h2>Employability in less than 12 months</h2>
+</div>
+</div>
+<div>
+<div>
+<p>300+</p>
+</div>
+<div>
+<h2>Agreements with international universities</h2>
+</div>
+</div>
+<div>
+<div>
+<p>16,900+</p>
+</div>
+<div>
+<h2>Students enrolled at Universidad Europea</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Boost your career</h2>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h5>Excellent teaching staff</h5>
+<p>The teaching staff is composed of professionals who combine their teaching activity with professional practice.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Internship agreements</h5>
+<p>Thanks to the agreements with the main companies of each sector you will be able to put your knowledge into practice and live a unique work experience.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>Tutored learning</h5>
+<p>You will have the help of a tutor to foster the development of all your skills and potential.</p>
+</div>
+</div>
+<div>
+<div>
+<h5>30% International students</h5>
+<p>You will live in a multicultural environment with an average above other universities. Our students come from all 5 continents.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Discover our Postgraduate offer</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div data-filter="areaDegreeFilter">
+<div data-filter-type="areaDegreeDiscount">All areas</div>
+<div data-filter-modal="areaDegreeDiscount">All areasArchitecture and DesignCommunication and MarketingBusiness and TechnologyInternational RelationsEngineering</div>
+</div>
+<div data-filter="campusDegreeFilter">
+<div data-filter-type="campusDegreeDiscount">All campus</div>
+<div data-filter-modal="campusDegreeDiscount">All campusAlcobendasValenciaOnline</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div data-degree-areas-id="1" data-degree-campus-id="2" data-degree-page-id="13059" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master Degree in International Construction Management &ndash; MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>If you&rsquo;re an architect or an engineer, then specialise with this MBA focused on the construction sector. Gain managerial skills and competencies and learn to use business administration tools that will prepare you to lead companies in a globalised market. The master's features a complete module on international markets and offers the opportunity to do top-level internships in Spain and Latin America with companies like ACS, FCC and Sacyr.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="12958" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in Big Data Analytics</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>The Master&rsquo;s Degree in Big Data Analytics is designed for engineers, statisticians and mathematicians, or data analysts, with a vocation in the field of ICT, who seek to obtain a solid knowledge in storage techniques and distributed information processing, as well as big data analytics and visualisation You will learn to apply cutting-edge technologies in Data Science and Machine Learning, becoming an expert in managing large volumes of data and infrastructures, machine learning and the analysis of business management processes. You will have access to the AWS Academy to prepare for the AWS Certified Cloud Practitioner during the module on cloud architectures and the AWS Certified Machine Learning Specialty during the module on data processing and machine learning.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="12" data-degree-campus-id="3" data-degree-page-id="781" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master&rsquo;s Degree in International Leadership and Negotiation</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Blended</li>
+<li>20 oct. 2023</li>
+<li>10 months</li>
+<li>Valencia</li>
+</ul>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Be prepared to lead global initiatives for change and gain the negotiation skills necessary to positively impact your organisation and the wider environment. A recognised master&rsquo;s degree by the United Nations, including for employment purposes.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13063" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Private Master's Degree in Project Management</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>
+<div>20% discount on place reservation for 23/24 intake until 15th June!</div>
+</div>
+<div>Throughout the Private Master&rsquo;s Degree in Project Management, you will study in depth a variety of management techniques and the human skills required to manage projects of varying complexity, through a broad study of experiences, tools and methodologies based on different standards such as those of the Project Management Institute (PMI) and the Agile Alliance. Additionally, at the end of the programme, students will be able to obtain a variety of certifications such as: PMP&reg; Certification, Prince2&reg;, Certified Scrum Product Owner&reg; by Agile Alliance</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="589" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Master&rsquo;s Degree in Business Administration</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 Months</li>
+<li>Alcobendas</li>
+</ul>
+<div>
+<div>Seize this unique chance and enjoy a 20% discount on tuition fee.</div>
+</div>
+<div>A Master in Business Analytics focuses on studying the process of collecting, structuring and analysing the data available within a company, with the aim of optimising decision making. Students will learn how to use different tools for processing, analysing and visualising data, which will equip them with the necessary knowledge and skills to enable them to make data-driven decisions.</div>
+Request information</div>
+</div>
+<div data-degree-areas-id="7" data-degree-campus-id="2" data-degree-page-id="13091" data-degree-study-type-id="3">
+<div>
+<div>
+<div>
+<div>
+<h3>Global MBA</h3>
+</div>
+</div>
+</div>
+<ul>
+<li>Campus-based</li>
+<li>20 oct. 2023</li>
+<li>9 months</li>
+<li>Alcobendas</li>
+</ul>
+<div>The Global MBA is designed to provide students with the ability to assume positions of responsibility, learning to master the most innovative tools of management. It will also help you to understand communication, management and intercultural skills necessary to lead and coordinate international work teams. You will also get an insight into the different areas of a company.</div>
+Request information</div>
+</div>
+<div>
+<p>You have seen&nbsp;6&nbsp;of&nbsp;12&nbsp;results</p>
+</div>
+<div><button data-loadmore-cta="">View more</button></div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>Why live in Spain?</h2>
+<p>There are many reasons to live in Spain: culture, gastronomy, excellent beaches, Mediterranean diet, healthy living, a very pleasant climate, natural parks, history. Spain has dreamlike landscapes, beautiful towns, popular festivals, folklore. Come and discover everything we can offer!</p>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Villaviciosa de Od&oacute;n</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Madrid</h3>
+<div>Campus Alcobendas</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+<div>
+<div>
+<h3>Valencia</h3>
+<div>Campus Valencia</div>
+</div>
+<picture><source srcset="" media="(max-width: 991px)" /></picture></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2><strong>Experience &amp; Networking Week in Spain</strong></h2>
+<p>The optional Experience &amp; Networking Week trip offered on the Master&rsquo;s Degree gives you the opportunity to visit to companies and getting to know our laboratories that we have on the different campuses (Madrid, Valencia, M&aacute;laga and the Canary Islands).</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>Develop your potential in leading facilities</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Campus Life</p>
+<p>In the Student Experience Unit, the Campus Life area promotes student participation and university life through activities outside of the classroom, student clubs and associations, contests and awards, etc. By taking part in any of them, you will gain a broad worldview that will enrich your education.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>University Activities</p>
+<p>Extracurricular activities are open to the entire university community. In addition to organizing workshops, talks and conferences, we conduct cultural, sports, educational, cooperative and leisure activities. University Activities will help you stand out when you leave the University and find your way in your professional and personal life.</p>
+</div>
+</div>
+</div>
+<div data-full-height="true">
+<div>
+<div>
+<p>Student clubs and associations</p>
+<p>One way to integrate, meet new friends, learn and develop skills is through participating in a student club or association. You will be able to create, participate or manage one of them. The Campus Life area promotes, coordinates and collaborates with the clubs and associations to offer a dynamic, fun and, above all, student-led university life.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<ul>
+<li>Legal notice</li>
+<li>Privacy policy</li>
+<li>Cookies policy</li>
+<li>
+<div>Cookie settings</div>
+</li>
+</ul>
+</div>
+<div>Universidad Europea &copy; 2023. All rights reserved</div>
+</footer>
+
+
+447--13390--4170---------------------------------------282--68528--7135
+<h> </p>
+<l> </q>
+<!--This has polling place link and the written material -->
+<p> </z>
+<!-- search parameters -->
+<n> </f>
+<m> </i>
+<!--This has polling place link and the written material -->
+<w> </f>
+<!-- search parameters -->
+<table style="width: 100%;" border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<y style="height: 15px; width: 3.00926%;"> </t>
+<k style="height: 15px; width: 8.91204%;"> </b>
+<w style="height: 15px; width: 19.6759%;"> </l>
+<q style="width: 1.04167%; height: 15px;" align="left" valign="top"> </td
+<f style="height: 15px; width: 1.27315%;"> </z>
+<k style="height: 15px; width: 9.83796%;"> </k>
+<j style="height: 15px; width: 15.8565%;"> </r>
+<r style="width: 3.00926%; height: 15px;" align="left" valign="top"> </g>
+<k style="height: 15px; width: 37.1528%;"> </l>
+
+<tr>
+<k style="height: 15px; width: 3.00926%;"> </o>
+<a class="TitleMessageTableStyle" style="height: 15px; width: 56.5972%;" colspan="6">Voter Information</y>
+<h class="TitleMessageTableStyle" style="height: 15px; width: 3.00926%;" colspan="1" align="left" valign="top"> </t>
+<b style="height: 15px; width: 37.1528%;"> </d>
+
+<tr style="height: 2px;">
+<x style="width: 3.00926%;" valign="top"> </d>
+<e class="GenLabelBold" style="width: 8.91204%;" valign="top"> </h>
+<a style="width: 19.6759%;" valign="top"> </g>
+<c style="width: 1.04167%;" align="left" valign="top"> </b>
+<g style="width: 1.27315%;" valign="top"> </y>
+<v class="GenLabelBold" style="width: 9.83796%;" valign="top"> </f>
+<a style="width: 15.8565%;" valign="top"> </q>
+<z style="width: 3.00926%;" align="left" valign="top"> </u>
+<n style="width: 37.1528%;" valign="top"> </y>
+
+<tr>
+<m style="width: 3.00926%;" valign="top"> </t>
+<n class="GenLabelBold" style="width: 8.91204%;" valign="top"> </d>
+<v style="width: 19.6759%;" valign="top" nowrap="nowrap"> </p>
+<t style="width: 1.04167%;" align="left" valign="top"> </d>
+<f style="width: 1.27315%;" valign="top"> </i>
+<n class="GenLabelBold" style="width: 9.83796%;" valign=""> </v>
+<r style="width: 15.8565%;" valign="top" nowrap="nowrap"> </j>
+<w style="width: 3.00926%;" align="left" valign="top"> </b>
+<s style="width: 37.1528%;" valign="top"> </w>
+
+<tr>
+<h style="width: 3.00926%; height: 12px;" valign="top"> </b>
+<i class="GenLabelBold" style="width: 8.91204%; height: 12px;" valign="top"> </p>
+<i style="width: 19.6759%; height: 12px;" valign="top"> </h>
+<y style="width: 1.04167%; height: 12px;" align="left" valign="top"> </k>
+<t style="width: 1.27315%; height: 12px;" valign="top"> </v>
+<v class="GenLabelBold" style="width: 9.83796%; height: 12px;" valign="top"> </k>
+<t style="width: 15.8565%; height: 12px;" valign="top"> </z>
+<v style="width: 3.00926%; height: 12px;" align="left" valign="top"> </u>
+<m style="height: 12px; width: 37.1528%;" valign="top"> </j>
+
+<tr>
+<w style="width: 3.00926%; height: 43px;" valign="top"> </t>
+<i class="GenLabelBold" style="width: 8.91204%; height: 43px;" valign="top"> </d>
+<a style="width: 19.6759%; height: 43px;" valign="top" nowrap="nowrap"> </j>
+<q style="width: 1.04167%; height: 43px;" align="left" valign="top"> </z>
+<f style="width: 1.27315%; height: 43px;" valign="top"> </w>
+<b class="GenLabelBold" style="width: 9.83796%; height: 43px;" valign="top"> </a>
+<f style="width: 15.8565%; height: 43px;" valign="top" nowrap="nowrap"> </t>
+<n style="width: 3.00926%; height: 43px;" align="left" valign="top"> </c>
+<d style="height: 43px; width: 37.1528%;" valign="top"> </m>
+
+<tr>
+<{a_1} style="width: 3.00926%; height: 24px;" valign="top"> </b>
+<{a_1} class="GenLabelBold" style="width: 8.91204%; height: 24px;" valign="top"> </b>
+<{a_1} style="width: 19.6759%; height: 24px;" valign="top" nowrap="nowrap"> </y>
+<{a_1} style="width: 1.04167%; height: 24px;" align="left" valign="top"> </v>
+<{a_1} style="height: 24px; width: 1.27315%;"> </s>
+<{a_1} style="height: 24px; width: 9.83796%;"> </c>
+<{a_1} style="height: 24px; width: 58.3333%;" colspan="5" valign="top"> </r>
+
+<tr style="height: 15px;">
+<b style="width: 3.00926%;"> </u>
+
+<tr>
+<w style="width: 3.00926%;"> </e>
+<b style="width: 56.5972%;" colspan="6" align="center"><br /> </q>
+<t style="width: 3.00926%;" colspan="1" align="left" valign="top"> </p>
+<p style="width: 37.1528%;"> </f>
+
+</tbody>
+<tr>
+<a style="width: 8px;"> </t>
+<p width="15%"> </f>
+<f style="width: 186px;"> </o>
+<h width="2%"> </f>
+<r width="11%"> </o>
+<c style="width: 142px;"> </c>
+<p width="33%"> </s>
+
+<tr>
+<f style="width: 8px;"> </p>
+<z colspan="6"> </z>
+<q style="width: 8px;"> </e>
+
+</tbody>
+</table>
+<!-- end of code-->
+<table id="GridViewTable" border="0px" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<i style="width: 8px;"> </v>
+<q style="width: 593px;">
+<div> </div>
+</y>
+
+</tbody>
+</table>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+330--60071--4476---------------------------------------506--20431--9277
+
+----t0rnlvgc;{6,a}----3kx1fash;{6,a}
+
+<p>Company: Company</p>
+<p>Bonjour Hugo nous n'envoyons plus de courriels car nous tenons à ce que les chauffeurs se connectent sur le site, regardent les noms des passagers et déclarent le départ complet. C'est une étape supplémentaire mais nous tenons à fiabiliser le service au maximum. Merci pour votre commentaire Myriam Agente AmigoExpress</p>
+
+
+<p>Xfinity Forum Archive...</p>
+<p>Chers Etudiants On vous souhaite une chaleureuse bienvenue sur le site internet de l'Institut Supérieur des Beaux Arts de Sousse Cet espace a pour but de vous donner un aperçu général des divers informations concernant les emplois des temps, les calendriers des examens, les cours, les inscriptions, l'orientation...</p>
+<p>Thank you very much for your order. I hope you enjoy this yellow sundress. I see you’re in southern California so you’ll have many chances to use it. We’re here if you need anything.</p>
+<p> </p>
+
+
+<p>Afin de confirmer votre inscription et recevoir r guli rement nos informations, nous vous invitons   cliquer sur le lien ci-dessous : </p>
+<p>Emplois du temps Formulaire Support de cours Activités extra-scolaire Services Pré-inscription master Résultats Téléchargement</p>
+<p>Content in this area has been identified as outdated or irrelevant.</p>
+
+
+<p> </p>
+<p> For further any further enquires regarding your regalia hire please contact Alison from Academic Dress Hire</p>
+
+<p>Post your questions in the Xfinity Community</p>
+<p>Thank you for your order! Your order has been successfully transmitted. </p>
+
+<p>Zipcode: Zipcode Thank for your order Previously ordered | Thank for your order Thank you - your order has been received. Your Graduation Coordinator will be in touch closer to graduation to let you know when and where to collect your regalia.</p>
+<p>Télécharger notre Charte des bénévoles.</p>
+
+ 
+<p>Street: Street</p>
+
+<p> OUVERTURE DES INSCRIPTIONS BÉNÉVOLES !!! Nous sommes toujours en recherche de nouveaux bénévoles, alors n’hésitez pas a vous inscrire, nous vous offrirons un t-shirt Chouette Nature, les subsistances, l’accès au bar et un emplacement de tente, et l’occasion de vivre une expérience formidable, dans une très bonne ambiance!</p>
+
+ 
+<p> Ordered Publications in printed form publications</p>
+<p>Dear (write in the buyer’s ID or name),</p>
+<p>Content in this area has been identified as outdated or irrelevant.</p>
+
+<p>voir de plus :</p>
+<p>Post your questions in the Xfinity Community</p>
+
+<p>RENDEZ-VOUS MARDI & MERCREDI (muni de votre carte étudiante, salle Maurice Cozian autour du patio droit-lettres pour l'UFR Sciences Humaines)</p>
+
+<p>Last name: Last name</p>
+
+
+<p>N'hésitez pas à solliciter les personnels pour de plus amples renseignements.</p>
+<p>Zipcode: Zipcode Thank for your order Previously ordered | Thank for your order Thank you - your order has been received. Your Graduation Coordinator will be in touch closer to graduation to let you know when and where to collect your regalia.</p>
+
+<p>Thank you for your eBay purchase! Once you receive your item, please remember to leave positive feedback! I will do the same for you in return.</p>
+<p>So far, nothing has ever come from these "random" emails. Doesn't mean they won't someday. Bottom line, treat it as if it's real and call to get an explanation. </p>c
+
+--670783-3661736-d92085dfa80068d8e895be98f7a6abfe--

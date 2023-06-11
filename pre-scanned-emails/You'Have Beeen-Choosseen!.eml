@@ -1,0 +1,1846 @@
+Delivered-To: danielbe911@gmail.com
+Received: by 2002:a17:906:1711:b0:974:2ee7:bec9 with SMTP id c17csp500499eje;
+        Thu, 8 Jun 2023 10:55:24 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4//nrsPeQGR9dW0GArXDs6UgHuvGrHRKPcNSh4nsMVvUsKwrLVaP32nsu1cDmAniqaBqEQ
+X-Received: by 2002:a17:907:6297:b0:94f:1a23:2f1c with SMTP id nd23-20020a170907629700b0094f1a232f1cmr450773ejc.50.1686246924374;
+        Thu, 08 Jun 2023 10:55:24 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1686246924; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=ci5V0L3S5jjCWFq/mypDbdkabidwZHoCDK8lL/dr1PYXObricr4Wp68hD42AHbWVcu
+         HzQlTz3H2Wjh1gfy7cc3GDYERzOF+btUvIQf7h0zNGmiUdOPbtXDo12y1uiWSaZrTHSJ
+         jZ/6D6D1/I35Mc0DVVaTKZL8Vcv/t18OTIwc+zquFz4ACbZtOC1qKGBBHaHAPh436W69
+         PE5Yg/1gmGCL2jh4xpqRhS0TXXFmNSQNMyHBVRdgob57EvMTjPBytv28bRSNMBS7VLqb
+         0q+F1mSDXKCf1fUJe7r86/XS/90acosNdWnBaCpgdBjUCaoPqOvzOorW3jqvdNh+xU97
+         73+w==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:date:subject:list-id:reply-to:from:feedback-id
+         :mime-version:to:dkim-signature;
+        bh=sAt04NK+/z9ssUyqXdadIhL8adbsGmbQohQfY2x7tpY=;
+        b=RiKSFrcWeGkRLVlPuvs2+fnOjyQRmxg0PsyPH3SkXSG+/B2Pg1E1bKiZ1beHS8pA6J
+         Mu3tGvUUG8Jg/JdfbsNpBjoLFnByb8up2gPQyqNTOjfQkCRCMRZE8L+kdVWj7cW+Tmxq
+         1hfE/xOK4h7aQSCOL6XEjrZFtUnRMcmRqhndVJESlIx7HgAKg3L3bVQBLAFEuaP2oWdt
+         lBzupdihuFtyvL/pbtzXgxFQCK0jGsQkw6FHO2QkwhZcesZoAppumz1EHugYpK5DteOz
+         Mov41T/0iEEKOfdLRpy3W3QtnfNre/m1Ay/n5DqmyRHpCTielCwce9Xs4AG4TL0C5HA1
+         Z7Kg==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@fghghjghkfgfh.onmicrosoft.com header.s=selector1-fghghjghkfgfh-onmicrosoft-com header.b=fd4+EMl9;
+       arc=pass (i=1);
+       spf=neutral (google.com: 2a01:111:f400:7e1a::31f is neither permitted nor denied by best guess record for domain of llbqhxdxectzhylqk_iemhbmu88z8u7023sge2b5@sdfdfgd.fghghjghkfgfh.onmicrosoft.com) smtp.mailfrom=LLBQHXdXectzHyLqK_iemhbmu88z8u7023sge2b5@sdfdfgd.fghghjghkfgfh.onmicrosoft.com
+Return-Path: <LLBQHXdXectzHyLqK_iemhbmu88z8u7023sge2b5@sdfdfgd.fghghjghkfgfh.onmicrosoft.com>
+Received: from EUR05-DB8-obe.outbound.protection.outlook.com (mail-db8eur05hn2031f.outbound.protection.outlook.com. [2a01:111:f400:7e1a::31f])
+        by mx.google.com with ESMTPS id p8-20020a170906228800b0096ace551abdsi171576eja.523.2023.06.08.10.55.24
+        for <danielbe911@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 08 Jun 2023 10:55:24 -0700 (PDT)
+Received-SPF: neutral (google.com: 2a01:111:f400:7e1a::31f is neither permitted nor denied by best guess record for domain of llbqhxdxectzhylqk_iemhbmu88z8u7023sge2b5@sdfdfgd.fghghjghkfgfh.onmicrosoft.com) client-ip=2a01:111:f400:7e1a::31f;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@fghghjghkfgfh.onmicrosoft.com header.s=selector1-fghghjghkfgfh-onmicrosoft-com header.b=fd4+EMl9;
+       arc=pass (i=1);
+       spf=neutral (google.com: 2a01:111:f400:7e1a::31f is neither permitted nor denied by best guess record for domain of llbqhxdxectzhylqk_iemhbmu88z8u7023sge2b5@sdfdfgd.fghghjghkfgfh.onmicrosoft.com) smtp.mailfrom=LLBQHXdXectzHyLqK_iemhbmu88z8u7023sge2b5@sdfdfgd.fghghjghkfgfh.onmicrosoft.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=diUq1gHfyuZMXgJmq9jTs2BH/5lpswNu6LFKWJqaxt5VuhJObKRtFII1IRZHp8JGi/jKeRACg9+eAfLHJ9OdqOOYmefa/g6teepSiaOa4UN0LDkAAK7O4Z6OVSClU0DRKzxLBDO7TLBdXUf5KzRPEMqNdL9LrWj8D8B68SQbEYQKN2V+t2w5mqPr58AsJaTh1NgVvyMQXbtQ5YU9Ir5jwielN+H4FfU8EgsG89St7V0MBbJeH0gw8oS7NPi+FKWvg6dx08wEF6qhckt9gVbjbKJp7KsX37A03ujDj63cMeeLMFwayx2T0pidKM353ACGg/BSqpDOhlEFQb38TQUc7g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=sAt04NK+/z9ssUyqXdadIhL8adbsGmbQohQfY2x7tpY=;
+ b=Kn4HyP4oKSPSfE1epvruYYvgk/yGjuaZqpz8oxQquBy5BumgsSTlIBuqmU1c+ZaIQFmaxLWMXi+o2yJFg6+XUYcEW2raAp0ionaOnp35SHgeZzDyptbn9q+7Iw/J5RX3azX/s0cix/BMOxn3co4FFAqPvWQuy6BCXYDkyckqX01F+6JSqgQFK0Ks1xnPU33DT/FrQ30IeFi/lTxreYbhoEWoYddVnAh5tQ4XZYl2Q1QuceocDbhHwDqbNR4hUmSOeEQ0+kf8wOutEOx5OfE1s4AIiFxi40RAkbpG2oxf3OXI/3c5RhjLzFe74NJizCqYpKCvWMeeuK8/aQYt9Wc1CQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none (sender ip is
+ 91.107.228.233) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=sdfdfgd.fghghjghkfgfh.onmicrosoft.com; dmarc=none action=none
+ header.from=fghghjghkfgfh.onmicrosoft.com; dkim=none (message not signed);
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=fghghjghkfgfh.onmicrosoft.com; s=selector1-fghghjghkfgfh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sAt04NK+/z9ssUyqXdadIhL8adbsGmbQohQfY2x7tpY=;
+ b=fd4+EMl9c8S51wd0CNIY5AKv98A7Cb5j7Hw4U1gCfrocxOMLCrzyRNDr1M+23Nh5WcBk705KP1bCr1FdLTLB7Dgw6ifI2Ilmz0d86P944OrItIA5ly2CFltgdiANzgTEAG3yynJSqO9omCdROfay4UX0oRrgrGqUVVOnRKVO2Z9SxiM5upjfbSYD2BZpJTbJDRwI3AXwAUoSJri6TJRS3sXqrk2HFmpD5q6ktpy0/ZFQI62o+MI0JKFSnXkna5Fcclf0Wfqyxiwex2h++z+wCvjHB4NXTO7NVxnkmtdij7r1FJ4Tf9VGrXeO4ZnggkVILHsicz1eP4CWNxtbYxLwYw==
+X-MS-Exchange-Authentication-Results: spf=none (sender IP is 91.107.228.233)
+ smtp.mailfrom=sdfdfgd.fghghjghkfgfh.onmicrosoft.com; dkim=none (message not
+ signed) header.d=none;dmarc=none action=none
+ header.from=fghghjghkfgfh.onmicrosoft.com;
+To: danielbe911@gmail.com
+MIME-Version: 2.0
+Content-Type: multipart/digest; boundary="670783-3661736-d92085dfa80068d8e895be98f7a6abfe"
+Feedback-ID: P-73484096983534-0:C5154292015:M93933435313-Nl:udtwynpcx
+From: "T-J Maxx Rewards!" <zgvilttorrettg_swhnrniyugjvprizc@fghghjghkfgfh.onmicrosoft.com>
+Reply-To: <UXfigIBZPtmppc@dbywwszwjwucnyf.fghghjghkfgfh.onmicrosoft.com>
+List-ID: 0082989845 <4853264757.7289367.xt.local>
+Subject: You'Have Beeen-Choosseen!
+Date: Thu, 08 Jun 2023 17:49:02 +0000
+Message-ID:
+ <4e686d39-9f5e-4adf-a8cd-6ec5d602670b@AM7EUR06FT055.eop-eur06.prod.protection.outlook.com>
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM7EUR06FT055:EE_|AS8P194MB1143:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6c472887-3a55-4d20-bea6-08db684985b1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info:
+	2IdHK78QAHmUyNFTGl00myFSSBz56hluLb0kOmBJJIKIu/VsCTALb7hjHvQ/njbZORCiEOZZ4FlA8FltcVOcs2YsdMMX4Kpc++mSBN9j9lgyTM+22X3jx2OOJIuDOqva/hYgVeRnvMVcOkZ35AJ89ZV1T0WqgEF2FOhyGBehFkf2Mh+5tEBbsxIv/fpNjOJ36hAAE0frh7rFbFxmxgoT4ScaLrvO0ToE5wekmiucrsnWv7H5Y5Bo6ftNlVlrP7OsK4AZF1PySL5KSg7NL87PZ8FLso/7WVNRU/hvhvq8X8SA8nXXSl4oqEJoYeuAXahHvl6OLXEDzX/i/SHxbMEhSqSoQsWcEfL0q/8L0yHY5DkH06g4HNe6sKu3IbJ0dIANG5ptN/MF7wHpWicYQgjj+Az2yZ7DgTjKyywjLrmJAqCsAfO9BZ0EhTwcFDTel5gc9rDftb/qIonzSeU2dbksa37b73mzvjMXJuZIfchMx68Bp0Kwn0AFn/Etm0yxKOIS/qLGXuG66IPUNBDpS59jF0vCmIvTmIQo2Ogbvz7m6M4mdq61u5nniQjArwb02M0B5i7nPwnA+fXYReBem7ciidU8OL0GIRe1C7b30T0dodBixVliIvxvGNuOwXibWCFgvoLTfujM8X5CpzhEe9TGJrdUOCskToBLAERx5ybNCD///bq5uZRam7sFMCyqYZKfOOq2A4tfREBntxCI6pEEwl7NOIFKM4Rpw16jmCQJKxBi9oucZB3o0qSisTTaLi4JljzeR1dRuJcCXLW9VwWbEbaykYmBe0u1ZQRMveKUY6O5pmzypwTYvecNW+NJ5ZO2NHek8HOWAJd2PSxVAx9LGa67vKfhhxUiVZIqRtD0Ixk=
+X-Forefront-Antispam-Report:
+	CIP:91.107.228.233;CTRY:IR;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:fghghjghkfgfh.onmicrosoft.com;PTR:static.233.228.107.91.clients.your-server.de;CAT:NONE;SFS:(13230028)(346002)(136003)(39860400002)(376002)(396003)(1690799014)(7200799014)(451199021)(5400799015)(40470700004)(46966006)(36840700001)(8936002)(8676002)(31696002)(5660300002)(31686004)(66899021)(40460700003)(8400799014)(26005)(9686003)(2906002)(30864003)(40140700001)(186003)(166002)(40480700001)(41300700001)(41320700001)(82740400003)(81166007)(19810500001)(70586007)(42186006)(83170400001)(70206006)(3480700007)(33964004)(34020700004)(508600001)(36860700001)(82310400005)(6916009)(336012)(83380400001)(66574015)(47076005)(578654002)(43852003)(84790400001)(12100799033)(579004);DIR:OUT;SFP:1501;
+X-OriginatorOrg: fghghjghkfgfh.onmicrosoft.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jun 2023 17:55:18.7508
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6c472887-3a55-4d20-bea6-08db684985b1
+X-MS-Exchange-CrossTenant-Id: 366d931c-e403-457e-b65a-9cae01150821
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=366d931c-e403-457e-b65a-9cae01150821;Ip=[91.107.228.233];Helo=[fghghjghkfgfh.onmicrosoft.com]
+X-MS-Exchange-CrossTenant-AuthSource:
+	AM7EUR06FT055.eop-eur06.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8P194MB1143
+
+--670783-3661736-d92085dfa80068d8e895be98f7a6abfe
+Content-Type: multipart/parallel; boundary="_-------461586746-96853413561058410=_:"
+
+--_-------461586746-96853413561058410=_:
+Content-Type: multipart/alternative; boundary="_----------=ponine461586746"
+
+--_----------=ponine461586746
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Hexa
+
+AUTORISATION D’INSCRIPTION
+POUR ETUDIANT MINEUR
+Je soussigné(e)………………………………………………………………………………………………,
+certifie sur l’honneur agir en qualité de représentant légal de
+………………………………………………………….…………., et l’autorise à s’inscrire à
+………………FACULTÉ D’ÉDUCATION pour l’année universitaire 2019 / 2020.
+ A…………..………..…………, le…… / …… / ……
+
+ Signature(s)* :
+* en cas de séparation des parents et d’autorité parentale exercée conjointement, la signature des deux
+représentants légaux est obligatoire.
+Your subscription to our list has been confirmed.
+
+--_----------=_EQ24danielbe911_670783-3661736-d92085dfa80068d8e895be98f7a6abfe
+Content-Type: text/html; charset=utf-8
+
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">DURING YOUR STUDY ABROAD YEAR</h3>
+<p>Once you know you'll be studying abroad, you'll need to arrange accommodation, insurance, visas, proof of your finances and maybe some foreign language studies.[A]  [A]</p>
+</div>
+
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">PREPARE TO APPLY</h3>
+<p>Find out more about the application process, researching your destination, how much it will cost and more.</p>
+</div>
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">GET READY TO GO</h3>
+<p>Congratulations on being accepted for Study Abroad! Now it's time to plan the details, like where you'll stay, organising your visa and applying for your student loan.</p>
+</div>
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">SUMMER SCHOOLS</h3>[5A]
+<p>Short programmes, usually through summer schools, are a great chance to experience study and life in another country.</p>
+</div>
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">RETURNING TO LEEDS</h3>
+<p>Welcome back! Here's some useful information to help you settle back into life in Leeds.[A]</p>
+</div>
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">GRADUATE STUDY ABROAD OPPORTUNITIES</h3>
+<p>If you're a Postgraduate researcher, there may be opportunities to study abroad during your time here.</p>
+</div>
+
+<div class="js-equal grid__item grid__box">
+<h3 class="heading heading--sub-section">STUDY ABROAD HANDBOOKS AND DOCUMENTS</h3>
+<p>Handbooks, checklists, forms and information you will need before and during your study abroad.</p>
+</div>
+
+ECYRXTENZAGWNRufCBfIOIJMBSLVWFBSL1DXTK933Gdp4Kxznaffruuuronqsfdsel76PROJJ8Z98AO637RAwdLaQlJBAhXE4y
+SVSKNNLCOAFUVEDCOEOcNUNQBKXAUWQJYEAVcNPfFHO2rJLsyyojThuGuZsjRTcGzNVN8D9G9NZUOC9OZ561PTSxwcMHZXRrRZOmQCikspxU8BnGqnbcd2w7bhqoq6c6qkt9ib52duhqyvdk665B8YFQmOoeEfq2je0wv1yth8e4
+
+--_----------=ponine461586746
+Content-Type: text/html; charset=utf-8
+
+
+<CeNteR>
+<h3 style=" text-align: center;"><a href="https://gdfgdfgfghfgh.s3.us-west-1.amazonaws.com/gdfgdfgfghfgh.html#c18734MIUNC3661736ubKF670783myP44190TaQo207"><strong><span style='font-size: 24px;'><u><span style="color: ; background-color: rgb(255, 255, 255);">Your-Name: Camee Up For a Le.Creuset-Customeer-Gift!!</span></u></span></strong></a></h3>
+<imG SRc="https://gdfgdfgfghfgh.s3.us-west-1.amazonaws.com/gdfgdfgfghfgh.png" USEmAP="#map1">
+<mAP naME="map1">
+<aRea hRef="https://gdfgdfgfghfgh.s3.us-west-1.amazonaws.com/gdfgdfgfghfgh.html#c18734MIUNC3661736ubKF670783myP44190TaQo207" coords="1,0,550,1096" shape="rect">
+<aRea hRef="https://gdfgdfgfghfgh.s3.us-west-1.amazonaws.com/gdfgdfgfghfgh.html#u18734MqRQU3661736Vuoc670783UUu44190TWqM207" coords="2,1100,548,1130" shape="rect">
+</MAP>
+<HeaD>
+<ObJECT>
+<TitLe>
+<applet>
+
+
+--_----------=ponine461586746--
+--_-------461586746-96853413561058410=_:--
+--670783-3661736-d92085dfa80068d8e895be98f7a6abfe
+Content-Type: text/html;
+Content-Transfer-Encoding: Hexa
+
+
+----06hukclj;{6,a}----b2i6gy4b;{6,a}
+
+
+
+Bonjour faunth artxos_
+
+¡Gracias por suscribirte! | Thanks for subscribing! | Merci pour votre subscription!
+Oui_ inscris moi sur cette liste.
+Merci de l'intérêt que vous portez à notre contenu ! Cliquez sur le bouton pour confirmer votre inscription à la newsletter Easyoonhxr.
+
+Nous vous remercions de votre confiance.
+
+activation de compte sur Inscription-Facile
+
+Votre compte a été créé_ mais il doit encore être activé.
+
+<p>Thanks for asking. There’s a  link on the login screen in the app. (see image beside when login).</p>
+
+<p>In addition to that_ there are a couple other options on the web (but not in the app):</p>
+
+
+<div>
+<div>
+<div>
+<div>
+<ul>
+<li>COVID-19&nbsp;</li>
+<li>NOTRE ORGANISATION&nbsp;</li>
+<li>NOS &Eacute;COLES</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>&nbsp;8580 Kilgour Place, Richmond (C.-B.) V7C 3R1</div>
+<div>&nbsp;T&eacute;l: 604-295-4056&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Email: ecole_navigateurs@csf.bc.ca</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;COLE DES NAVIGATEURS</h2>
+<h3>RICHMOND</h3>
+<h4>J'apprends en fran&ccedil;ais</h4>
+</div>
+</div>
+<div>
+<ul>
+<li>INSCRIPTION</li>
+<li>&Eacute;COLE</li>
+<li>PROGRAMMES</li>
+<li>SERVICES</li>
+<li>VIE SCOLAIRE</li>
+<li>PARENTS</li>
+<li>SANT&Eacute; ET S&Eacute;CURIT&Eacute;</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div><iframe></iframe></div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&Eacute;COLE DES NAVIGATEURS</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;cole en images</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Transport scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Calendrier scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Inscription</h2>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>DERNI&Egrave;RES NOUVELLES</h1>
+<div>
+<ul>
+<li>
+<div>
+<h4>La Colombie-Britannique lance un plan d&rsquo;action contre le racisme pour les &eacute;l&egrave;ves de la maternelle &agrave; la 12e ann&eacute;e</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>27 JAN, 2023</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>Portes ouvertes &ndash; mercredi 8 f&eacute;vrier 2023 &agrave; 18h00</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>26 JAN, 2023</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+<li>
+<div>
+<h4>D&eacute;fi francophonie du CSF &ndash; Hiver 2022 !</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>15 D&Eacute;C, 2022</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>En cas d&rsquo;absence &ndash; SafeArrival</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>22 AO&Ucirc;T, 2022</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+</ul>
+</div>
+<div>Voir plus de nouvelles</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h1>&Eacute;V&Egrave;NEMENTS &Agrave; VENIR</h1>
+<div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<th>JUIN 2023</th>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN15</abbr></div>
+</td>
+<td>
+<div>
+<h4>SORTIE &Agrave; LA PLAGE (DATE PROVISOIRE)</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN16</abbr></div>
+</td>
+<td>
+<div>
+<h4>TH&Eacute; DES B&Eacute;N&Eacute;VOLES</h4>
+</div>
+<div>&nbsp;13:00 -</div>
+<div>&nbsp;14:30 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN22</abbr></div>
+</td>
+<td>
+<div>
+<h4>GRADUATION DES 7E ANN&Eacute;E</h4>
+</div>
+<div>&nbsp;13:30 -</div>
+<div>&nbsp;15:00 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN26</abbr></div>
+</td>
+<td>
+<div>
+<h4>JOURN&Eacute;E SPORTIVE</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>Voir plus d&rsquo;&eacute;v&egrave;nements</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&nbsp;VIE SCOLAIRE</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>L&rsquo;&eacute;cole des Navigateurs fait partie du Conseil scolaire francophone qui offre une &eacute;ducation de qualit&eacute;, en fran&ccedil;ais, &agrave; travers toute la province via ses 47 &eacute;coles publiques francophones.</h2>
+</div>
+</div>
+</div>
+<div>Inscription</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h4>&Eacute;COLE DES NAVIGATEURS</h4>
+<p>Accueillant des &eacute;l&egrave;ves de la&nbsp;maternelle &agrave; la 7<em>&egrave;me</em>, l&rsquo;&eacute;cole des Navigateurs s&rsquo;engage &agrave; d&eacute;velopper l&rsquo;identit&eacute; culturelle des &eacute;l&egrave;ves ainsi qu&rsquo;&agrave; promouvoir le d&eacute;veloppement d&rsquo;une communaut&eacute; francophone.&nbsp;Pour y arriver, elle offre une &eacute;ducation publique francophone d&rsquo;excellence qui favorise la ma&icirc;trise de la langue fran&ccedil;aise, tout en offrant aux jeunes la possibilit&eacute; de ma&icirc;triser une deuxi&egrave;me langue; la langue anglaise.</p>
+</div>
+<div>
+<h4>CONTACTEZ-NOUS</h4>
+<p>8580 Kilgour Place<br/>Richmond (C.-B.) V7C 3R1</p>
+<p>Tel: 604-295-4056</p>
+<p>Direction :&nbsp;Sandrine Legay</p>
+</div>
+<div>
+<h4>LIENS RAPIDES</h4>
+<div>
+<ul>
+<li>Inscription</li>
+<li>Horaires</li>
+<li>Calendrier scolaire</li>
+<li>Contactez-nous</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<ul>
+<li>Administration du site&nbsp;&nbsp;- &nbsp;</li>
+<li>
+<p>&copy; 2023 navigateurs. Tous droits r&eacute;serv&eacute;s.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+<div>
+<div>
+<div>
+<ul>
+<li>COVID-19&nbsp;</li>
+<li>NOTRE ORGANISATION&nbsp;</li>
+<li>NOS &Eacute;COLES</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>&nbsp;8580 Kilgour Place, Richmond (C.-B.) V7C 3R1</div>
+<div>&nbsp;T&eacute;l: 604-295-4056&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Email: ecole_navigateurs@csf.bc.ca</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;COLE DES NAVIGATEURS</h2>
+<h3>RICHMOND</h3>
+<h4>J'apprends en fran&ccedil;ais</h4>
+</div>
+</div>
+<div>
+<ul>
+<li>INSCRIPTION</li>
+<li>&Eacute;COLE</li>
+<li>PROGRAMMES</li>
+<li>SERVICES</li>
+<li>VIE SCOLAIRE</li>
+<li>PARENTS</li>
+<li>SANT&Eacute; ET S&Eacute;CURIT&Eacute;</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div><iframe></iframe></div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&Eacute;COLE DES NAVIGATEURS</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;cole en images</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Transport scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Calendrier scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Inscription</h2>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>DERNI&Egrave;RES NOUVELLES</h1>
+<div>
+<ul>
+<li>
+<div>
+<h4>La Colombie-Britannique lance un plan d&rsquo;action contre le racisme pour les &eacute;l&egrave;ves de la maternelle &agrave; la 12e ann&eacute;e</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>27 JAN, 2023</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>Portes ouvertes &ndash; mercredi 8 f&eacute;vrier 2023 &agrave; 18h00</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>26 JAN, 2023</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+<li>
+<div>
+<h4>D&eacute;fi francophonie du CSF &ndash; Hiver 2022 !</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>15 D&Eacute;C, 2022</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>En cas d&rsquo;absence &ndash; SafeArrival</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>22 AO&Ucirc;T, 2022</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+</ul>
+</div>
+<div>Voir plus de nouvelles</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h1>&Eacute;V&Egrave;NEMENTS &Agrave; VENIR</h1>
+<div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<th>JUIN 2023</th>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN15</abbr></div>
+</td>
+<td>
+<div>
+<h4>SORTIE &Agrave; LA PLAGE (DATE PROVISOIRE)</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN16</abbr></div>
+</td>
+<td>
+<div>
+<h4>TH&Eacute; DES B&Eacute;N&Eacute;VOLES</h4>
+</div>
+<div>&nbsp;13:00 -</div>
+<div>&nbsp;14:30 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN22</abbr></div>
+</td>
+<td>
+<div>
+<h4>GRADUATION DES 7E ANN&Eacute;E</h4>
+</div>
+<div>&nbsp;13:30 -</div>
+<div>&nbsp;15:00 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN26</abbr></div>
+</td>
+<td>
+<div>
+<h4>JOURN&Eacute;E SPORTIVE</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>Voir plus d&rsquo;&eacute;v&egrave;nements</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&nbsp;VIE SCOLAIRE</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>L&rsquo;&eacute;cole des Navigateurs fait partie du Conseil scolaire francophone qui offre une &eacute;ducation de qualit&eacute;, en fran&ccedil;ais, &agrave; travers toute la province via ses 47 &eacute;coles publiques francophones.</h2>
+</div>
+</div>
+</div>
+<div>Inscription</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h4>&Eacute;COLE DES NAVIGATEURS</h4>
+<p>Accueillant des &eacute;l&egrave;ves de la&nbsp;maternelle &agrave; la 7<em>&egrave;me</em>, l&rsquo;&eacute;cole des Navigateurs s&rsquo;engage &agrave; d&eacute;velopper l&rsquo;identit&eacute; culturelle des &eacute;l&egrave;ves ainsi qu&rsquo;&agrave; promouvoir le d&eacute;veloppement d&rsquo;une communaut&eacute; francophone.&nbsp;Pour y arriver, elle offre une &eacute;ducation publique francophone d&rsquo;excellence qui favorise la ma&icirc;trise de la langue fran&ccedil;aise, tout en offrant aux jeunes la possibilit&eacute; de ma&icirc;triser une deuxi&egrave;me langue; la langue anglaise.</p>
+</div>
+<div>
+<h4>CONTACTEZ-NOUS</h4>
+<p>8580 Kilgour Place<br/>Richmond (C.-B.) V7C 3R1</p>
+<p>Tel: 604-295-4056</p>
+<p>Direction :&nbsp;Sandrine Legay</p>
+</div>
+<div>
+<h4>LIENS RAPIDES</h4>
+<div>
+<ul>
+<li>Inscription</li>
+<li>Horaires</li>
+<li>Calendrier scolaire</li>
+<li>Contactez-nous</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<ul>
+<li>Administration du site&nbsp;&nbsp;- &nbsp;</li>
+<li>
+<p>&copy; 2023 navigateurs. Tous droits r&eacute;serv&eacute;s.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+<div>
+<div>
+<div>
+<ul>
+<li>COVID-19&nbsp;</li>
+<li>NOTRE ORGANISATION&nbsp;</li>
+<li>NOS &Eacute;COLES</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>&nbsp;8580 Kilgour Place, Richmond (C.-B.) V7C 3R1</div>
+<div>&nbsp;T&eacute;l: 604-295-4056&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Email: ecole_navigateurs@csf.bc.ca</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;COLE DES NAVIGATEURS</h2>
+<h3>RICHMOND</h3>
+<h4>J'apprends en fran&ccedil;ais</h4>
+</div>
+</div>
+<div>
+<ul>
+<li>INSCRIPTION</li>
+<li>&Eacute;COLE</li>
+<li>PROGRAMMES</li>
+<li>SERVICES</li>
+<li>VIE SCOLAIRE</li>
+<li>PARENTS</li>
+<li>SANT&Eacute; ET S&Eacute;CURIT&Eacute;</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div><iframe></iframe></div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&Eacute;COLE DES NAVIGATEURS</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;cole en images</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Transport scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Calendrier scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Inscription</h2>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>DERNI&Egrave;RES NOUVELLES</h1>
+<div>
+<ul>
+<li>
+<div>
+<h4>La Colombie-Britannique lance un plan d&rsquo;action contre le racisme pour les &eacute;l&egrave;ves de la maternelle &agrave; la 12e ann&eacute;e</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>27 JAN, 2023</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>Portes ouvertes &ndash; mercredi 8 f&eacute;vrier 2023 &agrave; 18h00</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>26 JAN, 2023</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+<li>
+<div>
+<h4>D&eacute;fi francophonie du CSF &ndash; Hiver 2022 !</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>15 D&Eacute;C, 2022</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>En cas d&rsquo;absence &ndash; SafeArrival</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>22 AO&Ucirc;T, 2022</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+</ul>
+</div>
+<div>Voir plus de nouvelles</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h1>&Eacute;V&Egrave;NEMENTS &Agrave; VENIR</h1>
+<div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<th>JUIN 2023</th>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN15</abbr></div>
+</td>
+<td>
+<div>
+<h4>SORTIE &Agrave; LA PLAGE (DATE PROVISOIRE)</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN16</abbr></div>
+</td>
+<td>
+<div>
+<h4>TH&Eacute; DES B&Eacute;N&Eacute;VOLES</h4>
+</div>
+<div>&nbsp;13:00 -</div>
+<div>&nbsp;14:30 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN22</abbr></div>
+</td>
+<td>
+<div>
+<h4>GRADUATION DES 7E ANN&Eacute;E</h4>
+</div>
+<div>&nbsp;13:30 -</div>
+<div>&nbsp;15:00 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN26</abbr></div>
+</td>
+<td>
+<div>
+<h4>JOURN&Eacute;E SPORTIVE</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>Voir plus d&rsquo;&eacute;v&egrave;nements</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&nbsp;VIE SCOLAIRE</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>L&rsquo;&eacute;cole des Navigateurs fait partie du Conseil scolaire francophone qui offre une &eacute;ducation de qualit&eacute;, en fran&ccedil;ais, &agrave; travers toute la province via ses 47 &eacute;coles publiques francophones.</h2>
+</div>
+</div>
+</div>
+<div>Inscription</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h4>&Eacute;COLE DES NAVIGATEURS</h4>
+<p>Accueillant des &eacute;l&egrave;ves de la&nbsp;maternelle &agrave; la 7<em>&egrave;me</em>, l&rsquo;&eacute;cole des Navigateurs s&rsquo;engage &agrave; d&eacute;velopper l&rsquo;identit&eacute; culturelle des &eacute;l&egrave;ves ainsi qu&rsquo;&agrave; promouvoir le d&eacute;veloppement d&rsquo;une communaut&eacute; francophone.&nbsp;Pour y arriver, elle offre une &eacute;ducation publique francophone d&rsquo;excellence qui favorise la ma&icirc;trise de la langue fran&ccedil;aise, tout en offrant aux jeunes la possibilit&eacute; de ma&icirc;triser une deuxi&egrave;me langue; la langue anglaise.</p>
+</div>
+<div>
+<h4>CONTACTEZ-NOUS</h4>
+<p>8580 Kilgour Place<br/>Richmond (C.-B.) V7C 3R1</p>
+<p>Tel: 604-295-4056</p>
+<p>Direction :&nbsp;Sandrine Legay</p>
+</div>
+<div>
+<h4>LIENS RAPIDES</h4>
+<div>
+<ul>
+<li>Inscription</li>
+<li>Horaires</li>
+<li>Calendrier scolaire</li>
+<li>Contactez-nous</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<ul>
+<li>Administration du site&nbsp;&nbsp;- &nbsp;</li>
+<li>
+<p>&copy; 2023 navigateurs. Tous droits r&eacute;serv&eacute;s.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<p>.</p>
+
+
+
+----UvYHyPBz;KDDMCF----sgaRcLL1;VMCFJY
+
+
+
+----rezLnjkh;SOIOOZ----f7dvidv5;AAUTHC
+
+----7MIuhZUo;DRWFOZ----I6dUN4mk;GEQKMN
+<p> Computers: We provide computers for student use in the student lounge_ and students will not require a laptop for their classwork. If you do wish to bring a laptop_ however_ wifi is available in local cafés. Finally_ please remember that YOU will be responsible for carrying your own luggage at all times_ so try to be as realistic as possible about what you will need. Electricity in France Please keep in mind that electricity in France is different than in the U.S. Thus_ please do not bring irons_ hair dryers_ or other electrical equipment. Even with a transformer_ they will often short out. If necessary_ cheap appliances can be bought in France and used just for the month.  Checklist 1. TO DO IMMEDIATELY (_____) Check that your passport is valid and will not expire while you are in France. (_____) If you are not a US_ Canadian or European Union citizen_ contact your local French Embassy to determine whether you need to apply for an entry visa to France. 2. ADVANCE PLANNING (_____) Order your debit/credit card. Make a copy of it in case it gets lost. (_____) Make 3 photocopies of your passport & birth certificate: one to leave with your family and two to carry with you while you travel. () Confirm your plane reservation with the airline_ as well as the time_ flight number and departure terminal. NOTE: DO THIS 72 HOURS BEFORE YOU LEAVE! 3. PACKING TIME () Make sure that any breakables in your suitcase are well-wrapped or protected_ or placed in your hand luggage. (_____) Think through how much clothing you will need this summer. (Each year most students bring far too much_ so try to adhere to the packing list.) 4. BEFORE YOU LEAVE THE HOUSE (You MUST include all these items in your carry-on bag) (_____) Your passport (and visa paperwork_ if applicable) (_____) A copy of your passport in another place from the original_ with a second copy left at home with your parents () Your plane tickets (_____) Your spending money (packed securely). () The Académie de France program office telephone numbers and addresses (_____) Name & address labels_ plus “OXBRIDGE” luggage tags_ on your luggage (sent by mail) 5. AT THE AIRPORT (_____) Keep the bar-coded luggage stubs_ given to you by the airline at check-in_ in a safe place in your carry-on luggage. Happy travels from wherever you may be in the world_ and we will see you in France in early July! Map of Montpellier Internat d’Excellence Montpellier 4_ rue du 81ème régiment d'infanterie 34090 Montpellier France</p>
+----EQErurrG;QNFVMD----bsX4mYT4;JBNICV
+----tgCxXqO9;NOYEFK----IHuklwby;OMUIFZ
+
+
+----W9ACUmn6;CYKBTZ----qw8jklbm;BKPUAQ
+
+
+
+----UBSVFEpK;VLKHIO----h8DhR5ws;KJNLIX
+
+
+
+----Y6MYkN7x;TCWPQG----WwkzGeOi;YGPUNT
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f4f6f9" class="email-content-table-outer">
+    <tr>
+      <td valign="top" align="center" style="border-top: 4px solid #2B96D4; font-family: SalesforceSans_ Helvetica Neue_ Helvetica_ Arial; font-size: 14px;" class="td-outer">
+        
+        <table cellpadding="0" cellspacing="0" border="0" class="email-content-table" style="width: 656px; border: 0; padding: 0; margin: 0;">
+          <tr>
+            <td style="border: 0; padding: 0; margin: 0;">
+            
+              <table width="656" cellpadding="0" cellspacing="16" border="0" class="email-content-table-sub" style="border: 0; padding: 0; margin: 0;">
+                <tr>
+                  <td align="center" class="layout-td-width td-logo" style="border: 0; padding: 0; margin: 0; font-size: 0px;"></td>
+                </tr>
+              </table>
+              
+            </td>
+          </tr>
+          <tr class="tr-top">
+            <td style="border: 0; padding: 0; margin: 0;">
+            
+              <table width="656" cellpadding="0" cellspacing="0" border="0" class="email-content-table-sub" style="border: 0; padding: 0; margin: 0;">
+                <tr>
+                  <td align="right" valign="bottom" style="width: 16px; height: 17px; font-size: 0;" class="shadow-pixel-td"></td>
+                  <td align="center" bgcolor="#4B9EE4" style="width: 624px; height: 17px; font-size: 0;" class="layout-td-width"></td>
+                  <td align="left" valign="bottom" style="width: 16px; height: 17px; font-size: 0;" class="shadow-pixel-td"></td>
+                </tr>
+              </table>
+              
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 0; padding: 0; margin: 0;">
+            
+              <table width="656" cellpadding="0" cellspacing="0" border="0" class="email-content-table-sub email-content-table-sub-with-actual" style="border: 0; padding: 0; margin: 0;">
+                <tr>
+                  <td bgcolor="#efefef" width="1" class="shadow-pixel-td"></td>
+                  <td bgcolor="#e9e9e9" width="1" class="shadow-pixel-td"></td>
+                  <td bgcolor="#e0e0e0" width="1" class="shadow-pixel-td"></td>
+                  <td bgcolor="#4B9EE4" width="650" class="layout-td-width">
+                    
+                    <table width="650" cellpadding="0" cellspacing="0" border="0" class="email-content-table-actual email-content-table-actual-top">
+                      <tr>
+                        <td align="center" bgcolor="#4B9EE4" style="width: 650px; background: #4B9EE4; color: #ffffff; font-family: SalesforceSansLight_ Helvetica Neue_ Helvetica_ Arial; font-size: 32px; padding: 16px 0 24px 0;" class="layout-td-width td-title"><span style="padding: 0 20px; display: block;">Thanks for signing up with Salesforce!</span></td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="width: 650px; font-size: 0;" class="layout-td-width"></td>
+                      </tr>
+                    </table>
+----Ot4NcaiC;YOCTGB----TLdthyLv;FECRAX
+----HTZ7jz4H;UVOXBZ]----xDW5kc3c;TMBBSD
+
+
+----rMjjLQwG;TPTVST----tgtWn0nk;VYIXTD
+
+
+
+<div>
+<div>
+<div>
+<div>
+<ul>
+<li>COVID-19&nbsp;</li>
+<li>NOTRE ORGANISATION&nbsp;</li>
+<li>NOS &Eacute;COLES</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>&nbsp;8580 Kilgour Place, Richmond (C.-B.) V7C 3R1</div>
+<div>&nbsp;T&eacute;l: 604-295-4056&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Email: ecole_navigateurs@csf.bc.ca</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;COLE DES NAVIGATEURS</h2>
+<h3>RICHMOND</h3>
+<h4>J'apprends en fran&ccedil;ais</h4>
+</div>
+</div>
+<div>
+<ul>
+<li>INSCRIPTION</li>
+<li>&Eacute;COLE</li>
+<li>PROGRAMMES</li>
+<li>SERVICES</li>
+<li>VIE SCOLAIRE</li>
+<li>PARENTS</li>
+<li>SANT&Eacute; ET S&Eacute;CURIT&Eacute;</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div><iframe></iframe></div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&Eacute;COLE DES NAVIGATEURS</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;cole en images</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Transport scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Calendrier scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Inscription</h2>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>DERNI&Egrave;RES NOUVELLES</h1>
+<div>
+<ul>
+<li>
+<div>
+<h4>La Colombie-Britannique lance un plan d&rsquo;action contre le racisme pour les &eacute;l&egrave;ves de la maternelle &agrave; la 12e ann&eacute;e</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>27 JAN, 2023</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>Portes ouvertes &ndash; mercredi 8 f&eacute;vrier 2023 &agrave; 18h00</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>26 JAN, 2023</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+<li>
+<div>
+<h4>D&eacute;fi francophonie du CSF &ndash; Hiver 2022 !</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>15 D&Eacute;C, 2022</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>En cas d&rsquo;absence &ndash; SafeArrival</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>22 AO&Ucirc;T, 2022</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+</ul>
+</div>
+<div>Voir plus de nouvelles</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h1>&Eacute;V&Egrave;NEMENTS &Agrave; VENIR</h1>
+<div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<th>JUIN 2023</th>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN15</abbr></div>
+</td>
+<td>
+<div>
+<h4>SORTIE &Agrave; LA PLAGE (DATE PROVISOIRE)</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN16</abbr></div>
+</td>
+<td>
+<div>
+<h4>TH&Eacute; DES B&Eacute;N&Eacute;VOLES</h4>
+</div>
+<div>&nbsp;13:00 -</div>
+<div>&nbsp;14:30 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN22</abbr></div>
+</td>
+<td>
+<div>
+<h4>GRADUATION DES 7E ANN&Eacute;E</h4>
+</div>
+<div>&nbsp;13:30 -</div>
+<div>&nbsp;15:00 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN26</abbr></div>
+</td>
+<td>
+<div>
+<h4>JOURN&Eacute;E SPORTIVE</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>Voir plus d&rsquo;&eacute;v&egrave;nements</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&nbsp;VIE SCOLAIRE</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>L&rsquo;&eacute;cole des Navigateurs fait partie du Conseil scolaire francophone qui offre une &eacute;ducation de qualit&eacute;, en fran&ccedil;ais, &agrave; travers toute la province via ses 47 &eacute;coles publiques francophones.</h2>
+</div>
+</div>
+</div>
+<div>Inscription</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h4>&Eacute;COLE DES NAVIGATEURS</h4>
+<p>Accueillant des &eacute;l&egrave;ves de la&nbsp;maternelle &agrave; la 7<em>&egrave;me</em>, l&rsquo;&eacute;cole des Navigateurs s&rsquo;engage &agrave; d&eacute;velopper l&rsquo;identit&eacute; culturelle des &eacute;l&egrave;ves ainsi qu&rsquo;&agrave; promouvoir le d&eacute;veloppement d&rsquo;une communaut&eacute; francophone.&nbsp;Pour y arriver, elle offre une &eacute;ducation publique francophone d&rsquo;excellence qui favorise la ma&icirc;trise de la langue fran&ccedil;aise, tout en offrant aux jeunes la possibilit&eacute; de ma&icirc;triser une deuxi&egrave;me langue; la langue anglaise.</p>
+</div>
+<div>
+<h4>CONTACTEZ-NOUS</h4>
+<p>8580 Kilgour Place<br/>Richmond (C.-B.) V7C 3R1</p>
+<p>Tel: 604-295-4056</p>
+<p>Direction :&nbsp;Sandrine Legay</p>
+</div>
+<div>
+<h4>LIENS RAPIDES</h4>
+<div>
+<ul>
+<li>Inscription</li>
+<li>Horaires</li>
+<li>Calendrier scolaire</li>
+<li>Contactez-nous</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<ul>
+<li>Administration du site&nbsp;&nbsp;- &nbsp;</li>
+<li>
+<p>&copy; 2023 navigateurs. Tous droits r&eacute;serv&eacute;s.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+<div>
+<div>
+<div>
+<ul>
+<li>COVID-19&nbsp;</li>
+<li>NOTRE ORGANISATION&nbsp;</li>
+<li>NOS &Eacute;COLES</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>&nbsp;8580 Kilgour Place, Richmond (C.-B.) V7C 3R1</div>
+<div>&nbsp;T&eacute;l: 604-295-4056&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Email: ecole_navigateurs@csf.bc.ca</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;COLE DES NAVIGATEURS</h2>
+<h3>RICHMOND</h3>
+<h4>J'apprends en fran&ccedil;ais</h4>
+</div>
+</div>
+<div>
+<ul>
+<li>INSCRIPTION</li>
+<li>&Eacute;COLE</li>
+<li>PROGRAMMES</li>
+<li>SERVICES</li>
+<li>VIE SCOLAIRE</li>
+<li>PARENTS</li>
+<li>SANT&Eacute; ET S&Eacute;CURIT&Eacute;</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div><iframe></iframe></div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&Eacute;COLE DES NAVIGATEURS</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<h2>&Eacute;cole en images</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Transport scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Calendrier scolaire</h2>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h2>Inscription</h2>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>DERNI&Egrave;RES NOUVELLES</h1>
+<div>
+<ul>
+<li>
+<div>
+<h4>La Colombie-Britannique lance un plan d&rsquo;action contre le racisme pour les &eacute;l&egrave;ves de la maternelle &agrave; la 12e ann&eacute;e</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>27 JAN, 2023</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>Portes ouvertes &ndash; mercredi 8 f&eacute;vrier 2023 &agrave; 18h00</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>26 JAN, 2023</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+<li>
+<div>
+<h4>D&eacute;fi francophonie du CSF &ndash; Hiver 2022 !</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>15 D&Eacute;C, 2022</time>&nbsp;PAR&nbsp;N_CAMARGOCORONADO</div>
+</div>
+</li>
+<li>
+<div>
+<h4>En cas d&rsquo;absence &ndash; SafeArrival</h4>
+<div>PUBLI&Eacute; LE&nbsp;<time>22 AO&Ucirc;T, 2022</time>&nbsp;PAR&nbsp;SANDRINE LEGAY</div>
+</div>
+</li>
+</ul>
+</div>
+<div>Voir plus de nouvelles</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<h1>&Eacute;V&Egrave;NEMENTS &Agrave; VENIR</h1>
+<div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<th>JUIN 2023</th>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN15</abbr></div>
+</td>
+<td>
+<div>
+<h4>SORTIE &Agrave; LA PLAGE (DATE PROVISOIRE)</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN16</abbr></div>
+</td>
+<td>
+<div>
+<h4>TH&Eacute; DES B&Eacute;N&Eacute;VOLES</h4>
+</div>
+<div>&nbsp;13:00 -</div>
+<div>&nbsp;14:30 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN22</abbr></div>
+</td>
+<td>
+<div>
+<h4>GRADUATION DES 7E ANN&Eacute;E</h4>
+</div>
+<div>&nbsp;13:30 -</div>
+<div>&nbsp;15:00 &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td>
+<div><abbr>JUIN26</abbr></div>
+</td>
+<td>
+<div>
+<h4>JOURN&Eacute;E SPORTIVE</h4>
+</div>
+<div>all day</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>Voir plus d&rsquo;&eacute;v&egrave;nements</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h1>&nbsp;VIE SCOLAIRE</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h2>L&rsquo;&eacute;cole des Navigateurs fait partie du Conseil scolaire francophone qui offre une &eacute;ducation de qualit&eacute;, en fran&ccedil;ais, &agrave; travers toute la province via ses 47 &eacute;coles publiques francophones.</h2>
+</div>
+</div>
+</div>
+<div>Inscription</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<h4>&Eacute;COLE DES NAVIGATEURS</h4>
+<p>Accueillant des &eacute;l&egrave;ves de la&nbsp;maternelle &agrave; la 7<em>&egrave;me</em>, l&rsquo;&eacute;cole des Navigateurs s&rsquo;engage &agrave; d&eacute;velopper l&rsquo;identit&eacute; culturelle des &eacute;l&egrave;ves ainsi qu&rsquo;&agrave; promouvoir le d&eacute;veloppement d&rsquo;une communaut&eacute; francophone.&nbsp;Pour y arriver, elle offre une &eacute;ducation publique francophone d&rsquo;excellence qui favorise la ma&icirc;trise de la langue fran&ccedil;aise, tout en offrant aux jeunes la possibilit&eacute; de ma&icirc;triser une deuxi&egrave;me langue; la langue anglaise.</p>
+</div>
+<div>
+<h4>CONTACTEZ-NOUS</h4>
+<p>8580 Kilgour Place<br/>Richmond (C.-B.) V7C 3R1</p>
+<p>Tel: 604-295-4056</p>
+<p>Direction :&nbsp;Sandrine Legay</p>
+</div>
+<div>
+<h4>LIENS RAPIDES</h4>
+<div>
+<ul>
+<li>Inscription</li>
+<li>Horaires</li>
+<li>Calendrier scolaire</li>
+<li>Contactez-nous</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<ul>
+<li>Administration du site&nbsp;&nbsp;- &nbsp;</li>
+<li>
+<p>&copy; 2023 navigateurs. Tous droits r&eacute;serv&eacute;s.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+663--57435--1249---------------------------------------466--31668--7953
+<s> </w>
+<v> </n>
+<!--This has polling place link and the written material -->
+<y> </k>
+<!-- search parameters -->
+<r> </q>
+<g> </f>
+<!--This has polling place link and the written material -->
+<p> </x>
+<!-- search parameters -->
+<table style="width: 100%;" border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<m style="height: 15px; width: 3.00926%;"> </r>
+<o style="height: 15px; width: 8.91204%;"> </h>
+<j style="height: 15px; width: 19.6759%;"> </q>
+<z style="width: 1.04167%; height: 15px;" align="left" valign="top"> </td
+<x style="height: 15px; width: 1.27315%;"> </j>
+<g style="height: 15px; width: 9.83796%;"> </i>
+<z style="height: 15px; width: 15.8565%;"> </r>
+<t style="width: 3.00926%; height: 15px;" align="left" valign="top"> </s>
+<o style="height: 15px; width: 37.1528%;"> </c>
+
+<tr>
+<r style="height: 15px; width: 3.00926%;"> </l>
+<w class="TitleMessageTableStyle" style="height: 15px; width: 56.5972%;" colspan="6">Voter Information</g>
+<s class="TitleMessageTableStyle" style="height: 15px; width: 3.00926%;" colspan="1" align="left" valign="top"> </g>
+<r style="height: 15px; width: 37.1528%;"> </s>
+
+<tr style="height: 2px;">
+<p style="width: 3.00926%;" valign="top"> </f>
+<s class="GenLabelBold" style="width: 8.91204%;" valign="top"> </b>
+<x style="width: 19.6759%;" valign="top"> </e>
+<t style="width: 1.04167%;" align="left" valign="top"> </y>
+<q style="width: 1.27315%;" valign="top"> </a>
+<t class="GenLabelBold" style="width: 9.83796%;" valign="top"> </o>
+<f style="width: 15.8565%;" valign="top"> </w>
+<h style="width: 3.00926%;" align="left" valign="top"> </p>
+<f style="width: 37.1528%;" valign="top"> </v>
+
+<tr>
+<t style="width: 3.00926%;" valign="top"> </t>
+<s class="GenLabelBold" style="width: 8.91204%;" valign="top"> </e>
+<m style="width: 19.6759%;" valign="top" nowrap="nowrap"> </e>
+<v style="width: 1.04167%;" align="left" valign="top"> </q>
+<i style="width: 1.27315%;" valign="top"> </p>
+<z class="GenLabelBold" style="width: 9.83796%;" valign=""> </d>
+<z style="width: 15.8565%;" valign="top" nowrap="nowrap"> </d>
+<k style="width: 3.00926%;" align="left" valign="top"> </k>
+<l style="width: 37.1528%;" valign="top"> </q>
+
+<tr>
+<g style="width: 3.00926%; height: 12px;" valign="top"> </i>
+<h class="GenLabelBold" style="width: 8.91204%; height: 12px;" valign="top"> </m>
+<w style="width: 19.6759%; height: 12px;" valign="top"> </h>
+<l style="width: 1.04167%; height: 12px;" align="left" valign="top"> </o>
+<o style="width: 1.27315%; height: 12px;" valign="top"> </c>
+<r class="GenLabelBold" style="width: 9.83796%; height: 12px;" valign="top"> </b>
+<h style="width: 15.8565%; height: 12px;" valign="top"> </s>
+<w style="width: 3.00926%; height: 12px;" align="left" valign="top"> </z>
+<h style="height: 12px; width: 37.1528%;" valign="top"> </d>
+
+<tr>
+<u style="width: 3.00926%; height: 43px;" valign="top"> </h>
+<e class="GenLabelBold" style="width: 8.91204%; height: 43px;" valign="top"> </u>
+<k style="width: 19.6759%; height: 43px;" valign="top" nowrap="nowrap"> </c>
+<p style="width: 1.04167%; height: 43px;" align="left" valign="top"> </q>
+<t style="width: 1.27315%; height: 43px;" valign="top"> </c>
+<j class="GenLabelBold" style="width: 9.83796%; height: 43px;" valign="top"> </q>
+<r style="width: 15.8565%; height: 43px;" valign="top" nowrap="nowrap"> </o>
+<z style="width: 3.00926%; height: 43px;" align="left" valign="top"> </u>
+<w style="height: 43px; width: 37.1528%;" valign="top"> </o>
+
+<tr>
+<{a_1} style="width: 3.00926%; height: 24px;" valign="top"> </u>
+<{a_1} class="GenLabelBold" style="width: 8.91204%; height: 24px;" valign="top"> </a>
+<{a_1} style="width: 19.6759%; height: 24px;" valign="top" nowrap="nowrap"> </k>
+<{a_1} style="width: 1.04167%; height: 24px;" align="left" valign="top"> </e>
+<{a_1} style="height: 24px; width: 1.27315%;"> </i>
+<{a_1} style="height: 24px; width: 9.83796%;"> </v>
+<{a_1} style="height: 24px; width: 58.3333%;" colspan="5" valign="top"> </s>
+
+<tr style="height: 15px;">
+<l style="width: 3.00926%;"> </t>
+
+<tr>
+<e style="width: 3.00926%;"> </l>
+<g style="width: 56.5972%;" colspan="6" align="center"><br /> </a>
+<x style="width: 3.00926%;" colspan="1" align="left" valign="top"> </r>
+<l style="width: 37.1528%;"> </j>
+
+</tbody>
+<tr>
+<z style="width: 8px;"> </z>
+<y width="15%"> </i>
+<t style="width: 186px;"> </k>
+<i width="2%"> </c>
+<b width="11%"> </f>
+<n style="width: 142px;"> </c>
+<q width="33%"> </x>
+
+<tr>
+<w style="width: 8px;"> </n>
+<j colspan="6"> </s>
+<w style="width: 8px;"> </j>
+
+</tbody>
+</table>
+<!-- end of code-->
+<table id="GridViewTable" border="0px" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<o style="width: 8px;"> </u>
+<i style="width: 593px;">
+<div> </div>
+</f>
+
+</tbody>
+</table>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+886--70148--5766---------------------------------------877--03094--1438
+
+----2ia0ulbr;{6,a}----bgmx9kcu;{6,a}
+
+<p>Company: Company</p>
+<p>Bonjour Hugo nous n'envoyons plus de courriels car nous tenons à ce que les chauffeurs se connectent sur le site, regardent les noms des passagers et déclarent le départ complet. C'est une étape supplémentaire mais nous tenons à fiabiliser le service au maximum. Merci pour votre commentaire Myriam Agente AmigoExpress</p>
+
+
+<p>Xfinity Forum Archive...</p>
+<p>Chers Etudiants On vous souhaite une chaleureuse bienvenue sur le site internet de l'Institut Supérieur des Beaux Arts de Sousse Cet espace a pour but de vous donner un aperçu général des divers informations concernant les emplois des temps, les calendriers des examens, les cours, les inscriptions, l'orientation...</p>
+<p>Thank you very much for your order. I hope you enjoy this yellow sundress. I see you’re in southern California so you’ll have many chances to use it. We’re here if you need anything.</p>
+<p> </p>
+
+
+<p>Afin de confirmer votre inscription et recevoir r guli rement nos informations, nous vous invitons   cliquer sur le lien ci-dessous : </p>
+<p>Emplois du temps Formulaire Support de cours Activités extra-scolaire Services Pré-inscription master Résultats Téléchargement</p>
+<p>Content in this area has been identified as outdated or irrelevant.</p>
+
+
+<p> </p>
+<p> For further any further enquires regarding your regalia hire please contact Alison from Academic Dress Hire</p>
+
+<p>Post your questions in the Xfinity Community</p>
+<p>Thank you for your order! Your order has been successfully transmitted. </p>
+
+<p>Zipcode: Zipcode Thank for your order Previously ordered | Thank for your order Thank you - your order has been received. Your Graduation Coordinator will be in touch closer to graduation to let you know when and where to collect your regalia.</p>
+<p>Télécharger notre Charte des bénévoles.</p>
+
+ 
+<p>Street: Street</p>
+
+<p> OUVERTURE DES INSCRIPTIONS BÉNÉVOLES !!! Nous sommes toujours en recherche de nouveaux bénévoles, alors n’hésitez pas a vous inscrire, nous vous offrirons un t-shirt Chouette Nature, les subsistances, l’accès au bar et un emplacement de tente, et l’occasion de vivre une expérience formidable, dans une très bonne ambiance!</p>
+
+ 
+<p> Ordered Publications in printed form publications</p>
+<p>Dear (write in the buyer’s ID or name),</p>
+<p>Content in this area has been identified as outdated or irrelevant.</p>
+
+<p>voir de plus :</p>
+<p>Post your questions in the Xfinity Community</p>
+
+<p>RENDEZ-VOUS MARDI & MERCREDI (muni de votre carte étudiante, salle Maurice Cozian autour du patio droit-lettres pour l'UFR Sciences Humaines)</p>
+
+<p>Last name: Last name</p>
+
+
+<p>N'hésitez pas à solliciter les personnels pour de plus amples renseignements.</p>
+<p>Zipcode: Zipcode Thank for your order Previously ordered | Thank for your order Thank you - your order has been received. Your Graduation Coordinator will be in touch closer to graduation to let you know when and where to collect your regalia.</p>
+
+<p>Thank you for your eBay purchase! Once you receive your item, please remember to leave positive feedback! I will do the same for you in return.</p>
+<p>So far, nothing has ever come from these "random" emails. Doesn't mean they won't someday. Bottom line, treat it as if it's real and call to get an explanation. </p>
+ZPEFEXASITHYWC1PTiHTlHXLDJGWELAYDHUM5gS6pEMtzsBmfarQigBrNPkoLNVzCDO6IYB336V86OQYI52BFYDnjBhRrMAfAlsjRQBY3SvSnrYaeIQ9347g9xci72mco534nu9zxttwniuu8bmjmHPfwV4zldo5rvwlkvo6enf0
+
+--670783-3661736-d92085dfa80068d8e895be98f7a6abfe--

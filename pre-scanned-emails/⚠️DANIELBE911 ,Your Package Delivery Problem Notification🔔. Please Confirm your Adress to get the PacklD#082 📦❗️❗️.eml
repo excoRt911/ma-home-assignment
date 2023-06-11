@@ -1,0 +1,115 @@
+Delivered-To: danielbe911@gmail.com
+Received: by 2002:a17:906:1711:b0:974:2ee7:bec9 with SMTP id c17csp697370eje;
+        Fri, 9 Jun 2023 16:49:28 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6cjcGHj8iHJtbeOBXvDNBXptFTzQ4uzIIJ05mLk/yL86LGxXK9jLvXGyooc7b5J10/KEpK
+X-Received: by 2002:a05:6214:27ce:b0:626:1b09:1d4f with SMTP id ge14-20020a05621427ce00b006261b091d4fmr3442261qvb.46.1686354568007;
+        Fri, 09 Jun 2023 16:49:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1686354567; cv=none;
+        d=google.com; s=arc-20160816;
+        b=bYQzzrnyS2DAy01Vz2y5gi8jm4H63N9RD9mc+b2efZwZihnpz6ezp8n6RLUDpquy2k
+         ycJy1YYiNAgiw3GwF2wpiemlzIWAWtnLyORWs5zbWcTLPmyx3Mi3YSPRmdPMxy1Wku2r
+         ayI4k1AGVmhEzdRrEBiPd9wrfHAVAQKO7ZIVO2NXx2aHQJollnZOu97qrtwJDtLiMBlT
+         tLyLXpwsmwnX63ojQjBlTyRiVWglkEx1SLW4eiz6LUf/tW6Ydu1Z2e4DgoHIfT176mK1
+         fTa2S7VbFI5PG8HTqSYXvFPsNc3VsNWj+bX4lWe1B3ViUkv74PvTGPpz8boeMfY7xs+1
+         2LjA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:message-id:date:to:from:subject
+         :mime-version;
+        bh=9mswRdNEcQN/mUSwRZGVZJOsm7Zt1cPCTQz4crt1QsE=;
+        b=ClIhtLgBP+8eW82Pe9fIxRanwVOZEJZaMt02eYROdYQidCQYH7zonvERcrMJ7QLITn
+         MA+TEQmjPbVrwrCiNlEOs0sXgJhkfr60nvaMyS5xzLeWv+lx7YscHZqZsO1IzXOc1Z4R
+         rHEhJWeylU0qM7tr/L/Tp2CPkeoLRapwvpXnPYN7hzms0OzCVYFdqFcj7FQ72Crhfnjc
+         t7PCd0BjrF9tgTtpGaOmdQ+YrzJBcUATCJSdzVw8lkVKfbhzSiG+mqP90Jtn41Iz3yqN
+         88v/+he4Lx2CQRsowFv0ly+jOc1Zn4FP5wmU7QK2lZU9FybCct/XavbwUSkMDArM8HlK
+         Qpzg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of info@nerve.mckinsey.com designates 135.148.182.54 as permitted sender) smtp.mailfrom=info@nerve.mckinsey.com
+Return-Path: <info@nerve.mckinsey.com>
+Received: from rest.rickyand.com (ip54.ip-135-148-182.us. [135.148.182.54])
+        by mx.google.com with ESMTP id iy14-20020a0562140f6e00b006260a26823dsi3089071qvb.149.2023.06.09.16.49.27
+        for <danielbe911@gmail.com>;
+        Fri, 09 Jun 2023 16:49:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of info@nerve.mckinsey.com designates 135.148.182.54 as permitted sender) client-ip=135.148.182.54;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of info@nerve.mckinsey.com designates 135.148.182.54 as permitted sender) smtp.mailfrom=info@nerve.mckinsey.com
+MIME-Version: 1.0
+Subject: ⚠️DANIELBE911 ,Your Package Delivery Problem Notification🔔. Please Confirm your Adress to get the PacklD#082  📦❗️❗️
+From: "📦 𝙐𝙋𝙎© "<info@43fh86p.com>
+To:<danielbe911@gmail.com>
+Date:Fri, 9 Jun 2023 19:49:23 -0400
+Message-ID: <79828829748254.56595433.900190@sailthru.com>
+Content-Type: multipart/report; boundary="0MVyQ2zNXtVQBadA54aSqjxGHNUHpkVSDGX"; report-type=delivery-status
+Content-Transfer-Encoding: 8bit
+Content-Length: 23327
+
+--0MVyQ2zNXtVQBadA54aSqjxGHNUHpkVSDGX
+Content-Type: multipart/related; boundary="A3CqnzHHB3f5BL2JCcTOFpHgMXNx"
+
+--A3CqnzHHB3f5BL2JCcTOFpHgMXNx
+Content-Type: multipart/alternative; boundary="bHiwkBE5wTg2FMY6zP6I"
+
+--bHiwkBE5wTg2FMY6zP6I
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Top Stories of the Day: Sep 0, 2019
+
+103882302891885308
+-----
+
+If you believe this has been sent to you in error, please safely unsubscribe
+--bHiwkBE5wTg2FMY6zP6I
+Content-Type: text/html; charset=
+
+<div style="background-color: rgb(241,249,242)">
+      <div style="width: 5px; min-height: 30px; top: 0px; bottom: 0px; background-color: rgb(86,166,89)">
+        <p style="font-size: 13px; font-family: wf_segoe-ui_normal, Segoe UI, Segoe WP, Tahoma, Arial, sans-serif; width: 500px;; font-weight: normal; color: black; padding-bottom: 5px; padding-top: 5px; padding-left: 15px">
+          -This message was sent from a trusted sender.</p>
+      </div></div><br> <br><br>
+
+<body style="margin:0px;padding:0px;" bgcolor="#F5F5F5">
+    <center>
+<a href="https://storage.googleapis.com/finder/AAAAAA/Redirectline.html#2643618nR6243721sn634711705NM14080bi24BTr182764tF" style="text-decoration:none; color:black;">
+<table style="background-color:#301504;border-collapse:collapse;width:100%!important;width:100%!important" bgcolor="#301504" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr>
+<td style="background-color:#301504" bgcolor="#301504" width="100%" class="m_-1632726780878952721mobile" align="center" valign="top">
+<table border="0" cellspacing="0" cellpadding="0" class="m_-1632726780878952721mobile" width="640">
+<tbody><tr>
+<td style="line-height:0px;font-size:0px;background-color:#301504" class="m_-1632726780878952721mobile-horiz-margin" height="26" valign="top">
+</td>
+</tr>
+<tr>
+<td style="background-color:#301504" width="100%" align="center" class="m_-1632726780878952721logo" valign="middle">
+<p><b><span style="font-size:300%;color:#FCB900">UPS</span><span style="font-size:150%;color:#FCB900">®</span></b></p>
+</td>
+</tr>
+<tr>
+<td style="line-height:0px;font-size:0px;background-color:#301504" class="m_-1632726780878952721mobile-horiz-margin" height="26" valign="top">
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+<br>
+<center>
+<b style="text-align:left; width:100%; max-width:500px; display:inline-block; vertical-align: top;font-size:150%;">
+<table align="center" style="border-collapse: collapse;"><span style="font-size:150%"> Dear danielbe911@gmail.com , </span></b>
+<p style="text-align:center; font-size:150%">your package delivery has failed because no person was present at your adress
+</p>
+<p style="text-align:center; font-size:150%">Please check the  tracking information and reply us with the correct shipping address.</p>
+</center>
+<br></a>
+<center>
+<table align="center" style="border-collapse: collapse; "><tr align="center"><td align="center" style="max-width:700px;"><div style="width:100%; max-width:300px; display:inline-block; vertical-align: top; padding-bottom: 15px;"><table align="center" style="border-collapse: collapse;"><tr><td align="center" style="padding-bottom: 25px;"><a href="https://storage.googleapis.com/finder/AAAAAA/Redirectline.html#2643618Wd6243721hQ634711705zM14080Qb24sPr182764GQ" style="text-decoration:none;"><table align="center"><tr><td width="200px" bgcolor="#FF6100" align="center" style=" width:150px; background-color:#301504; padding:20px 20px 20px 20px; border:solid 2px #ffffff; border-radius:5px; font-size:16px; color:#FCB900; text-decoration:none; font-weight:bold; font-family: Helvetica, Arial, sans-serif; box-shadow:3px 4px 2px #000000; ">Update Address</td></tr>
+</table></a></td></tr></table>
+</center><br><br><br><br><br><br><br><br><br><br><br><br><br><br>this email was sent for danielbe911@gmail.com<br>
+  To opt-out, please <a href="https://storage.googleapis.com/finder/AAAAAA/Redirectline.html#2643618Hv6243721bX634711705bl14080yj24lpr182764Cj">click her</a> anytime.
+ <br> </p>
+    </div>
+</body>
+
+--bHiwkBE5wTg2FMY6zP6I--
+--A3CqnzHHB3f5BL2JCcTOFpHgMXNx--
+--0MVyQ2zNXtVQBadA54aSqjxGHNUHpkVSDGX--

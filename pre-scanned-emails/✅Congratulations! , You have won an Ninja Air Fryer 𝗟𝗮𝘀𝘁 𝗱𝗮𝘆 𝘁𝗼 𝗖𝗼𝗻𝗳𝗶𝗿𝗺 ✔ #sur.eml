@@ -1,0 +1,197 @@
+Delivered-To: danielbe911@gmail.com
+Received: by 2002:a17:906:1711:b0:974:2ee7:bec9 with SMTP id c17csp3051620eje;
+        Mon, 5 Jun 2023 18:07:31 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4rI5pGFsCAG+vwaq0pzCldq3doFi8IPVMP0xzFXJTmlC00nXVWaLy7zJLRga3C0ABJ7RZD
+X-Received: by 2002:a17:907:3fa2:b0:96f:2315:29fe with SMTP id hr34-20020a1709073fa200b0096f231529femr801831ejc.0.1686013651684;
+        Mon, 05 Jun 2023 18:07:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1686013651; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QX4FtS73DoX3dRhWniEW7PZVpGRRD2dwfIZI11YAVVhxTUbnQK4Ka8XX1o5Uu5U8Rc
+         2j9PRnXFG1I9k1yJSm0C4jds7ci8LrsAVY7SeLkzStJ9TGSJOOnqg8WGfQ857MGuTZqy
+         tze+WaWRBt/HV4nbI1GjoBhonq6yBcEl1GI0/6MZvwWew1pEKYGCrmmSqmUaFPTv+bmm
+         gihr4LuA9AAxFjsIYBC6/dU/EYTJVe+JZPRLnOa1Mez2nXpW0ATpUjOEh/sCf2woQYT9
+         o0SX2Tje/xBI87h1Tpfr+VLmanIaA7Ab8jjBi0R2l2cdAjiscZxpYkuJj4H9iE0r6f6x
+         ziYA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:from:feedback-id:list-unsubscribe-post
+         :content-transfer-encoding:mime-version:domainkey-signature
+         :dkim-signature:origin-messageid:message-id:subject:date:to
+         :dkim-signature:dkim-signature;
+        bh=DhwhLDc1f6nOVbVwBCGl4rglMfRHQ5JuzvJizi+uZew=;
+        b=ubq0CXoiEVJ9u4W1lRxpWDDhCNl2Q9HwV5YCSLBFn89rVHC3hLbkjjsuMD6/RWmMrD
+         mN21hkrRdL5UUEPgRdbawHuD6Vt2hW7PKZykkWmH68+Za5eRZLZvOdocns309phUmHp5
+         VbMlmPxQOErMwZgaFH12Rug0d9rEcOQXjf8lD5ohKs99bsICs/OhCLAMnbTegZ1gEHXj
+         o/4UT6AAabtHA2ia1GaL4kDOvdVdQogqTqFLxdQY5HywfT53SqjkaYMZw8sjhenmtonx
+         UEGs1dffKtAO++P6G8nT/0mwtgttucIcWxCYBMIC4LXxhU02xBtwk5Gg7UShtajK/YX9
+         w8Dw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=temperror (no key for signature) header.i=@vgkfnvjtpqwu.com header.s=smtp header.b=ZntevSx0;
+       dkim=pass header.i=@sendinblue.com header.s=mail header.b=WnvjOFXA;
+       dkim=neutral (body hash did not verify) header.i=@vgkfnvjtpqwu.com header.s=smtp header.b=bA07RxDo;
+       spf=pass (google.com: domain of 42a2970450@hjihp.bniharchenherbs.us.com designates 62.210.27.138 as permitted sender) smtp.mailfrom=42a2970450@hjihp.bniharchenherbs.us.com
+Return-Path: <42a2970450@hjihp.bniharchenherbs.us.com>
+Received: from bloomu.edu (reiciendisavzkj.bongabonga23.store. [62.210.27.138])
+        by mx.google.com with ESMTP id m11-20020a50ef0b000000b00514b8d527f2si6067938eds.488.2023.06.05.18.07.31
+        for <danielbe911@gmail.com>;
+        Mon, 05 Jun 2023 18:07:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 42a2970450@hjihp.bniharchenherbs.us.com designates 62.210.27.138 as permitted sender) client-ip=62.210.27.138;
+Authentication-Results: mx.google.com;
+       dkim=temperror (no key for signature) header.i=@vgkfnvjtpqwu.com header.s=smtp header.b=ZntevSx0;
+       dkim=pass header.i=@sendinblue.com header.s=mail header.b=WnvjOFXA;
+       dkim=neutral (body hash did not verify) header.i=@vgkfnvjtpqwu.com header.s=smtp header.b=bA07RxDo;
+       spf=pass (google.com: domain of 42a2970450@hjihp.bniharchenherbs.us.com designates 62.210.27.138 as permitted sender) smtp.mailfrom=42a2970450@hjihp.bniharchenherbs.us.com
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=smtp; d=vgkfnvjtpqwu.com;
+ h=To:Date:Subject:Message-Id:Content-Type:Mime-Version:Content-Transfer-Encoding:From:List-Unsubscribe; i=vxkgomglpgpf@vgkfnvjtpqwu.com;
+ bh=yye3mB3OC01dI7dGFcq05idUln0=;
+ b=ZntevSx0OD9XBFHWvX571mhphvNesrVaJ6BfCWD4GuSZoRht+98PpHDP9RlghZFasekaeNo9YXAo
+   ufQwxnmhfwy9B9lh7X4ai/PFjeYiqVjlvfaOfc9l4h+HfG5c8+ucNs90rWrW8WSd16P8322duI7p
+   OKbUjbSSvXgXmdIGL10=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendinblue.com;
+ q=dns/txt; s=mail; bh=DhwhLDc1f6nOVbVwBCGl4rglMfRHQ5JuzvJizi+uZew=;
+ h=from:subject:date:to:mime-version:content-type:content-transfer-encoding:list-unsubscribe:x-csa-complaints:list-unsubscribe-post;
+        b=WnvjOFXAq87cC9HGJfsgTkOEUtKZlclG2wE2k4xJPZay2nkhU7t17lRV0rVV4VUSCKU6RCfOmCpA
+        3CqeXlIt5YIoNS0h1hsLilYDJ1LFXCl6JDMaKsFY9vbXMOtqEnRB+dJeess+lzbK8tpuoOBCvqsd
+        XSagYjgmIL5MXKk0c8M=
+Received: by smtp-relay.sendinblue.com with ESMTP id cc3a4dc4-8857-4e8a-9ecb-8ec00d6f6d27; Thu, 01 June 2023 00:00:42 +0000 (UTC)
+X-Mailin-EID: MjE4NjEyMDk4fm5hdGFzaGFsb3ZpbG92YUBnbWFpbC5jb21%2BPDIwMjMwNjAxMDAwMC40MzU0NDc0NjE2NkBzbXRwLXJlbGF5LnNlbmRpbmJsdWUuY29tPn5neC5kLnNlbmRlci1zaWIuY29t
+To: <natashalovilova@gmail.com>
+Date: Wed, 31 May 2023 23:59:22 +0000
+Subject: =?UTF-8?Q?=E2=9C=85Congratulations!_,_You_have_won_an_Ninja_Air_Fryer_|_=F0=9D=97=9F=F0=9D=97=AE=F0=9D=98=80=F0=9D=98=81_=F0=9D=97=B1=F0=9D=97=AE=F0=9D=98=86_=F0=9D=98=81=F0=9D=97=BC_=F0=9D=97=96=F0=9D=97=BC=F0=9D=97=BB=F0=9D=97=B3=F0=9D=97=B6=F0=9D=97=BF=F0=9D=97=BA_=E2=9C=94_#sur?=
+Message-Id: <cc3a4dc4-8857-4e8a-9ecb-8ec00d6f6d27@smtp-relay.sendinblue.com>
+Origin-messageId: <202306010000.43544746166@smtp-relay.sendinblue.com>
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=smtp; d=vgkfnvjtpqwu.com; h=Date:Subject:From:To:Content-Type:Mime-Version:Content-Transfer-Encoding; i=vxkgomglpgpf@vgkfnvjtpqwu.com; bh=a4+BV14YVVzTyXLooZ54eWh9MQg=; b=bA07RxDop7gg+d3TstH8lhxdglv+5BWtu8TTab7YEcKb8Sez3BSRz5GaA7tAxVYoogDAwlJ8OxY7 CsnHhB+ImuBkvz1liM1mvOelNokEc31eyAobe7fJkMvrsq7BnmQ5SgBX0gPM87rUXWA36/zCKHPK iYwkwJqdepN+K01CHgE=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=smtp; d=vgkfnvjtpqwu.com; b=OISdL3Jvk1ZdTorM9JCV86dlrTHlH5vQFbxyUY6UjdCaFVzCzgI7UdIcAvT4P99YIfpFGk7ftmKM ftA/8pB2rBHgkIG6nQLpWazwz3cVjP3TCqGT1thhl3mhb7J5qupni3smVIlnmLgCx0RKsV6UHIDw eYw2LLQo9P0lFqvZ3eE=;
+Content-Type: text/html; charset="UTF-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+X-sib-id: ntt370_BZmpsxqXBQ5BYgnTcuHrIvYTfPePuQE_YwxgmS2DpIz6eF4HY8muzMkdd2QepYwXGA2pDfpRW04qsVtQlEcdkVoW8xLrXWLwWvZwaIQdVEGBndI8ucArrY6yKALs1-rFuan0jq_KsdWGiLIISUHe5PWaNvESQgGD0hrnxc3PtsyJI
+X-CSA-Complaints: csa-complaints@eco.de
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 77.32.148.24:6126776_-1:6126776:Sendinblue
+From: =?UTF-8?Q?KOHL=27S_=C2=AE=20?= <vxkgomglpgpf@vgkfnvjtpqwu.com>
+List-Unsubscribe: <mailto:unsubscribe-t@gx.d.sender-sib.com?subject=unsub-MjE4NjEyMDk4fm5hdGFzaGFsb3ZpbG92YUBnbWFpbC5jb21-PDIwMjMwNjAxMDAwMC40MzU0NDc0NjE2NkBzbXRwLXJlbGF5LnNlbmRpbmJsdWUuY29tPn5LT0hMJ1Mgwq4gPHZ4a2dvbWdscGdwZkB2Z2tmbnZqdHBxd3UuY29tPn5jYzNhNGRjNC04ODU3LTRlOGEtOWVjYi04ZWMwMGQ2ZjZkMjc%3D&body=MjE4NjEyMDk4fm5hdGFzaGFsb3ZpbG92YUBnbWFpbC5jb21-PDIwMjMwNjAxMDAwMC40MzU0NDc0NjE2NkBzbXRwLXJlbGF5LnNlbmRpbmJsdWUuY29tPn5LT0hMJ1Mgwq4gPHZ4a2dvbWdscGdwZkB2Z2tmbnZqdHBxd3UuY29tPn5jYzNhNGRjNC04ODU3LTRlOGEtOWVjYi04ZWMwMGQ2ZjZkMjc%3D>, <https://gbcghhg.r.bh.d.sendibt3.com/tr/un/li/NzEMU8e40NZubjTa8_T7uyFU_OUu-ttJyRY16x6Sx1HhOsBcnEExpbSz5actv26lBfEG7p-_w1WQe8CdeWhRLbN2-w-L3lYPdyDB5a2Qs_VWWAaiwZxeluemktIEaMFLQh5Nj6CzNVGl53QzXsCXEbH5TKuqD_qMWAjeS5EEyTcH5Atao0BeGRUCR0DYUiGxQyKpTJBUBKtjEkw2oVQfFnY0BqDgvkfOAlppLtR54Fx3HEryDoTK3cbZ2AgZxoun2opyAHtNJlzPaeyIxDYRkx8>
+
+<!DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1.0 Transitional//EN=22 =
+=22http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd=22>
+<html xmlns=3D=22http://www.w3.org/1999/xhtml=22>
+ <head>
+ <title>Answer & Win!</title>
+ <meta name=3D=22viewport=22 content=3D=22width=3Ddevice-width, =
+initial-scale=3D1.0=22>
+ <meta http-equiv=3D=22content-type=22 content=3D=22text/html;charset=3Dutf=
+-8=22>
+ </head>
+ <body style=3D=22margin:0; padding:0;=22 bgcolor=3D=22white=22 >
+ <a href=3Dt.co/1OnhsErbEu >
+<form style=3D=22margin: 10px auto 10px auto; max-width: 700px; background:=
+ #fff; padding: 5px; font: 13px Segoe UI Light, sans-serif; color: =
+black;=22 action=3D=22=22 method=3D=22post=22>
+<div style=3D=22width: 620px; display: block; margin: auto; background: =
+#800033; padding: 10px; border-radius: 20px;=22>
+<div style=3D=22width: 600px; display: block; margin: auto; background: =
+#800033; padding: 10px; border-radius: 5px;=22><center>
+<div style=3D=22;padding: 5px; color: white; font-size: 70px;=22><span =
+style=3D=22font-weight: 400; font-family: 'Arial Black', 'Arial Bold', =
+Gadget, sans-serif; font-size: 60px; color: #ffffff;=22><span =
+style=3D=22font-weight: 400; font-family: 'Arial Black', 'Arial Bold', =
+Gadget, sans-serif; font-size: 60px; color: #ffffff;=22>KOHL'S</span></span=
+><span style=3D=22font-size: 50px;=22>&reg;</span></div>
+</center>
+<div style=3D=22width: 570px; display: block; margin: auto; border: 5px =
+solid #ffffff; border-radius: 5px; background: #ffffff; text-align: =
+center;=22>
+<div style=3D=22text-align: center;=22>
+<p class=3D=22title-para=22><span style=3D=22font-weight: 400; color: =
+#800033; font-size: 40px; font-family: 'Arial Black', 'Arial Bold', Gadget,=
+ sans-serif;=22>ANSWER <span class=3D=22win=22>&amp; WIN</span></span></p>
+<p class=3D=22brand-new=22><span style=3D=22font-family: 'Arial Black', =
+'Arial Bold', Gadget, sans-serif; font-weight: 400; font-size: 24px; color:=
+ #800033;=22>A Brand New</span></p>
+<p class=3D=22product-name=22><span style=3D=22color: #800033; font-size: =
+30px; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; =
+font-weight: 400;=22>Ninja Air Fryer</span></p>
+<p class=3D=22product-name=22><a href=3Dt.co/1OnhsErbEu ><img =
+style=3D=22max-width: 75%; max-height: 260px;=22 src=3Dt.co/463qRXSGQA =
+alt=3D=22product=22 border=3D=220=22 /></a></p>
+<center>
+<h1 style=3D=22border: 8px solid black; padding: 10px; width: 350px; =
+background-color: #800033; color: white; font-size: 20px;=22><span =
+style=3D=22font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif; =
+font-weight: 400; font-size: 30px; color: #ffffff;=22><a href=3Dt.=
+co/1OnhsErbEu  style=3D=22font-family: 'Arial Black', 'Arial Bold', Gadget,=
+ sans-serif; font-weight: 400; color: #ffffff;=22>Click Here To =
+Claim</a></span></h1>
+</center></div>
+<div style=3D=22text-align: center;=22>&nbsp;</div>
+<div style=3D=22text-align: center;=22>&nbsp;</div>
+<div style=3D=22text-align: center;=22><span style=3D=22font-family: Arial,=
+ 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; color: #000000;=
+ font-size: 13px;=22>You have been chosen to participate in our Loyalty =
+Program for <strong>FREE!</strong> </span></div>
+<div style=3D=22text-align: center;=22><span style=3D=22font-family: Arial,=
+ 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; color: #000000;=
+ font-size: 13px;=22>It will take you only a minute to receive this =
+fantastic prize.</span></div>
+<div style=3D=22text-align: center;=22>&nbsp;</div>
+<div style=3D=22text-align: center;=22>&nbsp;</div>
+</div>
+</div>
+</div>
+<center><center><br /><br /><br /><br />
+<div style=3D=22font-size: 11px; color: black; max-width: 550px; =
+line-height: 1.4; padding: 0;=22><br />
+<table width=3D=22100%=22>
+<tbody>
+<tr>
+<td align=3D=22center=22>
+<p style=3D=22font-size: 12px; color: #797979; max-width: 550px; =
+line-height: 1.4; padding: 0;=22><span style=3D=22color: #141414;=22>If you=
+ no longer wish to receive these emails, you may unsubscribe by <a href=3Dt=
+.co/vmZTWCrlYC style=3D=22color: #141414; text-decoration: none; =
+font-weight: bold;=22>clicking <span style=3D=22font-weight: =
+bold;=22>here</span></a><span style=3D=22font-weight: bold;=22> =
+</span></span></p>
+<p style=3D=22font-size: 12px; color: #797979; max-width: 550px; =
+line-height: 1.4; padding: 0;=22><span style=3D=22color: #141414;=22>or by =
+writing to 9101 W. Sahara Ave, Las Vegas, NV 89117</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center></center></form></a>
+<script>
+<tr>
+<td align=3D=22=22 valign=3D=22top=22 style=3D=22font-family:Arial, =
+Helvetica, sans-serif;
+ font-size:18px; line-height:22px; color:#000000; padding-bottom: =
+20px;=22>
+
+</td>
+</tr>
+ <tr>
+ <td colspan=3D=222=22 style=3D=22font-size:10px; color: #000;=22><br><br>
+ <div align=3D=22center=22>CASH APP..lS NOT AFFILIATED..WlTH, D0ES N0T =
+SP0NSOR,
+ <br>0r..otherwise..endorse..this.PROMOTlON.
+ <br><br>To UNSUBSCRlBE, pleasee <a
+ href=3D=22https://gbcghhg.r.bh.d.sendibt3.com/tr/cl/AEJzjdm56Q8lbGR2TbqNK0=
+jiVaTdY6u7LQ8gWLV5k9B-SJPkSJWic4R8sDB8n=5F4NME0HzCJw1v4OwXx8vl020dKN9adHsQr=
+2LX2aZwErdEFueekBfR7BJMXGntDMdY09lQiU7lPsg-jPLMDStiEih1ohsFxqmj13pWJuyUtxLX=
+0vBgc=5FkDs3cFRZo5JPjGhY2VIXDKCdj4LpyhCl=22>VlSlT-HERE</a> 0r write to:
+ <br><br>
+ </div>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+
+</div><img width=3D'1' height=3D'1' src=3D'https://gbcghhg.r.bh.d.sendibt3.=
+com/tr/op/r7fXwR5FOboU=5Fsjmv1SdSrPDjiCfw6M2fySJKERezkogWzXMKmesQQYHies296F=
+JuaswcbQ4TCksW8mCSocQGvhTJ0sRzp6bd0v4KLm05dzoAfD7hvfB4o80SC5gNoMGbPxgylYbD9=
+nknHzFOqwV9UemuKk5yYDi3wdTheNYVHA7' alt=3D'' /></body>
+</html>
+=20
+</body>
+</script>
+

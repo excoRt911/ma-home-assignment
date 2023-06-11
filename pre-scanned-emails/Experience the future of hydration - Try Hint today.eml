@@ -1,0 +1,171 @@
+Delivered-To: danielbe911@gmail.com
+Received: by 2002:a17:906:1711:b0:974:2ee7:bec9 with SMTP id c17csp435780eje;
+        Fri, 9 Jun 2023 08:03:50 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4qGEniRQ+Doql0njqFyaSvuJyuBrlP8uXEk/3idNvkwQXh1XSnTI3KMekH1zAczy4g+bBI
+X-Received: by 2002:aa7:d48a:0:b0:516:2fa6:74ef with SMTP id b10-20020aa7d48a000000b005162fa674efmr1468694edr.14.1686323030238;
+        Fri, 09 Jun 2023 08:03:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1686323030; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zCkifdB0NxUf6gud0xI9OImzZzcvYtWjAWdfjqQC/zbEb4mm59w/P8/Wy5nGcS/G9j
+         yRLxa0MnxukOwVcJVqlQFGr0kIf+rDwP9Mq2IqvU61wwGTeGQLJKsebMkmBxEVTNgA0J
+         hTLhzTswOXMNiqGT7WjwAhAe5TctVQlB7yC5ZdVaM/T5vuuw/C0O+xWAfg/BXg2bGH4B
+         ZZ/MmplGQW2BsOBp29G9ibKL0wZtgcVJrQXz45XkBjU+gJcwhkErhPL1xozgCXB2l19q
+         pdwp5PR0ubkT5MJ137H9lWHpNXNXkpO+BaRbOmVdnYHB03KXczKtinhAy3/g2Df//OrS
+         YmsA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-transfer-encoding:subject:to:from:message-id
+         :date:dkim-signature;
+        bh=kfBUYfQEbB4P8yEv+LJzhzS6LiWHJ3LtiTVML8QW/Rg=;
+        b=HVA1rlxiAUaxFKoCMveW6ipnykOGagESC+pdCa3XPuW2ZyPomM5V6Sa6n6bMqpORPV
+         wbRDSChsfzjhXL1iR/URgcXN7NdbxOGBVzLIu/KAFvuQcqm9ArKDDjpwNhWdZMTkd1PW
+         WgYPyDKnLP3QN2a/p+0rwr2QiwhgHFK1f4KVDoMXY2Hlek0Z5q/3ZmbFs+riTutVMqZ5
+         oLTWJxBgeOAFgajOGCB1ejN4yPNOWlKEG4aeY3u2hVczfg4SI4wkbVNBqL0fwnSTqktY
+         Kg8iN4SCRmul3/ifMPyxTK2vneeJhbVJq/7NGNsw3SOmcCnV76OEcpW8YkjT62LBxB5J
+         aijw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ogseugo.tk header.s=defaultk header.b=V3FoiLf0;
+       spf=pass (google.com: domain of return.qtn4qtn2ejmz0ynwgtn00ym3eto4yjnzqjm@0nar25edb1utl6.r9097-34c3.ogseugo.tk designates 2a03:94e0:1733:10a:9097:34c3:0:1 as permitted sender) smtp.mailfrom=return.QTN4QTN2EjMz0yNwgTN00yM3ETO4YjNzQjM@0nar25edb1utl6.r9097-34c3.ogseugo.tk
+Return-Path: <return.QTN4QTN2EjMz0yNwgTN00yM3ETO4YjNzQjM@0nar25edb1utl6.r9097-34c3.ogseugo.tk>
+Received: from 2a0394e01733010a909734c300000001.ogseugo.tk (2a0394e01733010a909734c300000001.ogseugo.tk. [2a03:94e0:1733:10a:9097:34c3:0:1])
+        by mx.google.com with ESMTPS id p14-20020a05640210ce00b0050491f11f08si2568890edu.35.2023.06.09.08.03.45
+        for <danielbe911@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 09 Jun 2023 08:03:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of return.qtn4qtn2ejmz0ynwgtn00ym3eto4yjnzqjm@0nar25edb1utl6.r9097-34c3.ogseugo.tk designates 2a03:94e0:1733:10a:9097:34c3:0:1 as permitted sender) client-ip=2a03:94e0:1733:10a:9097:34c3:0:1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ogseugo.tk header.s=defaultk header.b=V3FoiLf0;
+       spf=pass (google.com: domain of return.qtn4qtn2ejmz0ynwgtn00ym3eto4yjnzqjm@0nar25edb1utl6.r9097-34c3.ogseugo.tk designates 2a03:94e0:1733:10a:9097:34c3:0:1 as permitted sender) smtp.mailfrom=return.QTN4QTN2EjMz0yNwgTN00yM3ETO4YjNzQjM@0nar25edb1utl6.r9097-34c3.ogseugo.tk
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ogseugo.tk;
+ q=dns/txt; s=defaultk; bh=kfBUYfQEbB4P8yEv+LJzhzS6LiWHJ3LtiTVML8QW/Rg=;
+ h=from:subject:to:mime-version:content-type:content-transfer-encoding;
+ b=V3FoiLf0ywuaijdmh9UezivOYO47oAsWIrvUUwy3dDLxb+FYDUKEFJ5jlWwZMwzeqJaA+FoT3YNu
+ JTziFfV2JKJy3E812sXSlxdlADP3DKS8/H2f3nhqNnDA26AX2q1lmJDJpNqeWRAxSrTwT0uaA9lt
+ vyLw9zl3Q4sx6VPV7zA=
+Date: Fri, 09 Jun 2023 14:59:33 GMT
+Message-Id: <dd9c7a7cfd4921a2147911db9bb9fd@naaprj0sc1080b.w9097-34c3.leikuu.club>
+From: "'Hint - Savor the Flavor'"
+ <mhnt45807@naaprj0sc1080b.w9097-34c3.leikuu.club>
+To: danielbe911@gmail.com
+Subject: Experience the future of hydration - Try Hint today
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content=3D=22text/html; charset=3Dutf-8=22 =
+http-equiv=3D=22Content-Type=22/>
+    <title></title>
+  </head>
+  <body style=3D=22font-size: 14px;margin:0;padding:0;width:100%;font-famil=
+y: Verdana, sans-serif;=22>
+    <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=220=22 =
+style=3D=22font-size: 14px;margin:0 auto;font-family: Verdana, =
+sans-serif;width:602px;=22 width=3D=22602=22>
+      <tbody>
+        <tr>
+          <td align=3D=22center=22 style=3D=22background-color: =
+#011942;font-family: Verdana, sans-serif;text-align: center;padding: 20px =
+0;=22><a href=3D=22http://naaprj0sc1080b.w9097-34c3.leikuu.=
+club/=3Fc1=3DcpgkBAIDIAAA8wywT4DrGNA&amp;c87=3Dwc2902210=22 =
+style=3D=22display: inline-block;text-decoration: none;color:#fff;font-size=
+: 1.3em; font-weight: bold;line-height: 1;padding: 0;margin: 0 0 16px =
+0;=22>Unlock Your Exclusive Offer:</a> <a href=3D=22http://naaprj0sc1080b.=
+w9097-34c3.leikuu.club/=3Fc1=3DcpgkBAIDIAAA8wywT4DrGNA&amp;c87=3Dqy4238026=
+=22 style=3D=22display: inline-block;text-decoration: =
+none;color:#fff;font-size: 1.1em; font-weight: normal;line-height: =
+1;padding: 0; margin: 0;=22>Click to Apply Promo Code <span =
+style=3D=22background-color: #db4555;font-size: 0.8em;padding: =
+6px;font-weight: bold;=22>EMAILONLYOFFER <font style=3D=22font-size: 0.=
+8em=22>&#9654;</font></span> at Checkout. </a>
+          </td>
+        </tr>
+        <tr>
+          <td align=3D=22left=22 style=3D=22width:100%;height:632px;backgro=
+und-color:#f9f3e9;background-repeat: no-repeat;background-image: =
+url(http://naaprj0sc1080b.w9097-34c3.leikuu.club//img-cpgkBAIDIAAA8wywT4DrG=
+NA/hintbg.jpg);vertical-align: top;text-align: left;=22>
+            <div style=3D=22padding-top: 156px;padding-left: 46px;=22>
+              <p style=3D=22padding: 10px 0;margin:0;color:#2d3a85;font-wei=
+ght: bold;font-size: 1.44em;line-height: 1;=22>New Customer Offer
+              </p>
+              <div style=3D=22height:130px;width:100%;=22><a =
+href=3D=22http://naaprj0sc1080b.w9097-34c3.leikuu.club/=3Fc1=3DcpgkBAIDIAAA=
+8wywT4DrGNA&amp;c87=3Dow6464956=22 style=3D=22text-decoration: =
+none;display: block;margin: 0;padding: 0;=22><img alt=3D=2236 BOTTLES=22 =
+src=3D=22http://naaprj0sc1080b.w9097-34c3.leikuu.club/img-cpgkBAIDIAAA8wywT=
+4DrGNA/hint36b.gif=22 width=3D=22266=22 height=3D=2247=22 =
+style=3D=22padding: 0;margin:0;color:#2c3984;font-weight: bold;font-size: 2=
+.4em;line-height: 1;width:auto;height:auto;=22 /></a> <a =
+href=3D=22http://naaprj0sc1080b.w9097-34c3.leikuu.club/=3Fc1=3DcpgkBAIDIAAA=
+8wywT4DrGNA&amp;c87=3Dax4974943=22 style=3D=22text-decoration: =
+none;display: block;margin: 0;padding: 10px 0;=22><img alt=3D=22FOR $36=22 =
+src=3D=22http://naaprj0sc1080b.w9097-34c3.leikuu.club/img-cpgkBAIDIAAA8wywT=
+4DrGNA/hint36p.gif=22 width=3D=22269=22 height=3D=2272=22 =
+style=3D=22padding: 0;margin:0;color:#2c3984;font-weight: bold;font-size: =
+3em;line-height: 1;width:auto;height:auto;=22 /></a>
+              </div><a href=3D=22http://naaprj0sc1080b.w9097-34c3.leikuu.=
+club/=3Fc1=3DcpgkBAIDIAAA8wywT4DrGNA&amp;c87=3Deq401092=22 =
+style=3D=22font-family: Verdana, sans-serif;text-decoration: =
+none;color:#fff;background-color:#db4555;display: inline-block;padding: =
+20px 62px;font-size: 1.5em;font-weight: bold;line-height: 1;margin: 34px 0 =
+0 0;=22>shop now</a>
+            </div>
+            <div style=3D=22text-align: center;width: =
+100%;padding-top:50px;=22>
+              <p style=3D=22color:#273582;font-size: 1.4em;font-weight: =
+normal;padding: 6px 0;margin: 0;=22>Fall in love with fruit-infused water =
+for only
+              </p>
+              <p style=3D=22color:#273582;font-size: 1.5em;font-weight: =
+bold;padding: 0;margin: 0;=22>$1 per bottle + FREE shipping!
+              </p>
+            </div>
+            <img alt=3D=22=22 src=3D=22http://naaprj0sc1080b.w9097-34c3.=
+leikuu.club/img-cpgkBAIDIAAA8wywT4DrGNA/hint-line.gif=22 width=3D=22602=22 =
+height=3D=221=22 style=3D=22width:602px;height:1px;=22 />
+          </td>
+        </tr>
+        <tr>
+          <td style=3D=22font-size:0.8em;text-align: center;=22>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =F0=9D=98=90=F0=9D=98=A7 =
+=F0=9D=98=BA=F0=9D=98=B0=F0=9D=98=B6 =F0=9D=98=B8=F0=9D=98=B0=F0=9D=98=B6=
+=F0=9D=98=AD=F0=9D=98=A5 =F0=9D=98=AF=F0=9D=98=B0 =F0=9D=98=AD=
+=F0=9D=98=B0=F0=9D=98=AF=F0=9D=98=A8=F0=9D=98=A6=F0=9D=98=B3 =
+=F0=9D=98=AD=F0=9D=98=AA=F0=9D=98=AC=F0=9D=98=A6 =F0=9D=98=B5=F0=9D=98=B0 =
+=F0=9D=98=B3=F0=9D=98=A6=F0=9D=98=A4=F0=9D=98=A6=F0=9D=98=AA=F0=9D=98=B7=
+=F0=9D=98=A6 =F0=9D=98=A6=F0=9D=98=AE=F0=9D=98=A2=F0=9D=98=AA=F0=9D=98=AD =
+=F0=9D=98=A2=F0=9D=98=A5=F0=9D=98=B7=F0=9D=98=A6=F0=9D=98=B3=F0=9D=98=B5=
+=F0=9D=98=AA=F0=9D=98=B4=F0=9D=98=A6=F0=9D=98=AE=F0=9D=98=A6=F0=9D=98=AF=
+=F0=9D=98=B5=F0=9D=98=B4 =F0=9D=98=A7=F0=9D=98=B3=F0=9D=98=B0=F0=9D=98=AE =
+<span>=F0=9D=98=8B=F0=9D=98=B3=F0=9D=98=AA=F0=9D=98=AF=F0=9D=98=AC=
+=F0=9D=98=8F=F0=9D=98=AA=F0=9D=98=AF=F0=9D=98=B5.</span><span>=
+=F0=9D=98=A4=F0=9D=98=B0=F0=9D=98=AE</span>,
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a =
+href=3D=22http://naaprj0sc1080b.w9097-34c3.leikuu.club/=3Fc1=3DcpgkBAIDIAAA=
+8wywT4DrGNA&amp;c2=3Dunsub=22>=F0=9D=98=A4=F0=9D=98=AD=F0=9D=98=AA=
+=F0=9D=98=A4=F0=9D=98=AC =F0=9D=98=A9=F0=9D=98=A6=F0=9D=98=B3=F0=9D=98=A6 =
+</a>=F0=9D=98=B0=F0=9D=98=B3 =F0=9D=98=B8=F0=9D=98=B3=F0=9D=98=AA=
+=F0=9D=98=B5=F0=9D=98=A6 =F0=9D=98=B5=F0=9D=98=B0 =F0=9D=98=B6=F0=9D=98=B4 =
+=F0=9D=98=A2=F0=9D=98=B5: 625 =F0=9D=98=94=F0=9D=98=A2=F0=9D=98=B3=
+=F0=9D=98=AC=F0=9D=98=A6=F0=9D=98=B5 =F0=9D=98=9A=F0=9D=98=B5=F0=9D=98=B3=
+=F0=9D=98=A6=F0=9D=98=A6=F0=9D=98=B5 =F0=9D=98=9A=F0=9D=98=A2=F0=9D=98=AF =
+=F0=9D=98=8D=F0=9D=98=B3=F0=9D=98=A2=F0=9D=98=AF=F0=9D=98=B4=F0=9D=98=AA=
+=F0=9D=98=B4=F0=9D=98=A4=F0=9D=98=B0, =F0=9D=98=8A=F0=9D=98=88 94105.
+            <br />&nbsp;
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class=3D=22didprocuring=22 style=3D=22min-height:180px;height:200p=
+x;margin-bottom:60px;=22>&nbsp;
+    </div>
+    <p style=3D=22text-align: center;=22><a href=3D=22http://naaprj0sc1080b=
+.w9097-34c3.leikuu.club/=3Fc1=3DcpgkBAIDIAAA8wywT4DrGNA&amp;c2=3Doptt#vo803=
+9749=22><img alt=3D=22=22 src=3D=22http://naaprj0sc1080b.w9097-34c3.leikuu.=
+club/img-cpgkBAIDIAAA8wywT4DrGNA/prfott.jpg=22 width=3D=22314=22 =
+height=3D=2226=22 /></a>
+    </p>
+  </body>
+</html>

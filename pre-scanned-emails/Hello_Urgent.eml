@@ -1,0 +1,93 @@
+Delivered-To: danielbe911@gmail.com
+Received: by 2002:a17:906:1711:b0:974:2ee7:bec9 with SMTP id c17csp2984655eje;
+        Mon, 5 Jun 2023 15:33:13 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5Kc2LGmVVhCb5ujOfJGRviSkXidjuC0hhakte/NVX+He4h0fqD7bdr/PJvY6CewjS+7OEL
+X-Received: by 2002:a17:907:3f1f:b0:96a:928c:d382 with SMTP id hq31-20020a1709073f1f00b0096a928cd382mr267466ejc.48.1686004392985;
+        Mon, 05 Jun 2023 15:33:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1686004392; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dToKq1v9oXOx+6vXcJbYlvkkoAS971gi5J39t1BfMkAG0FFuroe6r6pAxmxWcOV5R+
+         k7aAqqAOzTlBCBm9ZiBU0cuEkY2mKDamzhGAz/iyqQkkAtWY95vKQ2ZRhQRx2xUJE1CU
+         2QzcXHSIdOj7JACRzSqDUZIpu8mWmgF0g9mHlnh12sfcWmZz1RvgS3aMyZe81CN78Sze
+         PHTSGToNJiNo+DLT3ZscFikPAJbkLq1usVk+PNCVV42xKsRh+lAA45g5e4Oort/kGGte
+         tFEy6cqtf42unAb5vyUcwq9VIAt3situKJq1oOtIn/wBqtTjHRuYcODea1QjolTsyZW4
+         p6vg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:date:subject:from:reply-to
+         :dkim-signature:message-id;
+        bh=W8C2m22MKrK/nd5wwRN76LyqqH4MSXVgYxsfalnIPgs=;
+        b=jdTFL9NhE7UWWcuoOyLduJpK63eZlx1q2jbEjT5nEYz0JLZVQeOnJeGkXq3eKAVWtf
+         TtSFnk3vBn3kPueMJoczrzWuBagEcDdNCp8aDSbpJ0rL3i7HFK6fBvDcSda02GmESRVp
+         oLuNzTkdlSpidZ52Y4eUGEJY8OukwzWXugENlKbqateIJkU01EXqTaRfcLxgl0ui7q4Y
+         //vZyDAXRTALUz60R+O0aUP7o7/23FMdEh+/LekiPvhVNYMSmSuXz5CS5a1/PHxaGGLt
+         nM0S61fiiIgOZ4ovESstIJCqm5EvUqTLyaNT1dTrZ62RBwmpsHtdHnEwNQZGVu7HvgZC
+         sJkA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=neutral (invalid public key) header.i=@kra.go.ke header.s=mail2 header.b=DiC8OxJN;
+       spf=pass (google.com: domain of admin.itax2@kra.go.ke designates 196.61.52.123 as permitted sender) smtp.mailfrom=admin.itax2@kra.go.ke;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kra.go.ke
+Return-Path: <admin.itax2@kra.go.ke>
+Received: from mail.zd.kra.go.ke (mail.zd.kra.go.ke. [196.61.52.123])
+        by mx.google.com with ESMTPS id dr18-20020a170907721200b00977c89aca02si3810320ejc.964.2023.06.05.15.33.12
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 05 Jun 2023 15:33:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of admin.itax2@kra.go.ke designates 196.61.52.123 as permitted sender) client-ip=196.61.52.123;
+Authentication-Results: mx.google.com;
+       dkim=neutral (invalid public key) header.i=@kra.go.ke header.s=mail2 header.b=DiC8OxJN;
+       spf=pass (google.com: domain of admin.itax2@kra.go.ke designates 196.61.52.123 as permitted sender) smtp.mailfrom=admin.itax2@kra.go.ke;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=kra.go.ke
+Message-ID: <647e62a8.170a0220.eda0d.dab7SMTPIN_ADDED_MISSING@mx.google.com>
+Received: from ksmg3.prd.dc01.kra.go.ke (localhost [127.0.0.1])
+	by mail.zd.kra.go.ke (Postfix) with ESMTP id 4BDE5100032;
+	Tue,  6 Jun 2023 01:33:26 +0300 (EAT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kra.go.ke; s=mail2;
+	t=1686004406; bh=W8C2m22MKrK/nd5wwRN76LyqqH4MSXVgYxsfalnIPgs=;
+	h=Reply-To:From:Subject:Date:MIME-Version:Content-Type;
+	b=DiC8OxJNdpnqSUW32BHa2m+GEZctss/OHsiq3gfPfF/KRC2yULkZFgC8Rr7q8oMaE
+	 WUUbI38wgeSAN1KzQelfC1vpFFA4vYCFKwKOruIAKN/C5ocCxT6r4NGVCYKxzVg0Z4
+	 wvTsT/Tto4+oYXrp/KWdc/t4W0odqG/B87AowgOufBcuLQEzCesE3BI7/yZ5D4XyH9
+	 m1GRfvXTrur3D8BhWrCB94pu2JcByBSNAxcn+Vmc2lL9GMVP9PXk7/XgpO9wR+0X5i
+	 oHt6I7ITq0izq3H2VlWjRLNuvQUGx0LU0hCbG4vAn64GMDd50QXxsNojVqiyLJFz+0
+	 +rInStEDKxubw==
+Received: from User (unknown [10.152.2.105])
+	by mail.zd.kra.go.ke (Postfix) with SMTP;
+	Tue,  6 Jun 2023 01:33:16 +0300 (EAT)
+X-CheckPoint: {647E629B-C-CFF61A57-C8E395B1}
+X-MAIL-CPID: 363FB5BD86F770620BCEDA6B25D30569_11
+X-CheckPoint: {647E629B-7-B1E6F70F-E9D139A8}
+X-MAIL-CPID: 6F609F75EB4F8A0F2EF61B0351A8A844_3
+Reply-To: <emefrankeme@gmail.com>
+From: "Mr.Frank Emeka"<admin.itax2@kra.go.ke>
+Subject: Hello/Urgent
+Date: Mon, 5 Jun 2023 15:33:10 -0700
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="Windows-1251"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2600.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+X-KSMG-Rule-ID: 3
+X-KSMG-Message-Action: skipped
+X-KSMG-AntiSpam-Status: not scanned, whitelist
+X-KSMG-AntiPhishing: not scanned, whitelist
+X-KSMG-AntiVirus: Kaspersky Secure Mail Gateway, version 1.1.2.30, not scanned, whitelist
+
+Dear Friend,
+
+A customer of ours who died (19) years ago in Tsunami tragedy in Indonesia leaving behind an estate/capital (US$20M) in a Bank here where I work,till date nobody has come forward or put application for the claim.During the Bank private search for the late gentle man relatives your name and email contact was among the findings that matches the same surname as the deceased who died intestate with no Will or next of kin. To maintain the level of security required I have intentionally left out the final details.
+
+Banking regulation/legislation demand that I notify the fiscal authorities after a statutory time period when dormant accounts of this type are called in by the monetary regulatory bodies if nobody applies to claim the funds. I urge you to come forward since I can provide you with the details needed for you to claim the estate/capital so that I can be gratify by you ,in this way $12,000,000.00 for you and $8,000,000.00 for me. I will do all the crucial part in the Bank to have the claim released to you promptly.
+
+Please endeavor to observe utmost discretion in all matters concerning this issue to affirm your willingness and cooperation please do so by replying me with your Telephone Number and Your Contact Information.
+
+I do expect your prompt response. Email: emefrankeme@gmail.com
+
+Thank you,
+
+Mr.Frank Emeka
+
+Email secured by Check Point
+
+Email secured by Check Point

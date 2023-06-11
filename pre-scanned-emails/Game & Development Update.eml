@@ -1,0 +1,421 @@
+Delivered-To: danielbe911@gmail.com
+Received: by 2002:a17:906:1711:b0:974:2ee7:bec9 with SMTP id c17csp1615109eje;
+        Sat, 3 Jun 2023 03:14:32 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4HE+vQbFRCnRaCxhcXOs8IPbbhLop8GXTwI6OOjtBPFLMF6jtKAxA2/2hD1LGVnexy8Jbq
+X-Received: by 2002:a17:903:2382:b0:1b1:82a6:7c84 with SMTP id v2-20020a170903238200b001b182a67c84mr2437147plh.62.1685787272376;
+        Sat, 03 Jun 2023 03:14:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685787272; cv=none;
+        d=google.com; s=arc-20160816;
+        b=oqCdi04QjQ7fwGCSOCY5suj2/Kbu2QfEntXf0KNZb+9sL+yoijyWZcPLfb8x8UeLNm
+         qVg23vXwICF4Jkm73NK/Kh3BgknhsGFEyyARrgbOmuM8HKAfVG6v0ho/lda5amnQ5age
+         N7G+wBoIqUE/onskJN/E0ZFTWpJN3lxE4KkUe5iNXM4y2lBnrSOZfbmvqM+Fzuj2HM/n
+         IREKYFFpb2t4NdMaqguyxNVJcN4hOn7KBXlSYuAdolKI0l+dQIBdIa6FZfWVfS4c81Ij
+         h5qEQok16+p/EchmuVbueoHqgIodJzV16uAdqA7chdim1sceAHWptjLFvSpiStVUi10s
+         A/Mg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:mime-version:subject:to:from:date
+         :dkim-signature:dkim-signature;
+        bh=lSdYMmvGZeh4NTGnboTsRq2++AvRkiQzdQ5escT7U+0=;
+        b=sUnPQ1SU+P8ReGw+heO62mEDehOUmFaGITaXzEhFLG2kr3OKF/utVNAyTggX8VuLpI
+         I47QvYGtwl1XsuS3xRWfUlnnhOakeRZYStXGlYJebNUzUQkwwNyWVcZ60ubn58gEazLt
+         Eja9U9IX8Rko4PLNNxE15X7NJl9QtIQlYnN5uBEZgYZMZN2KHVken/pluRGxVlfZc57r
+         GuG92m6uQ9YonOU7i4wnyupzn10eF4zQMSKRcZdZMVr5Em4mv9rvkkD9J7N/ajVZHxvt
+         eyBFWdmK+2UR/6p3PGYe0xrFOuCQo1fzLNjmpyn21FPUxDhH1MegRKGmzp99q6WWZGnF
+         A01w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@makingfun.com header.s=4zjyt5vsulfzskqm5y3dggx3bghp25xg header.b=GTsDHRNQ;
+       dkim=pass header.i=@amazonses.com header.s=hsbnp7p3ensaochzwyq5wwmceodymuwv header.b=SmANA0y8;
+       spf=pass (google.com: domain of 0101018880c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000@us-west-2.amazonses.com designates 69.169.239.13 as permitted sender) smtp.mailfrom=0101018880c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=makingfun.com
+Return-Path: <0101018880c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000@us-west-2.amazonses.com>
+Received: from b239-13.smtp-out.us-west-2.amazonses.com (b239-13.smtp-out.us-west-2.amazonses.com. [69.169.239.13])
+        by mx.google.com with ESMTPS id ix20-20020a170902f81400b001b033635461si2298742plb.545.2023.06.03.03.14.32
+        for <danielbe911@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 03 Jun 2023 03:14:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0101018880c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000@us-west-2.amazonses.com designates 69.169.239.13 as permitted sender) client-ip=69.169.239.13;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@makingfun.com header.s=4zjyt5vsulfzskqm5y3dggx3bghp25xg header.b=GTsDHRNQ;
+       dkim=pass header.i=@amazonses.com header.s=hsbnp7p3ensaochzwyq5wwmceodymuwv header.b=SmANA0y8;
+       spf=pass (google.com: domain of 0101018880c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000@us-west-2.amazonses.com designates 69.169.239.13 as permitted sender) smtp.mailfrom=0101018880c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=makingfun.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=4zjyt5vsulfzskqm5y3dggx3bghp25xg; d=makingfun.com; t=1685787272;
+	h=Date:From:To:Subject:MIME-Version:Content-Type:Message-ID;
+	bh=FEJD7pOm/XKkY40e2wAUtz9H7ybvtOBXs0t3UJi+vJ4=;
+	b=GTsDHRNQvI8gmqdIXPST7tiTcbfSv7Y9XJKYGYlg8X1c9lbJ9fHWpCO3ukOimEEr
+	WrghH/OqANQgDXpvc4P8SY+fJWUvVTeBsbRRIBoXlz+kWZEU5tDGRnqD4XU5ckriLb+
+	l8jxJIqsYL4YvPDRw64hyBu9tPfBZqybySBvFaZw=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=hsbnp7p3ensaochzwyq5wwmceodymuwv; d=amazonses.com; t=1685787272;
+	h=Date:From:To:Subject:MIME-Version:Content-Type:Message-ID:Feedback-ID;
+	bh=FEJD7pOm/XKkY40e2wAUtz9H7ybvtOBXs0t3UJi+vJ4=;
+	b=SmANA0y8rD6/0sTBlNbIiGeXAJF+PoTvxxMpGWiL48ISEP6LZEJTQ81Nl/zvnfLU
+	yfDluQvdPfbh42B22yhfZul9fr8Eo1WY//CXWGHqKyH6kZkpGusWrekZUe2eYv1hJKr
+	uLgB/5Khvb4OQEcNYIlGkiWvu5KrF3AWJWmjCDwg=
+Date: Sat, 3 Jun 2023 10:14:31 +0000
+From: Making Fun <noreply@makingfun.com>
+To: danielbe911@gmail.com
+Subject: Game & Development Update
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_395714_653340190.1685787271820"
+Message-ID: <0101018880c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000@us-west-2.amazonses.com>
+Feedback-ID: 1.us-west-2.T4RxVOxHhrAxfNngjYrbRBN9cj7vdeRdCNodsoguOlA=:AmazonSES
+X-SES-Outgoing: 2023.06.03-69.169.239.13
+
+------=_Part_395714_653340190.1685787271820
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hello! This update shares progress in our live games and the new Unity vers=
+ion of Eternium in development. Our next
+email will discuss the upcoming Closed Alpha test for "Project Artemis", th=
+e highly anticipated new action-RPG from
+Dream Primer.
+
+Live operations of Eternium(http://www.eterniumgame.com) have been fully tr=
+ansitioned to Making Fun, while Dream Primer
+focuses on Project Artemis. We fixed a number of bugs identified by the pla=
+yer community, reactivated side quests, and
+made updates required by Google and Apple. We are now running all 3 ANB (=
+=E2=80=9CA New Beginning=E2=80=9D) events within each Season.
+We are exploring creating a new season-long leaderboard to support this new=
+ format.
+
+The rebuild of Eternium in Unity is at an exciting point. We hit =E2=80=9Cf=
+irst playable=E2=80=9D at the start of May, an official
+milestone to mark the transition from =E2=80=9Cexperimentation mode=E2=80=
+=9D to =E2=80=9Cproduction=E2=80=9D. It felt amazing to see Eternium taking=
+ up
+the FULL screen of my Android phone and to play the familiar first level wi=
+th the familiar music while seeing
+opportunities to grow and evolve the game=E2=80=99s appeal for the next dec=
+ade. Here is a video update(https://youtu.be/05SiEr_TP54)
+that includes a play-through of level 1.
+
+Upcoming goals include improving foundational artistic and technical system=
+s such as enemies, abilities, and the user
+interface and perfecting the tap/gesture input scheme for mobile. Artists a=
+re working to enhance the graphics workflow
+on level 3, which has more sophisticated requirements due to the introducti=
+on of variable height terrain. Keep an eye on
+the Eternium Forum(https://forum.makingfun.com/forum/eternium) for more upd=
+ates
+
+Runestrike(https://www.runestrike.com/) had a major update in March. We int=
+roduced a streamlined Home screen, a new
+Collection screen to make it easier to find and equip Skins, and a new Conq=
+uests feature with semi-weekly challenges
+that will spice up how you play Runestrike. Extra mana=E2=80=A6 more blood=
+=E2=80=A6 minions that come into play with Blitz... These
+challenges bring a new level of fun and strategy to the deck building battl=
+er.
+
+Hidden Express(http://www.hiddenexpress.com) is smoking steadily along with=
+ 3,775 levels! In March, we released a new
+mid-week event, City Spotlight. Each week we feature a mystery City that is=
+ hidden by 20 tiles. Some of the tiles have
+power-ups under them, some have random levels, and the rest have the levels=
+ from the mystery City. Clear all 20 tiles
+before the timer runs out to completely reveal the hidden City map and earn=
+ great rewards!
+
+We listen carefully to our player communities and strongly consider you in =
+all decisions. Come say hello! The latest
+discussions can always be found on Discord: Eternium(https://discord.com/in=
+vite/eternium), Runestrike(https://discord.com/invite/runetrike).
+
+John Welch
+CEO | Making Fun
+
+
+Keep connected with us:
+
+Facebook: https://facebook.com/makingfun
+Youtube: https://www.youtube.com/user/makingfunvideos
+Twitter: https://twitter.com/makingfun
+
+You are receiving this email because you are subscribed to updates and othe=
+r Making Fun news.
+
+unsubscribe: https://www.makingfun.com/unsubscribe?mid=3D647b1287f3b8c521ad=
+4e8e18&a=3DMaking%20Fun%20Newsletter
+
+=C2=A9 2023 Making Fun, Inc.
+Terms of Service: https://www.makingfun.com/footer/terms-of-service
+Privacy Policy: https://www.makingfun.com/footer/privacy-policy
+------=_Part_395714_653340190.1685787271820
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8">
+</head>
+<body style=3D"font-family: 'Roboto', Verdana, sans-serif; font-size: 14px;=
+ font-weight: 300; font-stretch: normal;
+            font-style: normal; line-height: 1.43; letter-spacing: normal; =
+text-align: left; color: #fafafa;">
+<table style=3D"width: 580px; background-color: #1f1f1f;" align=3D"center" =
+cellspacing=3D"0" cellpadding=3D"0">
+    <tr>
+        <td>
+            <img src=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun=
+/update_2023/header.png"
+                 srcset=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/making=
+fun/update_2023/header@2x.png 2x,
+            https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun/update_2023=
+/header@3x.png 3x"/>
+
+        </td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 40px 54px;">
+            <p>
+                Hello! This update shares progress in our live games and th=
+e new Unity version of Eternium in
+                development. Our next email will discuss the upcoming Close=
+d Alpha test for "Project Artemis", the
+                highly anticipated new action-RPG from Dream Primer.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun=
+/update_2023/eternium.png"
+                 srcset=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/making=
+fun/update_2023/eternium@2x.png 2x,
+         https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun/update_2023/et=
+ernium@3x.png 3x"/>
+        </td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 20.8px 54px 40px;">
+            <p>
+                Live operations of <a href=3D"http://flc39csm.r.us-west-2.a=
+wstrack.me/L0/http:%2F%2Fwww.eterniumgame.com/1/0101018880c06262-d68f8dd9-2=
+d3c-40a9-93cb-555862da245e-000000/KqFkUD_CnFhf9-KwQHV4pqv1kCU=3D325" style=
+=3D"font-weight: bold; color: #fafafa;">Eternium</a>
+                have been fully transitioned to Making Fun, while Dream Pri=
+mer focuses on Project Artemis. We fixed a
+                number of bugs identified by the player community, reactiva=
+ted side quests, and made updates required by
+                Google and Apple. We are now running all 3 ANB (=E2=80=9CA =
+New Beginning=E2=80=9D) events within each Season. We are
+                exploring creating a new season-long leaderboard to support=
+ this new format.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun=
+/update_2023/unity.png"
+                 srcset=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/making=
+fun/update_2023/unity@2x.png 2x,
+            https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun/update_2023=
+/unity@3x.png 3x"/>
+
+        </td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 20.8px 54px 40px;">
+            <p>
+                The rebuild of Eternium in Unity is at an exciting point. W=
+e hit =E2=80=9Cfirst playable=E2=80=9D at the start of May,
+                an official milestone to mark the transition from =E2=80=9C=
+experimentation mode=E2=80=9D to =E2=80=9Cproduction=E2=80=9D. It felt
+                amazing to see Eternium taking up the FULL screen of my And=
+roid phone and to play the familiar first
+                level with the familiar music while seeing opportunities to=
+ grow and evolve the game=E2=80=99s appeal for the
+                next decade. Here is a <a href=3D"https://flc39csm.r.us-wes=
+t-2.awstrack.me/L0/https:%2F%2Fyoutu.be%2F05SiEr_TP54/1/0101018880c06262-d6=
+8f8dd9-2d3c-40a9-93cb-555862da245e-000000/d78j9kULq6GA43J3Z40pRG-rPVc=3D325=
+"
+                                          style=3D"font-weight: bold; color=
+: #fafafa;">video update</a> that includes a
+                play-through of level 1.
+            </p>
+            <p>
+                Upcoming goals include improving foundational artistic and =
+technical systems such as enemies, abilities,
+                and the user interface and perfecting the tap/gesture input=
+ scheme for mobile. Artists are working to
+                enhance the graphics workflow on level 3, which has more so=
+phisticated requirements due to the
+                introduction of variable height terrain. Keep an eye on the=
+ <a
+                    href=3D"https://flc39csm.r.us-west-2.awstrack.me/L0/htt=
+ps:%2F%2Fforum.makingfun.com%2Fforum%2Feternium/1/0101018880c06262-d68f8dd9=
+-2d3c-40a9-93cb-555862da245e-000000/GUBqcKVEJDQcAFkYipzzlioWFyk=3D325" styl=
+e=3D"font-weight: bold; color: #fafafa;">Eternium
+                Forum</a> for more updates.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun=
+/update_2023/runestrike.png"
+                 srcset=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/making=
+fun/update_2023/runestrike@2x.png 2x,
+         https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun/update_2023/ru=
+nestrike@3x.png 3x"/>
+        </td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 20.8px 54px 40px;">
+            <p>
+                <a href=3D"https://flc39csm.r.us-west-2.awstrack.me/L0/http=
+s:%2F%2Fwww.runestrike.com%2F/1/0101018880c06262-d68f8dd9-2d3c-40a9-93cb-55=
+5862da245e-000000/qB5sVK4j8JxT4xdoD16TcwYsNaE=3D325" style=3D"font-weight: =
+bold; color: #fafafa;">Runestrike</a> had a
+                major update in March. We introduced a streamlined Home scr=
+een, a new Collection screen to make it
+                easier to find and equip Skins, and a new Conquests feature=
+ with semi-weekly challenges that will spice
+                up how you play Runestrike. Extra mana=E2=80=A6 more blood=
+=E2=80=A6 minions that come into play with Blitz... These
+                challenges bring a new level of fun and strategy to the dec=
+k building battler.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun=
+/update_2023/hidden_express.png"
+                 srcset=3D"https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/making=
+fun/update_2023/hidden_express@2x.png 2x,
+         https://c6m8c4p5.ssl.hwcdn.net/mfp/emails/makingfun/update_2023/hi=
+dden_express@3x.png 3x"/>
+        </td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 20.8px 54px 40px;">
+            <p>
+                <a href=3D"http://flc39csm.r.us-west-2.awstrack.me/L0/http:=
+%2F%2Fwww.hiddenexpress.com/1/0101018880c06262-d68f8dd9-2d3c-40a9-93cb-5558=
+62da245e-000000/1KCA62n04_8Wt_JqcphNpA9TQs4=3D325" style=3D"font-weight: bo=
+ld; color: #fafafa;">Hidden Express</a> is
+                smoking steadily along with 3,775 levels! In March, we rele=
+ased a new mid-week event, City Spotlight.
+                Each week we feature a mystery City that is hidden by 20 ti=
+les. Some of the tiles have power-ups under
+                them, some have random levels, and the rest have the levels=
+ from the mystery City. Clear all 20 tiles
+                before the timer runs out to completely reveal the hidden C=
+ity map and earn great rewards!
+            </p>
+            <p>
+                We listen carefully to our player communities and strongly =
+consider you in all decisions. Come say
+                hello! The latest discussions can always be found on Discor=
+d: <a
+                    href=3D"https://flc39csm.r.us-west-2.awstrack.me/L0/htt=
+ps:%2F%2Fdiscord.com%2Finvite%2Feternium/1/0101018880c06262-d68f8dd9-2d3c-4=
+0a9-93cb-555862da245e-000000/XyhcGYO9S8ZvrEXcKso17n6WUgE=3D325" style=3D"fo=
+nt-weight: bold; color: #fafafa;">Eternium</a>,
+                <a href=3D"https://flc39csm.r.us-west-2.awstrack.me/L0/http=
+s:%2F%2Fdiscord.com%2Finvite%2Frunestrike/1/0101018880c06262-d68f8dd9-2d3c-=
+40a9-93cb-555862da245e-000000/ZJRF4Ot4yseY3eK6--_EfBqrRh4=3D325"
+                   style=3D"font-weight: bold; color: #fafafa;">Runestrike<=
+/a>.
+            </p>
+            <p>
+                John Welch<br/>
+                CEO | Making Fun
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style=3D"text-align:center; background-color: #000; paddin=
+g: 30px 54px 46px;">
+                <div>
+                    Keep connected with us:
+                    <table cellspacing=3D"0" align=3D"center" cellpadding=
+=3D"10">
+                        <tr>
+                            <td>
+                                <a href=3D"https://flc39csm.r.us-west-2.aws=
+track.me/L0/https:%2F%2Ffacebook.com%2Fmakingfun/1/0101018880c06262-d68f8dd=
+9-2d3c-40a9-93cb-555862da245e-000000/yOK2AdT6YliU3qVAcx6fs2m1pvE=3D325">
+                                    <img src=3D"https://c6m8c4p5.ssl.hwcdn.=
+net/mfp/emails/makingfun/common/facebook.png"
+                                         srcset=3D"https://c6m8c4p5.ssl.hwc=
+dn.net/mfp/emails/makingfun/common/facebook@2x.png 2x,
+                                            https://c6m8c4p5.ssl.hwcdn.net/=
+mfp/emails/makingfun/common/facebook@3x.png 3x"/>
+                                </a>
+                            </td>
+                            <td>
+                                <a href=3D"https://flc39csm.r.us-west-2.aws=
+track.me/L0/https:%2F%2Fwww.youtube.com%2Fuser%2Fmakingfunvideos/1/01010188=
+80c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000/GfdIMLbpPLnMoQyMqaZNpf=
+kOa_w=3D325">
+                                    <img src=3D"https://c6m8c4p5.ssl.hwcdn.=
+net/mfp/emails/makingfun/common/youtube.png"
+                                         srcset=3D"https://c6m8c4p5.ssl.hwc=
+dn.net/mfp/emails/makingfun/common/youtube@2x.png 2x,
+                                        https://c6m8c4p5.ssl.hwcdn.net/mfp/=
+emails/makingfun/common/youtube@3x.png 3x"/>
+                                </a>
+                            </td>
+                            <td>
+                                <a href=3D"https://flc39csm.r.us-west-2.aws=
+track.me/L0/https:%2F%2Ftwitter.com%2Fmakingfun/1/0101018880c06262-d68f8dd9=
+-2d3c-40a9-93cb-555862da245e-000000/xI2-mmqU-rL1juqM6JpUH6aE8QM=3D325">
+                                    <img src=3D"https://c6m8c4p5.ssl.hwcdn.=
+net/mfp/emails/makingfun/common/twitter.png"
+                                         srcset=3D"https://c6m8c4p5.ssl.hwc=
+dn.net/mfp/emails/makingfun/common/twitter@2x.png 2x,
+                                        https://c6m8c4p5.ssl.hwcdn.net/mfp/=
+emails/makingfun/common/twitter@3x.png 3x"/>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    You are receiving this email because you are subscribed=
+ to updates and other Making Fun news.
+                    <br/>
+                    <br/>
+                    <a style=3D"color: #fafafa;"
+                       href=3D"https://flc39csm.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fwww.makingfun.com%2Funsubscribe%3Fmid=3D647b1287f3b8c521ad4e8e1=
+8%26a=3DMaking%2520Fun%2520Newsletter/1/0101018880c06262-d68f8dd9-2d3c-40a9=
+-93cb-555862da245e-000000/TmTb1gDaSneMEIJzE4Xey-sRBgE=3D325">unsubscribe</a=
+>
+                    <br/>
+                    <br/>
+                    =C2=A9 2023 Making Fun, Inc.<br/>
+                    <a href=3D"https://flc39csm.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fwww.makingfun.com%2Ffooter%2Fterms-of-service/1/0101018880c0626=
+2-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000/eSwLjDqRKTJZ_n662j4QRGSiMEk=
+=3D325"
+                       style=3D"color: #fafafa; text-decoration: none;">
+                        Terms of Service
+                    </a>
+                    |
+                    <a href=3D"https://flc39csm.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fwww.makingfun.com%2Ffooter%2Fprivacy-policy/1/0101018880c06262-=
+d68f8dd9-2d3c-40a9-93cb-555862da245e-000000/ZMX9CIBss5sVHVcrLAv2-ocbIp0=3D3=
+25"
+                       style=3D"color: #fafafa; text-decoration: none;">
+                        Privacy Policy 2022-11-21
+                    </a>
+                </p>
+            </div>
+        </td>
+    </tr>
+</table><img alt=3D"" src=3D"https://flc39csm.r.us-west-2.awstrack.me/I0/01=
+01018880c06262-d68f8dd9-2d3c-40a9-93cb-555862da245e-000000/CH8R8HV9XtJtkZZ3=
+aGOYZgQTx0E=3D325" style=3D"display: none; width: 1px; height: 1px;">
+
+------=_Part_395714_653340190.1685787271820--

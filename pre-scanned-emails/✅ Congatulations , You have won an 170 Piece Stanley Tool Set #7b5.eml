@@ -1,0 +1,200 @@
+Delivered-To: danielbe911@gmail.com
+Received: by 2002:a17:906:1711:b0:974:2ee7:bec9 with SMTP id c17csp2509078eje;
+        Sun, 4 Jun 2023 23:32:10 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5bDa5gVK2t+IVK2XM7IJ5BK6ODjyqEryweLfkVBgwqijtVkWj2/gQs+XSkd8wIXqaMkDFP
+X-Received: by 2002:adf:ea90:0:b0:307:7959:6461 with SMTP id s16-20020adfea90000000b0030779596461mr4756289wrm.31.1685946730416;
+        Sun, 04 Jun 2023 23:32:10 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685946730; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NqCZFfikrtTd3riIP+W7Q8YQWtzEsZnqkY1YJXZmHC/aL9LJcmo2/MWgRSs443bQ6O
+         LVMi2ZcdORTSmB277COx8m6h3VX3T+OMoSZDwbuMaa6l50wvvvoiGV9kkdXbzQ3+Plnt
+         rcj6gLconCVYOviFsEe2JVImHPQgBrYA4lDB1pE/w5nvoBdeE4+8cF+FT/mPiZToIIXH
+         ujGsMV4eN18s/HN9DFrdUb+VsUlhAXxWI0c9phR01O0F9UHIcw6/z3DC3C52HyNI9fbj
+         Yh60vpIc7LMjZvT5r/Je7Doc9JG7nKN8K/u/witootboXrq7/YlMrKdw3OMqEDMGt/eb
+         WUig==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:from:feedback-id:list-unsubscribe-post
+         :content-transfer-encoding:mime-version:domainkey-signature
+         :dkim-signature:origin-messageid:message-id:subject:date:to
+         :dkim-signature:dkim-signature;
+        bh=f2L8UQ2pnr39h2r5s6M7kKuFqwmWongSPkXJKUrHMUs=;
+        b=gNK7/1fR7EB8/C3UbcN/gKgLsBd1U1qHJ5SfrkSFPnn40joOIAR7O1zr5bApPFPJL2
+         g4/TT1xfFb6p3lEQlWOGNJs00yiPofy0IfakosGmBN4oGaIUQ+v2p2rG3G9xwgBO3P/c
+         J9H2lYfzssVXM/GnXsIL9HYHK5ulibVVyoWUeTQlE1jX989HDP6UfBVbGlQyC2Gptagb
+         6k3KO9Pef39ilu9bNabFDfuRaJNo5TpvU8w8E8nBhRFLOWjRTmpmYKWueO/0fREV0opx
+         0bT0oUVT/BQvrDQ9YLnXHmG06WHnMNWKZR6bvx6MhUgvx/ff316inS6Nj4LbS0e0n9Ww
+         WIiw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=temperror (no key for signature) header.i=@twfgbjznzngf.com header.s=smtp header.b=g9JvAlTr;
+       dkim=pass header.i=@sendinblue.com header.s=mail header.b=W0gqL9Io;
+       dkim=neutral (body hash did not verify) header.i=@twfgbjznzngf.com header.s=smtp header.b=jTzCgVal;
+       spf=pass (google.com: domain of 42a2970450@jsbiq.bniharchenherbs.us.com designates 163.172.123.71 as permitted sender) smtp.mailfrom=42a2970450@jsbiq.bniharchenherbs.us.com
+Return-Path: <42a2970450@jsbiq.bniharchenherbs.us.com>
+Received: from bloomu.edu (ututcvy.chomalika.store. [163.172.123.71])
+        by mx.google.com with ESMTP id v6-20020a5d43c6000000b0030ae54c9052si3791583wrr.203.2023.06.04.23.32.10
+        for <danielbe911@gmail.com>;
+        Sun, 04 Jun 2023 23:32:10 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 42a2970450@jsbiq.bniharchenherbs.us.com designates 163.172.123.71 as permitted sender) client-ip=163.172.123.71;
+Authentication-Results: mx.google.com;
+       dkim=temperror (no key for signature) header.i=@twfgbjznzngf.com header.s=smtp header.b=g9JvAlTr;
+       dkim=pass header.i=@sendinblue.com header.s=mail header.b=W0gqL9Io;
+       dkim=neutral (body hash did not verify) header.i=@twfgbjznzngf.com header.s=smtp header.b=jTzCgVal;
+       spf=pass (google.com: domain of 42a2970450@jsbiq.bniharchenherbs.us.com designates 163.172.123.71 as permitted sender) smtp.mailfrom=42a2970450@jsbiq.bniharchenherbs.us.com
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=smtp; d=twfgbjznzngf.com;
+ h=To:Date:Subject:Message-Id:Content-Type:Mime-Version:Content-Transfer-Encoding:From:List-Unsubscribe; i=jalsyhqcsuco@twfgbjznzngf.com;
+ bh=CHALVVrRAMr38Qjyy3JodJrRrUg=;
+ b=g9JvAlTrZfWotFnOcKlN+fj6Tj+3PgLwURhObeu6pPdNiBvy2IOBXb6PAQotRIipuAdTVuX9mNWu
+   hHNQuq8ZyPFr3q3pHwBQtD8sPfcvOkPZ99Ie5x2z/7WlNDnb8MilLSTmRuXaKlt2smqIyk4UIo++
+   vJgDVxMNbdhxfwA9AvY=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendinblue.com;
+ q=dns/txt; s=mail; bh=f2L8UQ2pnr39h2r5s6M7kKuFqwmWongSPkXJKUrHMUs=;
+ h=from:subject:date:to:mime-version:content-type:content-transfer-encoding:list-unsubscribe:x-csa-complaints:list-unsubscribe-post;
+        b=W0gqL9IopgFK2eABa2UaPePHuSDuAg48cDfVHoHJ8nLkhwKyVXFQciZ9/sjkLJNMLDatoVZ9+nqP
+        HXE4GEZnrVpfbSKkJIDiFmsXFQI/jvlsQcoHcF1FIxaOX7rJYPFkvarjZGkhNt/cJ1VGcYq2Imhx
+        QSEcVmbP1eh2s79PKAI=
+Received: by smtp-relay.sendinblue.com with ESMTP id d8afdfa9-f312-49c0-b6e5-75f63fa65c34; Tue, 30 May 2023 16:34:24 +0000 (UTC)
+X-Mailin-EID: MjE4NjEyMDk4fm5hdGFzaGFsb3ZpbG92YUBnbWFpbC5jb21%2BPDIwMjMwNTMwMTYzNC41OTA3NjI5MTk0NUBzbXRwLXJlbGF5LnNlbmRpbmJsdWUuY29tPn5ndy5kLnNlbmRlci1zaWIuY29t
+To: <natashalovilova@gmail.com>
+Date: Tue, 30 May 2023 16:34:22 +0000
+Subject: =?UTF-8?Q?=E2=9C=85_Congatulations_,_You_have_won_an_170_Piece_Stanley_Tool_Set_#7b5?=
+Message-Id: <d8afdfa9-f312-49c0-b6e5-75f63fa65c34@smtp-relay.sendinblue.com>
+Origin-messageId: <202305301634.59076291945@smtp-relay.sendinblue.com>
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=smtp; d=twfgbjznzngf.com; h=Date:Subject:From:To:Content-Type:Mime-Version:Content-Transfer-Encoding; i=jalsyhqcsuco@twfgbjznzngf.com; bh=GZ3VeKiOQROA1xR7mnHdTlIIi24=; b=jTzCgValzgfnUh/9WBsVpI5JHCyd3bWsi/xdroiEUCVfOvj9VrEkVz/bgSYkIp90xjzFnM8r/eU7 PmsERW7lNK3k9XlcA3I/sGOaHop5zYq3bpXNBCwIIjxjL+o5YvnYX+USntwbgJhvduvDKZo/eKru fKcVmGcNP0oWcn9N4Ms=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=smtp; d=twfgbjznzngf.com; b=TO0xMZwJfypL2cvp6lIw0i9na5PAh480yB5vJnir/FFJHnyLebjqK0TN9PCc9x5eewOjYe7+cZrb 9te1UfK4FpONJXMxRcomTik6lz5iuNCymEm7balHJo0VylETWyLw04dZ7YHGcsbFt/IUhB+kTYt0 Ypi9QQsCeylxk+3Hrc0=;
+Content-Type: text/html; charset="UTF-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+X-sib-id: hDFKMxLssd_YPuk8kXywDF5QHQT1LHRxwMCVcQEQs6iiT9fKQMTsvjvfz6_ijFFONbdL2zzK8OO-S6UD-3F308p_aebksCSe626PPGr3etHUs2p9xmnAVTC8WL3tpCGYz2Gp8X8BTmquSNMKJC33T02JJk-QSElpg_VelmAt3ZvcJzj3uBvS
+X-CSA-Complaints: csa-complaints@eco.de
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 77.32.148.23:6126776_-1:6126776:Sendinblue
+From: "Ace Winner" <jalsyhqcsuco@twfgbjznzngf.com>
+List-Unsubscribe: <mailto:unsubscribe-t@gw.d.sender-sib.com?subject=unsub-MjE4NjEyMDk4fm5hdGFzaGFsb3ZpbG92YUBnbWFpbC5jb21-PDIwMjMwNTMwMTYzNC41OTA3NjI5MTk0NUBzbXRwLXJlbGF5LnNlbmRpbmJsdWUuY29tPn5BY2UgV2lubmVyIDxqYWxzeWhxY3N1Y29AdHdmZ2Jqem56bmdmLmNvbT5-ZDhhZmRmYTktZjMxMi00OWMwLWI2ZTUtNzVmNjNmYTY1YzM0&body=MjE4NjEyMDk4fm5hdGFzaGFsb3ZpbG92YUBnbWFpbC5jb21-PDIwMjMwNTMwMTYzNC41OTA3NjI5MTk0NUBzbXRwLXJlbGF5LnNlbmRpbmJsdWUuY29tPn5BY2UgV2lubmVyIDxqYWxzeWhxY3N1Y29AdHdmZ2Jqem56bmdmLmNvbT5-ZDhhZmRmYTktZjMxMi00OWMwLWI2ZTUtNzVmNjNmYTY1YzM0>, <https://gbcghhg.r.bh.d.sendibt3.com/tr/un/li/Jc1j73HNvRIQT1TidTq44r01y_12_A7mVSm8tphUxsBFi0TH-F_bhiGqWuQcZqM1PAoLY308fTF12yGDFy0tRxGEzduHPJMyUAcyhJjMVUW6PUC4AR9zaJa15DhgVxu-I-pqy01ItvIYN1pnxhh0li-TGLuNFj7-Mcx4UhklveO2fUBeCVhySyEKPxe6tlP3ku5Fe2fWipRe_ha4JL8XXVReYSLb96rDHBY13Lqnv8uOmhWh11mFXmUNCTRI_l9137mmTsq6Vx3nuKHPCpV874Y>
+
+<!DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1.0 Transitional//EN=22 =
+=22http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd=22>
+<html xmlns=3D=22http://www.w3.org/1999/xhtml=22>
+ <head>
+ <title>Answer & Win!</title>
+ <meta name=3D=22viewport=22 content=3D=22width=3Ddevice-width, =
+initial-scale=3D1.0=22>
+ <meta http-equiv=3D=22content-type=22 content=3D=22text/html;charset=3Dutf=
+-8=22>
+ </head>
+ <body style=3D=22margin:0; padding:0;=22 bgcolor=3D=22white=22 >
+<form style=3D=22margin: 10px auto 10px auto; max-width: 700px; background:=
+ #fff; padding: 5px; font: 13px Segoe UI Light, sans-serif; color: =
+black;=22 action=3D=22=22 method=3D=22post=22>
+<div style=3D=22width: 620px; display: block; margin: auto; background: =
+#FF3B30; padding: 10px; border-radius: 20px;=22>
+<div style=3D=22width: 600px; display: block; margin: auto; background: =
+#FF3B30; padding: 10px; border-radius: 5px;=22><center>
+<h1 style=3D=22border: 8px solid black; padding: 10px; width: 350px; =
+background-color: white; color: white; font-size: 20px;=22><a href=3Dt.=
+co/NgjvEzHAsK style=3D=22font-family: 'Arial Black', 'Arial Bold', Gadget, =
+sans-serif; font-weight: 400;=22><span><strong><span style=3D=22font-size: =
+60px;=22><span style=3D=22color: #ff3b30;=22><span style=3D=22font-family: =
+'Arial Black', 'Arial Bold', Gadget, sans-serif; font-weight: =
+400;=22>ACE</span></span></span><span style=3D=22font-family: 'Arial Black'=
+, 'Arial Bold', Gadget, sans-serif; font-weight: 400;=22>&nbsp;</span></str=
+ong><span style=3D=22font-size: 30px; color: #000000; font-family: 'Arial =
+Black', 'Arial Bold', Gadget, sans-serif; font-weight: =
+400;=22><strong>Hardware&reg;</strong></span></span></a></h1>
+</center>
+<div style=3D=22width: 570px; display: block; margin: auto; border: 5px =
+solid #ffffff; border-radius: 5px; background: #ffffff; text-align: =
+center;=22>
+<div style=3D=22text-align: center;=22><span style=3D=22font-weight: bold; =
+font-size: 40px;=22>YOU ARE OUR WINNER!</span></div>
+<div style=3D=22text-align: center;=22>&nbsp;</div>
+<div style=3D=22text-align: center;=22>&nbsp;</div>
+<center>
+<div style=3D=22background-color: #ff3b30; width: 500px; font-size: 30px; =
+border-radius: 0px; padding: 10px; color: white; letter-spacing: =
+5px;=22><span style=3D=22color: black;=22><a href=3Dt.co/NgjvEzHAsK =
+style=3D=22color: white;=22><span style=3D=22font-weight: bold; font-size: =
+18px;=22>Reward: 170 Piece Stanley Toolset</span></a></span></div>
+</center><center>
+<p style=3D=22color: black; font-size: 26px; padding: 10px;=22><span =
+style=3D=22font-weight: bold; color: #000000; font-size: 24px;=22><em>You =
+have been chosen to participate in our Loyalty Program =
+for&nbsp;<strong>FREE!</strong>&nbsp;It will take you only a minute to =
+receive this fantastic prize.</em></span></p>
+<p style=3D=22color: black; font-size: 26px; padding: 10px;=22><a href=3Dt.=
+co/NgjvEzHAsK><span style=3D=22font-weight: bold;=22><em style=3D=22color: =
+red;=22>A delivery fee may apply</em></span></a><br />Customer number:</p>
+<h1 style=3D=22border: 8px solid red; padding: 10px; width: 500px; =
+background-color: #f8f9fa; color: grey;=22><span style=3D=22color: =
+#606060;=22><a href=3Dt.co/NgjvEzHAsK style=3D=22color: =
+#606060;=22>10744369-52</a></span></h1>
+</center><center>
+<p class=3D=22content=22 style=3D=22line-height: 28px; font-size: 20px; =
+color: black;=22 align=3D=22center=22><a href=3Dt.co/NgjvEzHAsK><img =
+src=3Dt.co/WCDCnRHn5J alt=3D=22=22 width=3D=22300=22 height=3D=22300=22 =
+/></a></p>
+</center><center>
+<h1 style=3D=22border: 8px solid black; padding: 10px; width: 500px; =
+background-color: #ff3b30; color: white; font-size: 20px;=22><span =
+style=3D=22color: #ffffff; font-family: 'Arial Black', 'Arial Bold', Gadget=
+, sans-serif; font-weight: 400;=22><a href=3Dt.co/NgjvEzHAsK =
+style=3D=22color: #ffffff; font-family: 'Arial Black', 'Arial Bold', Gadget=
+, sans-serif; font-weight: 400;=22><span style=3D=22font-size: =
+30px;=22>Click Here To Claim</span></a></span></h1>
+</center></div>
+</div>
+</div>
+</form>
+<div style=3D=22text-align: center;=22><span style=3D=22font-size: 18px; =
+letter-spacing: 1px;=22>&nbsp;</span></div>
+<center><center></center><center></center><center></center><center></center=
+><center><br /><br />
+<div style=3D=22font-size: 11px; color: black; max-width: 550px; =
+line-height: 1.4; padding: 0;=22><center>
+<p><br /><br /><span style=3D=22color: #000000;=22>To unsubscribe, please =
+click&nbsp;<a href=3Dt.co/5zmDKlMoHy style=3D=22color: =
+#000000;=22>here</a></span></p>
+</center><center>
+<p><br /><br /><span style=3D=22color: #000000;=22>The advertiser does not =
+manage your subscription.</span><br /><span style=3D=22color: =
+#000000;=22>If you perfer not to receive further communication please =
+unsubscribe&nbsp;<a href=3Dt.co/5zmDKlMoHy style=3D=22color: =
+#000000;=22>here</a></span><br /><span style=3D=22color: #000000;=22>Or =
+write to: 6101 Long Prairie Rd,Ste 744 #511, Flower Mound, TX, =
+75028</span></p>
+</center></div>
+</center></center>
+<script>
+<tr>
+<td align=3D=22=22 valign=3D=22top=22 style=3D=22font-family:Arial, =
+Helvetica, sans-serif;
+ font-size:18px; line-height:22px; color:#000000; padding-bottom: =
+20px;=22>
+
+</td>
+</tr>
+ <tr>
+ <td colspan=3D=222=22 style=3D=22font-size:10px; color: #000;=22><br><br>
+ <div align=3D=22center=22>CASH APP..lS NOT AFFILIATED..WlTH, D0ES N0T =
+SP0NSOR,
+ <br>0r..otherwise..endorse..this.PROMOTlON.
+ <br><br>To UNSUBSCRlBE, pleasee <a
+ href=3D=22https://gbcghhg.r.bh.d.sendibt3.com/tr/cl/-7HHEQ9iYRLmqQc2WHRtCd=
+Z3KR7MIHnZTF1xPW8-Vw5lXMavTniqUq4zXM6dPKwL53Py8-Vp7c22i5wCJ7u3QocRcpNGV0PzO=
+zhij-RNW3R9rK3gG71hh407Y86FniEdwItz8Id=5Fpk3Dbiw6b9Nq4PLiwqSMc3GjB6EoR3YW3y=
+4a9ldRHT-usDFXRUTuxNaSr-OyoQtpWFVNXWpA=22>VlSlT-HERE</a> 0r write to:
+ <br><br>
+ </div>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+
+</div><img width=3D'1' height=3D'1' src=3D'https://gbcghhg.r.bh.d.sendibt3.=
+com/tr/op/rNnNptb7mrQwwTN2vzj8Ne747t62nrM55521FridB9ib3=5FTLQNzQ=5FLLYebKaP=
+Bq47-HrGO=5FwGxHf2cdeGjLbcAW-VgXwVDnSe2MavS56qacM4F3THQ030fvwQ-rp-aka=5FYYT=
+MpK0RAYIpL2NlfSwvoXNDNDann94iusfIPDr-AO6' alt=3D'' /></body>
+</html>
+=20
+</body>
+</script>
+
