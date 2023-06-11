@@ -51,16 +51,30 @@ example outout:
 ```
 
 
-scraper.py script exceution example 
+**scraper.py script exceution example**
 
 ```bash
 python3 scraper.py --directory /users/projects/script/ma-home-assignment/pre-scanned-emails
 ```
 ### scraper.py parameters ###
-| flag | Type | Description | default-value | example (Legacy Site) 
+| flag | Type | Description | default-value | example 
 | :--- | :--- | :--- | :--- | :--- |
 | -d / --directory | string | the folder location of the downloaded .eml files | none | /users/alive/email_files/ |
 | -els-id | string | elastic cloud-id | OS.env ['ELS_CLOUD_ID'] | 'elk-tenant:ZXUtY2VudHJhbC0xLmF3cy5jbG91Z' |
 | -els-user | string | elastic user for basic auth | OS.env ['ELS_USER'] | 'elastic' |
-| -els-user | string | elastic user password for basic auth | OS.env ['ES_PASSWORD'] | Ab123@321 |
+| -els-password | string | elastic user password for basic auth | OS.env ['ES_PASSWORD'] | Ab123@321 |
+
+**__alerter.py script exceution example__**
+
+```bash
+python3 alerter.py -els-sniffer-index .ds-packetbeat-8.8.1-2023.06.10-000001
+```
+### alerter.py parameters ###
+| flag | Type | Description | default-value | example 
+| :--- | :--- | :--- | :--- | :--- |
+| -els-id | string | elastic cloud-id | OS.env ['ELS_CLOUD_ID'] | 'elk-tenant:ZXUtY2VudHJhbC0xLmF3cy5jbG91Z' |
+| -els-user | string | elastic user for basic auth | OS.env ['ELS_USER'] | 'elastic' |
+| -els-password | string | elastic user password for basic auth | OS.env ['ES_PASSWORD'] | Ab123@321 |
+| -els-sniffer-index | string | the sniffer index that contains users network activity | none | .ds-packetbeat-8.8.1-2023.06.10-000001
+
 
