@@ -1,5 +1,21 @@
 # MA-Home-Assignment #
 
+General Guidelines:
+
+scraper.py
+
+This script does the following:
+ -Connect to elastic instance via given arguments
+ -Scrapes .eml fiels from ```--directory``` location and create map list for each .eml file
+ -Send each json record data to ```email_scraper``` indice name
+
+ alerts.py
+
+ This script does the following:
+ -Connect to elastic instance via given arguments
+ -Retreive domain list from previous script indice name: ```email_scraper```
+ -Search given indice name from traffic shipper the extracted domains
+ -Alerts if domain found in each domain search
 
 ## How To:
 
@@ -21,6 +37,7 @@ Run the 2nd script by using the command:**<br>
 ```python3 alerter.py -d <directory>```<br>
 
 The script output will alert you if domain browsing correlation was found.<br>
+example outout:
 
 ```bash
 [ALERT] user domain browsing detected! [storage.googleapis.com] - Number of hits: 3
@@ -32,13 +49,18 @@ The script output will alert you if domain browsing correlation was found.<br>
 [ALERT] user domain browsing detected! [twitter.com] - Number of hits: 11
 [ALERT] user domain browsing detected! [cnn.com] - Number of hits: 28
 ```
-example outout:
 
 
-# scraper.py parameters
+scraper.py script exceution example 
+
+```bash
+python3 scraper.py --directory /users/projects/script/ma-home-assignment/pre-scanned-emails
+```
+### scraper.py parameters ###
 | flag | Type | Description | default-value | example (Legacy Site) 
 | :--- | :--- | :--- | :--- | :--- |
-| -d / --directory | string | downloaded .eml files | none | /users/alive/email_files/ |
+| -d / --directory | string | the folder location of the downloaded .eml files | none | /users/alive/email_files/ |
 | -els-id | string | elastic cloud-id | OS.env ['ELS_CLOUD_ID'] | 'elk-tenant:ZXUtY2VudHJhbC0xLmF3cy5jbG91Z' |
 | -els-user | string | elastic user for basic auth | OS.env ['ELS_USER'] | 'elastic' |
 | -els-user | string | elastic user password for basic auth | OS.env ['ES_PASSWORD'] | Ab123@321 |
+
