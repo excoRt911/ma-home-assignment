@@ -4,18 +4,18 @@ General Guidelines:
 
 scraper.py
 
-This script does the following:
- -Connect to elastic instance via given arguments
- -Scrapes .eml fiels from ```--directory``` location and create map list for each .eml file
- -Send each json record data to ```email_scraper``` indice name
+This script does the following:<br>
+ -Connect to elastic instance via given arguments<br>
+ -Scrapes .eml fiels from ```--directory``` location and create map list for each .eml file<br>
+ -Send each json record data to ```email_scraper``` indice name<br>
 
  alerts.py
 
- This script does the following:
- -Connect to elastic instance via given arguments
- -Retreive domain list from previous script indice name: ```email_scraper```
- -Search given indice name from traffic shipper the extracted domains
- -Alerts if domain found in each domain search
+ This script does the following:<br>
+ -Connect to elastic instance via given arguments<br>
+ -Retreive domain list from previous script indice name: ```email_scraper```<br>
+ -Search given indice name from traffic shipper the extracted domains<br>
+ -Alerts if domain found in each domain search<br>
 
 ## How To:
 
