@@ -5,7 +5,7 @@ import argparse
 
 
 
-def check_hit_on_network_traffic(els_connection: Elasticsearch,domains: List[str]) -> Dict[str,Any]:
+def check_hit_on_network_traffic(els_connection: Elasticsearch,domains: List[str],els_index: str) -> Dict[str,Any]:
     hits = {}
     for domain in domains:
         query = {
@@ -15,7 +15,7 @@ def check_hit_on_network_traffic(els_connection: Elasticsearch,domains: List[str
                     }
                 }
         }
-        response = els_connection.count(index="packetbeat-8.8.1", query=query)
+        response = els_connection.count(index=els_index, query=query)
         hit_count = response.body.get("count", 0)
         if hit_count > 0:
             hits[domain] = hit_count
@@ -56,6 +56,7 @@ def parse_args():
     p.add_argument("-els-id", default=os.environ.get('ELS_CLOUD_ID'), help="Elasticsearch cloud id")
     p.add_argument("-els-user", default=os.environ.get('ELS_USER'), help="Elasticsearch username")
     p.add_argument("-els-password", default=os.environ.get('ELS_PASSWORD'), help="Elasticsearch password")
+    p.add_argument("-els-sniffer-index", default=None, required=True, help="the name of the elastic index sending the sniffing data")
     return p.parse_args()
 
 
@@ -70,9 +71,9 @@ def main():
 
     # extract all domains from parsed .emls
     domains_list = retrieve_main_domains(es)
-
+    
     # detects hits from retrieved domains list
-    detect_hits = check_hit_on_network_traffic(es,domains_list)
+    detect_hits = check_hit_on_network_traffic(es,domains_list,args.els_sniffer_index)
 
     # Alerts from each HIT
     for domain,count in detect_hits.items():

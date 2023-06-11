@@ -36,7 +36,7 @@ example outout:
 
 
 # scraper.py parameters
-| flag | Type | Description | default-value | example (Legacy Site)
+| flag | Type | Description | default-value | example (Legacy Site) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | -d / --directory | string | downloaded .eml files | none | /users/alive/email_files/ |
 | -els-id | string | elastic cloud-id | OS.env ['ELS_CLOUD_ID'] | 'elk-tenant:ZXUtY2VudHJhbC0xLmF3cy5jbG91Z' |
