@@ -6,7 +6,7 @@ General Guidelines:
 
 This script does the following:<br>
  -Connect to elastic deployment via given arguments<br>
- -Scrapes .eml fiels from ```--directory``` location and create map list for each .eml file<br>
+ -Scrapes .eml files from ```--directory``` location and create map list that contains each .eml file IOC's<br>
  -Send each json record data to ```email_scraper``` indice name in elastic deployment<br>
 
  **alerts.py**
@@ -14,7 +14,7 @@ This script does the following:<br>
  This script does the following:<br>
  -Connect to elastic deployment via given arguments<br>
  -Retreive domain list from previous script indice name: ```email_scraper```<br>
- -Search given indice name from traffic shipper the extracted domains<br>
+ -Search given indice name from traffic shipper against the domains extracted from the scraper<br>
  -Alerts if domain found in each search itterations<br>
 
 ## How To:
